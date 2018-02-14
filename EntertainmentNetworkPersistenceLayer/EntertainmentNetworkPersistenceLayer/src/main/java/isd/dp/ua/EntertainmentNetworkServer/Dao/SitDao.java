@@ -1,0 +1,33 @@
+/* 
+* This module is part of the Entertainment Network system 
+* Copyright (c) SCC Soft Computer, Inc. 2018 
+* All Rights Reserved 
+* 
+* This document contains unpublished, confidential and proprietary 
+* information of SCC Soft Computer, Inc. No disclosure or use of 
+* any portion of the contents of these materials may be made without the 
+* express written consent of Soft Computer Consultants, Inc. 
+* 
+*/ 
+
+package isd.dp.ua.EntertainmentNetworkServer.Dao;
+// Generated Feb 9, 2018 5:32:55 PM by Hibernate Tools 3.5.0.Final
+
+import org.springframework.stereotype.Repository;
+
+import isd.dp.ua.EntertainmentNetworkServer.Common.HibernateDaoOperations;
+import isd.dp.ua.EntertainmentNetworkServer.Models.Sit;
+
+/**
+ * Home object for domain model class Sit.
+ * @see isd.dp.ua.EntertainmentNetworkServer.Models.Sit
+ * @author Hibernate Tools
+ */
+@Repository
+public class SitDao extends HibernateDaoOperations<Sit>
+{
+	public SitDao()
+	{
+		super(Sit.class);
+	}
+}
