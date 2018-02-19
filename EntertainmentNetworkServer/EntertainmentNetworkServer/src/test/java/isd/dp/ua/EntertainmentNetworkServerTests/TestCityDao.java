@@ -1,4 +1,4 @@
-package isd.dp.ua.EntertainmentNetworkPersistenceLayer;
+package isd.dp.ua.EntertainmentNetworkServerTests;
 
 import java.util.List;
 
