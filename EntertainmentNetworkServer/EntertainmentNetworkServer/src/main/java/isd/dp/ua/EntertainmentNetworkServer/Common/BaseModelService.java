@@ -13,52 +13,70 @@
 package isd.dp.ua.EntertainmentNetworkServer.Common;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.WebService;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 /*
  * Represents base implementation for service that uses dao implementation
  */
+@WebService
 @Service
-public abstract class BaseModelService<T> implements ICrudOperations<T>
+public abstract class BaseModelService<daoOperation extends HibernateDaoOperations<entityType>, entityType extends BaseModel, dtoType extends BaseDto> 
+implements ICrudOperations<dtoType>
 { 	
   /*
-   * Represents dao implementation of model
+   * Represents web services implementation of model
    */
-  protected ICrudOperations<T> daoOperations;
+  protected daoOperation daoOperations;
 
-  protected BaseModelService(ICrudOperations<T> daoOperations)
+  protected BaseModelService(daoOperation daoOperations, Class<entityType> entityType, Class<dtoType> dtoType, ModelMapper modelMapper)
   {
 	  this.daoOperations = daoOperations;
+	  this.entityType = entityType;
+	  this.dtoType = dtoType;
+	  this.modelMapper = modelMapper;
+  }
+
+  /**
+   * finds item by ID  via dao implementation
+   * @return T
+   */
+  @Override
+  public dtoType findById(BigDecimal id) 
+  {	
+	  return this.convertToDto(daoOperations.findById(id), this.getModel());
   }
   
   /*
    * Performs persisting (adding) item via dao implementation
    */
   @Override
-  public void persist(T item) 
+  public void persist(dtoType dto) 
   {
-	  daoOperations.persist(item);
+	  this.daoOperations.persist(this.convertToEntity(dto, this.getEntityModel()));
   }
   
   /*
    * Performs merge (updating) item via dao implementation
    */
   @Override
-  public T merge(T detachedInstance)
+  public dtoType merge(dtoType dto)
   {
-  	// TODO Auto-generated method stub
-  	return null;
+	  return this.convertToDto(this.daoOperations.merge(this.convertToEntity(dto, this.getEntityModel())), this.getModel());
   }
   
   /*
    * remove item via dao implementation
    */
   @Override
-  public void remove(T user) 
+  public void remove(dtoType dto) 
   {
-	  daoOperations.remove(user);
+	  this.daoOperations.remove(this.convertToEntity(dto, this.getEntityModel()));
   }
   
   /**
@@ -66,18 +84,51 @@ public abstract class BaseModelService<T> implements ICrudOperations<T>
    *  @return List<T>
    */
   @Override
-  public List<T> getAll() 
-  {
-    return daoOperations.getAll();
+  public List<dtoType> getAll() 
+  {	  
+	  List<dtoType> dtos = new ArrayList<dtoType>();
+	  
+	  for(entityType entity : this.daoOperations.getAll())
+	  {
+		  dtos.add(this.convertToDto(entity, this.getModel()));
+	  }
+	  
+	  return dtos;
   }
   
-  /**
-   * finds item by ID  via dao implementation
-   * @return T
+  /*
+   * returns type of dto 
    */
-  @Override
-  public T findById(BigDecimal id)
+  public Class<dtoType> getModel()
   {
-	  return daoOperations.findById(id);
+	  return this.dtoType;
   }
+  
+  /*
+   * returns type of entity 
+   */
+  public Class<entityType> getEntityModel()
+  {
+	  return this.entityType;
+  }
+  
+  /*
+   * converts entity to dto 
+   */
+  public <X extends BaseDto> X convertToDto(BaseModel entity, Class<X> type) 
+  {
+	  return modelMapper.map(entity, type);
+  }
+  
+  /*
+   * converts dto to entity  
+   */
+  public <T extends BaseModel> T convertToEntity(BaseDto dto, Class<T> type)
+  {	
+	  return modelMapper.map(dto, type);
+  }
+  
+  private final Class<dtoType> dtoType;
+  private final Class<entityType> entityType;
+  private final ModelMapper modelMapper;
 }

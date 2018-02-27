@@ -15,21 +15,23 @@ package isd.dp.ua.EntertainmentNetworkServer.Services;
 
 import javax.jws.WebService;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModelService;
-import isd.dp.ua.EntertainmentNetworkServer.Common.ICrudOperations;
+import isd.dp.ua.EntertainmentNetworkServer.Common.*;
+import isd.dp.ua.EntertainmentNetworkServer.Dao.HallDao;
+import isd.dp.ua.EntertainmentNetworkServer.Dto.HallDto;
 import isd.dp.ua.EntertainmentNetworkServer.Models.Hall;
 
 @WebService(endpointInterface="isd.dp.ua.EntertainmentNetworkServer.Common.ICrudOperations")
 @Service
-public class HallService extends BaseModelService<Hall>
+public class HallService extends BaseModelService<HallDao, Hall, HallDto>
 {
 	@Autowired
-	public HallService(@Qualifier("hallDao") ICrudOperations<Hall> daoOperations)
+	public HallService(@Qualifier("hallDao") HallDao daoOperations, ModelMapper modelMapper)
 	{
-		super(daoOperations);
+		super(daoOperations, Hall.class, HallDto.class, modelMapper);
 	}
 }

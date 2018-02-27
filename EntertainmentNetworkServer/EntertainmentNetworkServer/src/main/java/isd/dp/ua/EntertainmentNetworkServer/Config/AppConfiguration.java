@@ -1,8 +1,7 @@
 package isd.dp.ua.EntertainmentNetworkServer.Config;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @ComponentScan(value=
@@ -14,6 +13,11 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class AppConfiguration
 {
+	@Bean
+	public ModelMapper modelMapper()
+	{
+	    return new ModelMapper();
+	}
 }
 
 

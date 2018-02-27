@@ -15,12 +15,9 @@ package isd.dp.ua.EntertainmentNetworkServer.Common;
 import java.math.BigDecimal;
 import java.util.List;
 
-import javax.jws.WebService;
-
 /*
  * Represents base CRUD operations 
  */
-@WebService
 public interface ICrudOperations<T> 
 {
 	void persist(T transientInstance);
@@ -32,4 +29,6 @@ public interface ICrudOperations<T>
 	T findById(BigDecimal id);
 
 	List<T> getAll();
+	
+	Class<T> getModel();
 }

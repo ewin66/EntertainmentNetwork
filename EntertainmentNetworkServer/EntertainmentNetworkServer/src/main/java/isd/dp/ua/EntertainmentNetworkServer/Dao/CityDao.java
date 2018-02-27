@@ -13,6 +13,11 @@
 package isd.dp.ua.EntertainmentNetworkServer.Dao;
 // Generated Feb 9, 2018 5:32:55 PM by Hibernate Tools 3.5.0.Final
 
+import java.util.List;
+
+import javax.persistence.criteria.*;
+
+//import org.hibernate.criterion.CriteriaQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,5 +36,15 @@ public class CityDao extends HibernateDaoOperations<City>
 	public CityDao()
 	{
 		super(City.class);
+	}
+	
+	public List<City> findByName(String name)
+	{
+	    CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
+	    CriteriaQuery<City> query = builder.createQuery(City.class);
+	    Root<City> cities = query.from(City.class);
+	    query.select(cities).where(builder.equal(cities.get("citName"), name));
+
+	    return getEntityManager().createQuery(query).getResultList();
 	}
 }

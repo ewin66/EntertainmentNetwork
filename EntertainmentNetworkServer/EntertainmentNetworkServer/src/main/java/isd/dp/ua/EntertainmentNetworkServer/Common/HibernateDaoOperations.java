@@ -14,11 +14,14 @@ package isd.dp.ua.EntertainmentNetworkServer.Common;
 // Generated Feb 9, 2018 5:32:55 PM by Hibernate Tools 3.5.0.Final
 
 import java.math.BigDecimal;
-import java.text.NumberFormat;
 import java.util.List;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
@@ -27,15 +30,9 @@ import isd.dp.ua.EntertainmentNetworkServer.Logger.Log4jHelper;
 /**
  * Represents hibernate base dao operations for T model
  */
-@SuppressWarnings("unchecked")
 @Transactional
-public class HibernateDaoOperations<T> implements ICrudOperations<T>
+public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperations<T>
 {
-	/*
-	 * Represents type of model that is handled
-	 */
-	private final Class<T> model;
-
 	public HibernateDaoOperations(Class<T> model)
 	{
 		try	
@@ -51,6 +48,12 @@ public class HibernateDaoOperations<T> implements ICrudOperations<T>
 		this.model = model;
 	}
 
+	@Override
+	public Class<T> getModel()
+	{
+		return this.model;		
+	}
+	
 	/*
 	 * Performs persisting (adding) item to DB
 	 */
@@ -60,7 +63,7 @@ public class HibernateDaoOperations<T> implements ICrudOperations<T>
 		Log4jHelper.debug("persisting instance: %s", transientInstance.toString());
 		try
 		{
-			factory.getCurrentSession().persist(transientInstance);
+			this.getEntityManager().persist(transientInstance);
 			Log4jHelper.debug("persist successful");
 		} catch (RuntimeException re)
 		{
@@ -78,7 +81,7 @@ public class HibernateDaoOperations<T> implements ICrudOperations<T>
 		Log4jHelper.debug("removing instance: %s", persistentInstance.toString());
 		try
 		{
-			factory.getCurrentSession().delete(persistentInstance);
+			this.getEntityManager().remove(persistentInstance);
 			Log4jHelper.debug("remove successful");
 		} catch (RuntimeException re)
 		{
@@ -96,7 +99,7 @@ public class HibernateDaoOperations<T> implements ICrudOperations<T>
 		Log4jHelper.debug("merging instance");
 		try
 		{
-			T result = (T) factory.getCurrentSession().merge(detachedInstance);
+			T result = (T) this.getEntityManager().merge(detachedInstance);
 			Log4jHelper.debug("merge successful");
 			return result;
 		} catch (RuntimeException re)
@@ -112,10 +115,10 @@ public class HibernateDaoOperations<T> implements ICrudOperations<T>
 	@Override
 	public T findById(BigDecimal id)
 	{
-		Log4jHelper.debug("getting instance with id: %s", NumberFormat.getCurrencyInstance().format(id));
+		Log4jHelper.debug("getting instance with id: %s", id.toString());
 		try
 		{
-			T instance = (T) factory.getCurrentSession().get(model, id);
+			T instance = (T) this.getEntityManager().find(this.getModel(), id);
 			Log4jHelper.debug("get successful");
 			return instance;
 		} catch (RuntimeException re)
@@ -131,14 +134,32 @@ public class HibernateDaoOperations<T> implements ICrudOperations<T>
 	@Override
 	public List<T> getAll()
 	{
-		Log4jHelper.debug("getting all instances of type %s", this.model);		
-	    return factory.getCurrentSession().createCriteria(this.model).list();
+		Log4jHelper.debug("getting all instances of type %s", this.getModel());	
+		CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
+	    CriteriaQuery<T> query = builder.createQuery(this.getModel());
+	    Root<T> variableRoot = query.from(this.getModel());
+	    query.select(variableRoot);
+
+	    return getEntityManager().createQuery(query).getResultList();
+	}
+	
+	/*
+	 * returns entity manager
+	 */
+	protected EntityManager getEntityManager()
+	{
+		return manager;		
 	}
 	
 	/*
 	 * Represents hibernate factory for communication with DB
 	 */
-	@Autowired
-	private SessionFactory factory;
+	@PersistenceContext
+	private EntityManager manager;
+	
+	/*
+	 * Represents type of model that is handled
+	 */
+	private final Class<T> model;
 }
 

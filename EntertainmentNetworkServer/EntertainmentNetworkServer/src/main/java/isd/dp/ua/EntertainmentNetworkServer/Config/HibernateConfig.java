@@ -1,23 +1,28 @@
 package isd.dp.ua.EntertainmentNetworkServer.Config;
 
 import java.util.Properties;
+
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
 @PropertySource(value = { "classpath:application.properties" })
-public class HibernateConfig {
-
+public class HibernateConfig 
+{
 	@Autowired
 	private Environment env;
 
@@ -26,7 +31,8 @@ public class HibernateConfig {
 	 * @return DataSource
 	 */
 	@Bean
-	public DataSource getDataSource() {
+	public DataSource getDataSource() 
+	{
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName(env.getRequiredProperty("datasource.driver"));
 		dataSource.setUrl(env.getRequiredProperty("datasource.url"));
@@ -39,7 +45,8 @@ public class HibernateConfig {
 	 * Initialize hibernate properties 
 	 * @return Properties
 	 */
-	private Properties getHibernateProperties() {
+	private Properties getHibernateProperties() 
+	{
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", env.getRequiredProperty("hibernate.dialect"));
 		properties.put("hibernate.show_sql", env.getRequiredProperty("hibernate.show_sql"));
@@ -47,29 +54,32 @@ public class HibernateConfig {
 		return properties;
 	}
 
-	/**
-	 * Initialize SessionFactory 
-	 * @return LocalSessionFactoryBean
-	 */
 	@Bean
-	public LocalSessionFactoryBean getSessionFactory() {
-		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-		sessionFactory.setDataSource(getDataSource());
-		sessionFactory.setPackagesToScan(new String[] { "isd.dp.ua.EntertainmentNetworkServer.Models" });
-		sessionFactory.setHibernateProperties(getHibernateProperties());
-		return sessionFactory;
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() 
+	{
+      LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+      em.setDataSource(this.getDataSource());
+      em.setPackagesToScan(new String[] { "isd.dp.ua.EntertainmentNetworkServer.Models" });
+ 
+      JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+      em.setJpaVendorAdapter(vendorAdapter);
+      em.setJpaProperties(this.getHibernateProperties());
+ 
+      return em;
+    }
+	
+	@Bean
+	public PlatformTransactionManager transactionManager(EntityManagerFactory emf)
+	{
+		JpaTransactionManager transactionManager = new JpaTransactionManager();
+		transactionManager.setEntityManagerFactory(emf);
+		
+		return transactionManager;
 	}
-
-	/**
-	 * Initialize Transaction Manager 
-	 * @param sessionFactory
-	 * @return HibernateTransactionManager
-	 */
+	
 	@Bean
-	@Autowired
-	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager txManager = new HibernateTransactionManager();
-		txManager.setSessionFactory(sessionFactory);
-		return txManager;
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation()
+	{
+		 return new PersistenceExceptionTranslationPostProcessor();
 	}
 }
