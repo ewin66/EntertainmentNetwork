@@ -5,20 +5,21 @@ import java.util.List;
 
 import javax.jws.WebService;
 
-import isd.dp.ua.EntertainmentNetworkServer.Dto.CinemaDto;
+import isd.dp.ua.EntertainmentNetworkServer.Models.Cinema;
+import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 
 @WebService
 public interface ICinemaService 
 {
-	public void addCinema(CinemaDto dto);
+	public void addCinema(AddCinemaRequest dto);
 	
-	public CinemaDto findCinemaById(BigDecimal id);
+	public Cinema findCinemaById(BigDecimal id);
 
-	public List<CinemaDto> findCinemaByName(String name);
+	public List<Cinema> findCinemaByName(String name);
 	
-	public List<CinemaDto> getCinemas();
+	public List<Cinema> getCinemas();
 	
-	public CinemaDto mergeCinema(CinemaDto dto);
+	public Cinema mergeCinema(MergeCinemaRequest dto);
 	
-	public void removeCinema(CinemaDto dto);
+	public void removeCinema(BigDecimal id);
 }

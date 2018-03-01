@@ -5,20 +5,21 @@ import java.util.List;
 
 import javax.jws.*;
 
-import isd.dp.ua.EntertainmentNetworkServer.Dto.CityDto;
+import isd.dp.ua.EntertainmentNetworkServer.Models.City;
+import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 
 @WebService
 public interface ICityService
 {
-	void addCity(CityDto transientInstance);
+	void addCity(AddCityRequest transientInstance);
 
-	void removeCity(CityDto persistentInstance);
+	void removeCity(BigDecimal id);
 
-	CityDto mergeCity(CityDto detachedInstance);
+	City mergeCity(MergeCityRequest detachedInstance);
 
-	CityDto findCityById(BigDecimal id);
+	City findCityById(BigDecimal id);
 	
-	List<CityDto> findByName(String name);
+	List<City> findByName(String name);
 	
-	List<CityDto> getCities();
+	List<City> getCities();
 }

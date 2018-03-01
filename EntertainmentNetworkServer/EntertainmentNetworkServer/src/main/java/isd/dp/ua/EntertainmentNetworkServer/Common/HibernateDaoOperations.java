@@ -16,12 +16,12 @@ package isd.dp.ua.EntertainmentNetworkServer.Common;
 import java.math.BigDecimal;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-
+import org.hibernate.Criteria;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.CriteriaSpecification;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
@@ -63,7 +63,7 @@ public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperati
 		Log4jHelper.debug("persisting instance: %s", transientInstance.toString());
 		try
 		{
-			this.getEntityManager().persist(transientInstance);
+			this.getSeession().persist(transientInstance);
 			Log4jHelper.debug("persist successful");
 		} catch (RuntimeException re)
 		{
@@ -81,7 +81,7 @@ public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperati
 		Log4jHelper.debug("removing instance: %s", persistentInstance.toString());
 		try
 		{
-			this.getEntityManager().remove(persistentInstance);
+			this.getSeession().delete(persistentInstance);
 			Log4jHelper.debug("remove successful");
 		} catch (RuntimeException re)
 		{
@@ -99,7 +99,8 @@ public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperati
 		Log4jHelper.debug("merging instance");
 		try
 		{
-			T result = (T) this.getEntityManager().merge(detachedInstance);
+			@SuppressWarnings("unchecked")
+			T result = (T) this.getSeession().merge(detachedInstance);
 			Log4jHelper.debug("merge successful");
 			return result;
 		} catch (RuntimeException re)
@@ -118,7 +119,7 @@ public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperati
 		Log4jHelper.debug("getting instance with id: %s", id.toString());
 		try
 		{
-			T instance = (T) this.getEntityManager().find(this.getModel(), id);
+			T instance = this.getSeession().get(model, id);
 			Log4jHelper.debug("get successful");
 			return instance;
 		} catch (RuntimeException re)
@@ -134,28 +135,34 @@ public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperati
 	@Override
 	public List<T> getAll()
 	{
-		Log4jHelper.debug("getting all instances of type %s", this.getModel());	
-		CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
-	    CriteriaQuery<T> query = builder.createQuery(this.getModel());
-	    Root<T> variableRoot = query.from(this.getModel());
-	    query.select(variableRoot);
-
-	    return getEntityManager().createQuery(query).getResultList();
+		Log4jHelper.debug("getting all instances of type %s", this.getModel());		
+	    return this.ListCast(this.getSeession()
+	    		.createCriteria(this.getModel())
+	    		.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY));
 	}
 	
-	/*
-	 * returns entity manager
-	 */
-	protected EntityManager getEntityManager()
+	protected Session getSeession()
 	{
-		return manager;		
+		return this.factory.getCurrentSession();
+	}
+	
+	@SuppressWarnings("unchecked")
+	protected <X extends BaseModel> List<X>  ListCast(Criteria criteria)
+	{
+	    return criteria.list();		
+	}
+	
+	@SuppressWarnings("unchecked")
+	protected <X extends BaseModel> List<X>  ListCast(Query query)
+	{
+	    return query.list();		
 	}
 	
 	/*
 	 * Represents hibernate factory for communication with DB
-	 */
-	@PersistenceContext
-	private EntityManager manager;
+	 */	
+	@Autowired
+	private SessionFactory factory;
 	
 	/*
 	 * Represents type of model that is handled

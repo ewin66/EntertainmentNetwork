@@ -13,7 +13,6 @@
 package isd.dp.ua.EntertainmentNetworkServer.Services;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebService;
@@ -24,70 +23,76 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModelService;
-import isd.dp.ua.EntertainmentNetworkServer.Dao.CinemaDao;
-import isd.dp.ua.EntertainmentNetworkServer.Dto.CinemaDto;
+import isd.dp.ua.EntertainmentNetworkServer.Dao.*;
 import isd.dp.ua.EntertainmentNetworkServer.Interfaces.ICinemaService;
-import isd.dp.ua.EntertainmentNetworkServer.Models.Cinema;
+import isd.dp.ua.EntertainmentNetworkServer.Models.*;
+import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 
 @WebService(serviceName="CinemaWebService", endpointInterface="isd.dp.ua.EntertainmentNetworkServer.Interfaces.ICinemaService")
 @Service
-public class CinemaService extends BaseModelService<CinemaDao, Cinema, CinemaDto> implements ICinemaService
+public class CinemaService extends BaseModelService implements ICinemaService
 {
 	@Autowired
-	public CinemaService(@Qualifier("cinemaDao") CinemaDao daoOperations, ModelMapper modelMapper)
+	public CinemaService(@Qualifier("cinemaDao") CinemaDao cinemaOperations, CityDao cityOperations, ModelMapper modelMapper)
 	{
-		super(daoOperations, Cinema.class, CinemaDto.class, modelMapper);
+		super(modelMapper);
+		this.cityOperations = cityOperations;
+		this.cinemaOperations = cinemaOperations;
 	}
 
 	@Override
-	public void addCinema(CinemaDto dto) 
-	{		
-		this.persist(dto);
+	public void addCinema(AddCinemaRequest addRequest) 
+	{
+		this.cinemaOperations.persist(this.prepareCinema(addRequest));
 	}
 
 	@Override
-	public CinemaDto findCinemaById(BigDecimal id) 
+	public Cinema findCinemaById(BigDecimal id) 
 	{
-		return super.findById(id);
+		return this.cinemaOperations.findById(id);
 	}
 
-	public List<CinemaDto> findCinemaByAddress(String address)
+	public List<Cinema> findCinemaByAddress(String address)
 	{
-		List<CinemaDto> dtos = new ArrayList<CinemaDto>();
-		for(Cinema entity : super.daoOperations.findCinemaByAddress(address))
-		{
-			dtos.add(super.convertToDto(entity, this.getModel()));
-		}
-		
-		return dtos;
+		return this.cinemaOperations.findCinemaByAddress(address);
 	}
 	
-	public List<CinemaDto> findCinemaByName(String name) 
+	public List<Cinema> findCinemaByName(String name) 
 	{
-		List<CinemaDto> dtos = new ArrayList<CinemaDto>();
-		for(Cinema entity : super.daoOperations.findCinemaByName(name))
-		{
-			dtos.add(super.convertToDto(entity, this.getModel()));
-		}
-		
-		return dtos;
+		return this.cinemaOperations.findCinemaByName(name);
 	}
 
 	@Override
-	public List<CinemaDto> getCinemas() 
+	public List<Cinema> getCinemas() 
 	{
-		return super.getAll();
+		return this.cinemaOperations.getAll();
 	}
 
 	@Override
-	public CinemaDto mergeCinema(CinemaDto dto)
+	public Cinema mergeCinema(MergeCinemaRequest mergeRequest)
 	{
-		return this.merge(dto);
+		return this.cinemaOperations.merge(this.prepareCinema(mergeRequest));
 	}
 
 	@Override
-	public void removeCinema(CinemaDto dto)
-	{		
-		this.remove(dto);
+	public void removeCinema(BigDecimal id)
+	{
+		Cinema cinema = new Cinema();
+		cinema.setCinId(id);
+		this.cinemaOperations.remove(cinema);
 	}
+	
+	/*
+	 * Prepares cinema: find city, add it to cinema entity
+	 */
+	protected Cinema prepareCinema(AddCinemaRequest request)
+	{
+		City city = this.cityOperations.findById(request.getCitId());
+		Cinema cinema = this.convertToEntity(request, Cinema.class);
+		cinema.setCity(city);
+		return cinema;
+	}
+	
+	protected CityDao cityOperations;
+	protected CinemaDao cinemaOperations;
 }

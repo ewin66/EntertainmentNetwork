@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.HibernateDaoOperations;
-import isd.dp.ua.EntertainmentNetworkServer.Models.Sit;
+import isd.dp.ua.EntertainmentNetworkServer.Models.*;
 
 /**
  * Home object for domain model class Sit.

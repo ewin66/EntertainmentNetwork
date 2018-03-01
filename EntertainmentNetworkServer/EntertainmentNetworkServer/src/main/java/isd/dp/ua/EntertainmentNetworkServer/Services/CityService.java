@@ -13,7 +13,6 @@
 package isd.dp.ua.EntertainmentNetworkServer.Services;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.jws.WebService;
@@ -25,58 +24,59 @@ import org.springframework.stereotype.Service;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.*;
 import isd.dp.ua.EntertainmentNetworkServer.Dao.*;
-import isd.dp.ua.EntertainmentNetworkServer.Dto.*;
 import isd.dp.ua.EntertainmentNetworkServer.Interfaces.ICityService;
 import isd.dp.ua.EntertainmentNetworkServer.Models.*;
+import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 
 @WebService(serviceName="CityWebService", endpointInterface="isd.dp.ua.EntertainmentNetworkServer.Interfaces.ICityService")
 @Service
-public class CityService extends BaseModelService<CityDao, City, CityDto> implements ICityService
+public class CityService extends BaseModelService implements ICityService
 {	
 	@Autowired
-	public CityService(@Qualifier("cityDao")CityDao daoOperations, ModelMapper modelMapper)
+	public CityService(@Qualifier("cityDao")CityDao cityOperations, ModelMapper modelMapper)
 	{
-		super(daoOperations, City.class, CityDto.class, modelMapper);
+		super(modelMapper);
+		this.cityOperations = cityOperations;
 	}
 
 	@Override
-	public void addCity(CityDto dto) 
-	{		
-		this.persist(dto);
-	}
-
-	@Override
-	public List<CityDto> getCities() 
+	public void addCity(AddCityRequest addRequest) 
 	{	
-		return super.getAll();
+		City city = this.convertToEntity(addRequest, City.class);
+		this.cityOperations.persist(city);
+	}
+
+	@Override
+	public List<City> getCities() 
+	{	
+		return this.cityOperations.getAll();
 	}
 	
-	public CityDto findCityById(BigDecimal id) 
+	public City findCityById(BigDecimal id) 
 	{
-		return super.findById(id);
+		return this.cityOperations.findById(id);
 	} 	
 
 	@Override
-	public List<CityDto> findByName(String name) 
+	public List<City> findByName(String name) 
 	{
-		List<CityDto> dtos = new ArrayList<CityDto>();
-		for(City entity : this.daoOperations.findByName(name))
-		{
-			dtos.add(super.convertToDto(entity, this.getModel()));
-		}
-		
-		return dtos;
+		return this.cityOperations.findByName(name);
 	}
 	
 	@Override
-	public void removeCity(CityDto dto) 
+	public void removeCity(BigDecimal id) 
 	{
-		this.remove(dto);		
+		City city = new City();
+		city.setCitId(id);
+		this.cityOperations.remove(city);		
 	}
 
 	@Override
-	public CityDto mergeCity(CityDto dto)
+	public City mergeCity(MergeCityRequest mergeRequest)
 	{
-		return this.merge(dto);
+		City city = this.convertToEntity(mergeRequest, City.class);
+		return this.cityOperations.merge(city);
 	}	
+	
+	protected CityDao cityOperations;
 }

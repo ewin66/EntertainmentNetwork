@@ -2,20 +2,17 @@ package isd.dp.ua.EntertainmentNetworkServer.Config;
 
 import java.util.Properties;
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.JpaVendorAdapter;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
@@ -53,33 +50,32 @@ public class HibernateConfig
 		properties.put("hibernate.jdbc.batch_size", env.getRequiredProperty("hibernate.batch.size"));
 		return properties;
 	}
-
-	@Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() 
-	{
-      LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-      em.setDataSource(this.getDataSource());
-      em.setPackagesToScan(new String[] { "isd.dp.ua.EntertainmentNetworkServer.Models" });
- 
-      JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-      em.setJpaVendorAdapter(vendorAdapter);
-      em.setJpaProperties(this.getHibernateProperties());
- 
-      return em;
-    }
 	
+	/**
+	 * Initialize SessionFactory 
+	 * @return LocalSessionFactoryBean
+	 */
 	@Bean
-	public PlatformTransactionManager transactionManager(EntityManagerFactory emf)
+	public LocalSessionFactoryBean getSessionFactory() 
 	{
-		JpaTransactionManager transactionManager = new JpaTransactionManager();
-		transactionManager.setEntityManagerFactory(emf);
-		
-		return transactionManager;
+		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+		sessionFactory.setDataSource(getDataSource());
+		sessionFactory.setPackagesToScan(new String[] { "isd.dp.ua.EntertainmentNetworkServer.Models" });
+		sessionFactory.setHibernateProperties(getHibernateProperties());
+		return sessionFactory;
 	}
-	
+
+	/**
+	 * Initialize Transaction Manager 
+	 * @param sessionFactory
+	 * @return HibernateTransactionManager
+	 */
 	@Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation()
+	@Autowired
+	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) 
 	{
-		 return new PersistenceExceptionTranslationPostProcessor();
+		HibernateTransactionManager txManager = new HibernateTransactionManager();
+		txManager.setSessionFactory(sessionFactory);
+		return txManager;
 	}
 }

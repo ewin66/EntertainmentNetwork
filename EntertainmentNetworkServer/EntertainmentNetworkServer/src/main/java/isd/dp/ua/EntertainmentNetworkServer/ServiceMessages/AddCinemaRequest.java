@@ -1,39 +1,28 @@
-package isd.dp.ua.EntertainmentNetworkServer.Dto;
+package isd.dp.ua.EntertainmentNetworkServer.ServiceMessages;
 
 import java.math.BigDecimal;
 import java.sql.Blob;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.BaseDto;
+import isd.dp.ua.EntertainmentNetworkServer.Models.BlobXmlAdapter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType
-public class CinemaDto extends BaseDto 
-{	
-	public BigDecimal getCinId()
+public class AddCinemaRequest extends BaseDto
+{
+	public BigDecimal getCitId()
 	{
-		return this.cinId;
+		return this.citId;
 	}
 
-	public void setCinId(BigDecimal cinId)
+	public void setCitId(BigDecimal citId)
 	{
-		this.cinId = cinId;
+		this.citId = citId;
 	}
-
-	public CityDto getCity()
-	{
-		return this.city;
-	}
-
-	public void setCity(CityDto city)
-	{
-		this.city = city;
-	}
-
+	
 	public String getCinName()
 	{
 		return this.cinName;
@@ -63,23 +52,10 @@ public class CinemaDto extends BaseDto
 	{
 		this.cinAddress = cinAddress;
 	}
-
-	public List<HallDto> getHalls()
-	{
-		return this.halls;
-	}
-
-	public void setHalls(List<HallDto> halls)
-	{
-		this.halls = halls;
-	}
-
-	private BigDecimal cinId;
-	@XmlTransient
-	private CityDto city;
+	
+	private BigDecimal citId;
 	private String cinName;
 	@XmlJavaTypeAdapter(BlobXmlAdapter.class)
 	private Blob cinIcon;
 	private String cinAddress;
-	private List<HallDto> halls = new ArrayList<HallDto>();
 }

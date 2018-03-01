@@ -1,4 +1,4 @@
-package isd.dp.ua.EntertainmentNetworkServer.Dto;
+package isd.dp.ua.EntertainmentNetworkServer.Models;
 
 import java.sql.Blob;
 import javax.xml.bind.annotation.adapters.XmlAdapter;

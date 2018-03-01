@@ -16,6 +16,8 @@ package isd.dp.ua.EntertainmentNetworkServer.Models;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,6 +27,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModel;
 
@@ -33,6 +38,8 @@ import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModel;
  */
 
 @SuppressWarnings("serial")
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType
 @Entity
 @Table(name = "CITY", schema = "PBAB")
 public class City  extends BaseModel implements java.io.Serializable
@@ -97,7 +104,7 @@ public class City  extends BaseModel implements java.io.Serializable
 		this.citCountry = citCountry;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "city")
+	@OneToMany(cascade={CascadeType.MERGE}, fetch = FetchType.EAGER, mappedBy = "city")
 	public Set<Cinema> getCinemas()
 	{
 		return this.cinemas;

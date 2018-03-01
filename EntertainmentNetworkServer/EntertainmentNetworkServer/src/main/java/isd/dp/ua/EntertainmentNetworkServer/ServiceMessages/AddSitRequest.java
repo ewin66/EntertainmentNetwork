@@ -1,4 +1,4 @@
-package isd.dp.ua.EntertainmentNetworkServer.Dto;
+package isd.dp.ua.EntertainmentNetworkServer.ServiceMessages;
 
 import java.math.BigDecimal;
 
@@ -8,26 +8,16 @@ import isd.dp.ua.EntertainmentNetworkServer.Common.BaseDto;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType
-public class SitDto  extends BaseDto 
-{	
-	public BigDecimal getSitId()
+public class AddSitRequest extends BaseDto
+{
+	public BigDecimal getHalId()
 	{
-		return this.sitId;
+		return this.halId;
 	}
 
-	public void setSitId(BigDecimal sitId)
+	public void setHalId(BigDecimal halId)
 	{
-		this.sitId = sitId;
-	}
-
-	public HallDto getHall()
-	{
-		return this.hall;
-	}
-
-	public void setHall(HallDto hall)
-	{
-		this.hall = hall;
+		this.halId = halId;
 	}
 
 	public BigDecimal getSitNum()
@@ -39,7 +29,7 @@ public class SitDto  extends BaseDto
 	{
 		this.sitNum = sitNum;
 	}
-
+	
 	public BigDecimal getSitRow()
 	{
 		return this.sitRow;
@@ -49,7 +39,7 @@ public class SitDto  extends BaseDto
 	{
 		this.sitRow = sitRow;
 	}
-
+	
 	public BigDecimal getSitFloor()
 	{
 		return this.sitFloor;
@@ -59,7 +49,7 @@ public class SitDto  extends BaseDto
 	{
 		this.sitFloor = sitFloor;
 	}
-
+	
 	public BigDecimal getSitType()
 	{
 		return this.sitType;
@@ -70,9 +60,7 @@ public class SitDto  extends BaseDto
 		this.sitType = sitType;
 	}
 	
-	private BigDecimal sitId;
-	@XmlTransient
-	private HallDto hall;
+	private BigDecimal halId;
 	private BigDecimal sitNum;
 	private BigDecimal sitRow;
 	private BigDecimal sitFloor;

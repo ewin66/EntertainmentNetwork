@@ -15,8 +15,9 @@ package isd.dp.ua.EntertainmentNetworkServer.Dao;
 
 import java.util.List;
 
-import javax.persistence.criteria.*;
-
+import org.hibernate.Criteria;
+import org.hibernate.criterion.CriteriaSpecification;
+import org.hibernate.criterion.Restrictions;
 //import org.hibernate.criterion.CriteriaQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,11 +41,9 @@ public class CityDao extends HibernateDaoOperations<City>
 	
 	public List<City> findByName(String name)
 	{
-	    CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
-	    CriteriaQuery<City> query = builder.createQuery(City.class);
-	    Root<City> cities = query.from(City.class);
-	    query.select(cities).where(builder.equal(cities.get("citName"), name));
-
-	    return getEntityManager().createQuery(query).getResultList();
+		Criteria query = this.getSeession().createCriteria(City.class)
+				.add(Restrictions.like("citName", String.format("%%%s%%", name)))
+				.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
+	    return ListCast(query);
 	}
 }

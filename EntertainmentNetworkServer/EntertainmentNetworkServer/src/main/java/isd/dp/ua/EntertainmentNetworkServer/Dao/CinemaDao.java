@@ -16,10 +16,9 @@ package isd.dp.ua.EntertainmentNetworkServer.Dao;
 
 import java.util.List;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
-
+import org.hibernate.Criteria;
+import org.hibernate.criterion.CriteriaSpecification;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,21 +41,17 @@ public class CinemaDao extends HibernateDaoOperations<Cinema>
 	
 	public List<Cinema> findCinemaByName(String name)
 	{
-	    CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
-	    CriteriaQuery<Cinema> query = builder.createQuery(Cinema.class);
-	    Root<Cinema> cities = query.from(Cinema.class);
-	    query.select(cities).where(builder.equal(cities.get("cinName"), name));
-
-	    return getEntityManager().createQuery(query).getResultList();
+		Criteria query = this.getSeession().createCriteria(Cinema.class)
+				.add(Restrictions.like("cinName", String.format("%%%s%%", name)))
+				.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
+	    return ListCast(query);
 	}
 	
 	public List<Cinema> findCinemaByAddress(String address)
 	{
-	    CriteriaBuilder builder = getEntityManager().getCriteriaBuilder();
-	    CriteriaQuery<Cinema> query = builder.createQuery(Cinema.class);
-	    Root<Cinema> cities = query.from(Cinema.class);
-	    query.select(cities).where(builder.like(cities.<String>get("cinAddress"), address));
-
-	    return getEntityManager().createQuery(query).getResultList();
+		Criteria query = this.getSeession().createCriteria(Cinema.class)
+				.add(Restrictions.like("cinAddress", String.format("%%%s%%", address)))
+				.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY);
+	    return ListCast(query);
 	}
 }
