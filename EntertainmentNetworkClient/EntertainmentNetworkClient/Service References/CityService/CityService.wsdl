@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://127.0.0.1:9998/CityService?xsd=1" namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" />
+    </xsd:schema>
+  </types>
+  <message name="findByName">
+    <part name="parameters" element="tns:findByName" />
+  </message>
+  <message name="findByNameResponse">
+    <part name="parameters" element="tns:findByNameResponse" />
+  </message>
+  <message name="findCityById">
+    <part name="parameters" element="tns:findCityById" />
+  </message>
+  <message name="findCityByIdResponse">
+    <part name="parameters" element="tns:findCityByIdResponse" />
+  </message>
+  <message name="removeCity">
+    <part name="parameters" element="tns:removeCity" />
+  </message>
+  <message name="removeCityResponse">
+    <part name="parameters" element="tns:removeCityResponse" />
+  </message>
+  <message name="addCity">
+    <part name="parameters" element="tns:addCity" />
+  </message>
+  <message name="addCityResponse">
+    <part name="parameters" element="tns:addCityResponse" />
+  </message>
+  <message name="getCities">
+    <part name="parameters" element="tns:getCities" />
+  </message>
+  <message name="getCitiesResponse">
+    <part name="parameters" element="tns:getCitiesResponse" />
+  </message>
+  <message name="mergeCity">
+    <part name="parameters" element="tns:mergeCity" />
+  </message>
+  <message name="mergeCityResponse">
+    <part name="parameters" element="tns:mergeCityResponse" />
+  </message>
+  <portType name="ICityService">
+    <operation name="findByName">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/findByNameRequest" message="tns:findByName" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/findByNameResponse" message="tns:findByNameResponse" />
+    </operation>
+    <operation name="findCityById">
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/findCityByIdRequest" message="tns:findCityById" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/findCityByIdResponse" message="tns:findCityByIdResponse" />
+    </operation>
+    <operation name="removeCity">
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/removeCityRequest" message="tns:removeCity" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/removeCityResponse" message="tns:removeCityResponse" />
+    </operation>
+    <operation name="addCity">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityRequest" message="tns:addCity" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityResponse" message="tns:addCityResponse" />
+    </operation>
+    <operation name="getCities">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesRequest" message="tns:getCities" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesResponse" message="tns:getCitiesResponse" />
+    </operation>
+    <operation name="mergeCity">
+      <input xmlns:ns11="http://www.w3.org/2007/05/addressing/metadata" ns11:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/mergeCityRequest" message="tns:mergeCity" />
+      <output xmlns:ns12="http://www.w3.org/2007/05/addressing/metadata" ns12:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/mergeCityResponse" message="tns:mergeCityResponse" />
+    </operation>
+  </portType>
+</definitions>

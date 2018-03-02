@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addHall" type="tns:addHall" />
+  <xs:element name="addHallResponse" type="tns:addHallResponse" />
+  <xs:element name="findHallById" type="tns:findHallById" />
+  <xs:element name="findHallByIdResponse" type="tns:findHallByIdResponse" />
+  <xs:element name="getHalls" type="tns:getHalls" />
+  <xs:element name="getHallsResponse" type="tns:getHallsResponse" />
+  <xs:element name="mergeHall" type="tns:mergeHall" />
+  <xs:element name="mergeHallResponse" type="tns:mergeHallResponse" />
+  <xs:element name="removeHall" type="tns:removeHall" />
+  <xs:element name="removeHallResponse" type="tns:removeHallResponse" />
+  <xs:complexType name="mergeHall">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:mergeHallRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeHallRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:addHallRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="halId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="addHallRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cinId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="halName" type="xs:string" />
+          <xs:element minOccurs="0" name="halSitscount" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeHallResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:hall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="halId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="halName" type="xs:string" />
+          <xs:element minOccurs="0" name="halSitscount" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="sits" nillable="true" type="tns:sit" />
+          <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="sit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sitId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitNum" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitRow" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitFloor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitType" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getHalls">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getHallsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:hall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addHall">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addHallRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addHallResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findHallById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findHallByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:hall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeHall">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeHallResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

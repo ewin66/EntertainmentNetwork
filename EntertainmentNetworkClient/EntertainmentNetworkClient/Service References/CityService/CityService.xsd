@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addCity" type="tns:addCity" />
+  <xs:element name="addCityResponse" type="tns:addCityResponse" />
+  <xs:element name="findByName" type="tns:findByName" />
+  <xs:element name="findByNameResponse" type="tns:findByNameResponse" />
+  <xs:element name="findCityById" type="tns:findCityById" />
+  <xs:element name="findCityByIdResponse" type="tns:findCityByIdResponse" />
+  <xs:element name="getCities" type="tns:getCities" />
+  <xs:element name="getCitiesResponse" type="tns:getCitiesResponse" />
+  <xs:element name="mergeCity" type="tns:mergeCity" />
+  <xs:element name="mergeCityResponse" type="tns:mergeCityResponse" />
+  <xs:element name="removeCity" type="tns:removeCity" />
+  <xs:element name="removeCityResponse" type="tns:removeCityResponse" />
+  <xs:complexType name="findCityById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCityByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="city">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="citId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="citName" type="xs:string" />
+          <xs:element minOccurs="0" name="citCountry" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="cinemas" nillable="true" type="tns:cinema" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="cinema">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cinId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cinName" type="xs:string" />
+          <xs:element minOccurs="0" name="cinIcon" type="xs:string" />
+          <xs:element minOccurs="0" name="cinAddress" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="halls" nillable="true" type="tns:hall" />
+          <xs:element minOccurs="0" name="cityId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="hall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="halId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="halName" type="xs:string" />
+          <xs:element minOccurs="0" name="halSitscount" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="sits" nillable="true" type="tns:sit" />
+          <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="sit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sitId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitNum" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitRow" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitFloor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitType" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="mergeCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:mergeCityRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeCityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:addSitRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="citId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="addSitRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="halId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitNum" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitRow" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitFloor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitType" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeCityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeCityResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addCityRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addCityRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="citName" type="xs:string" />
+          <xs:element minOccurs="0" name="citCountry" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="addCityResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findByNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCities">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCitiesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

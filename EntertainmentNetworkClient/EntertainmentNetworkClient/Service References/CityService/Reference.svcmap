@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ea97d361-ae38-450b-a47c-b3f7d7243500" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:9998/CityService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CityService.wsdl" MetadataType="Wsdl" ID="680c25bb-9e3a-4b07-add6-75bba122184c" SourceId="1" SourceUrl="http://127.0.0.1:9998/CityService?wsdl=1" />
+    <MetadataFile FileName="CityWebService.wsdl" MetadataType="Wsdl" ID="607c66f6-3cb4-477b-96a4-e1aa1f6849db" SourceId="1" SourceUrl="http://127.0.0.1:9998/CityService?wsdl" />
+    <MetadataFile FileName="CityService.xsd" MetadataType="Schema" ID="02dbdd4d-bbe1-4f4d-afe7-822f732c294e" SourceId="1" SourceUrl="http://127.0.0.1:9998/CityService?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

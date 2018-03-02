@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addCinema" type="tns:addCinema" />
+  <xs:element name="addCinemaResponse" type="tns:addCinemaResponse" />
+  <xs:element name="findCinemaById" type="tns:findCinemaById" />
+  <xs:element name="findCinemaByIdResponse" type="tns:findCinemaByIdResponse" />
+  <xs:element name="findCinemaByName" type="tns:findCinemaByName" />
+  <xs:element name="findCinemaByNameResponse" type="tns:findCinemaByNameResponse" />
+  <xs:element name="getCinemas" type="tns:getCinemas" />
+  <xs:element name="getCinemasResponse" type="tns:getCinemasResponse" />
+  <xs:element name="mergeCinema" type="tns:mergeCinema" />
+  <xs:element name="mergeCinemaResponse" type="tns:mergeCinemaResponse" />
+  <xs:element name="removeCinema" type="tns:removeCinema" />
+  <xs:element name="removeCinemaResponse" type="tns:removeCinemaResponse" />
+  <xs:complexType name="findCinemaByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCinemaByNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cinema" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cinema">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cinId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cinName" type="xs:string" />
+          <xs:element minOccurs="0" name="cinIcon" type="xs:string" />
+          <xs:element minOccurs="0" name="cinAddress" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="halls" nillable="true" type="tns:hall" />
+          <xs:element minOccurs="0" name="cityId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="hall">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="halId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="halName" type="xs:string" />
+          <xs:element minOccurs="0" name="halSitscount" type="xs:decimal" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="sits" nillable="true" type="tns:sit" />
+          <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="sit">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sitId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitNum" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitRow" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitFloor" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sitType" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="addCinema">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addCinemaRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addCinemaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="citId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cinName" type="xs:string" />
+          <xs:element minOccurs="0" name="cinIcon" type="xs:string" />
+          <xs:element minOccurs="0" name="cinAddress" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addCinemaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="removeCinema">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeCinemaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findCinemaById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findCinemaByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cinema" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeCinema">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:mergeCinemaRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeCinemaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:addCinemaRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cinId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="mergeCinemaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cinema" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCinemas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getCinemasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cinema" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
