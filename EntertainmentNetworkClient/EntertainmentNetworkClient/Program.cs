@@ -1,4 +1,4 @@
-﻿using EntertainmentNetworkClient.CityService;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace EntertainmentNetworkClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EntertainmentNetwork());
+            Application.Run(new EntertainmentNetworkMainForm());
         }
     }
 }

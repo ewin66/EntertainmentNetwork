@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://127.0.0.1:9998/SitService?xsd=1" namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" />
+    </xsd:schema>
+  </types>
+  <message name="addSit">
+    <part name="parameters" element="tns:addSit" />
+  </message>
+  <message name="addSitResponse">
+    <part name="parameters" element="tns:addSitResponse" />
+  </message>
+  <message name="findSitById">
+    <part name="parameters" element="tns:findSitById" />
+  </message>
+  <message name="findSitByIdResponse">
+    <part name="parameters" element="tns:findSitByIdResponse" />
+  </message>
+  <message name="getSits">
+    <part name="parameters" element="tns:getSits" />
+  </message>
+  <message name="getSitsResponse">
+    <part name="parameters" element="tns:getSitsResponse" />
+  </message>
+  <message name="removeSit">
+    <part name="parameters" element="tns:removeSit" />
+  </message>
+  <message name="removeSitResponse">
+    <part name="parameters" element="tns:removeSitResponse" />
+  </message>
+  <message name="mergeSit">
+    <part name="parameters" element="tns:mergeSit" />
+  </message>
+  <message name="mergeSitResponse">
+    <part name="parameters" element="tns:mergeSitResponse" />
+  </message>
+  <portType name="ISitService">
+    <operation name="addSit">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/addSitRequest" message="tns:addSit" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/addSitResponse" message="tns:addSitResponse" />
+    </operation>
+    <operation name="findSitById">
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/findSitByIdRequest" message="tns:findSitById" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/findSitByIdResponse" message="tns:findSitByIdResponse" />
+    </operation>
+    <operation name="getSits">
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/getSitsRequest" message="tns:getSits" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/getSitsResponse" message="tns:getSitsResponse" />
+    </operation>
+    <operation name="removeSit">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/removeSitRequest" message="tns:removeSit" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/removeSitResponse" message="tns:removeSitResponse" />
+    </operation>
+    <operation name="mergeSit">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitRequest" message="tns:mergeSit" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitResponse" message="tns:mergeSitResponse" />
+    </operation>
+  </portType>
+</definitions>

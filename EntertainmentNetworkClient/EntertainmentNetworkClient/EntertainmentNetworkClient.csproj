@@ -33,10 +33,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,11 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntertainmentNetwork.cs">
+    <Compile Include="EntertainmentNetworkMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EntertainmentNetwork.Designer.cs">
-      <DependentUpon>EntertainmentNetwork.cs</DependentUpon>
+    <Compile Include="EntertainmentNetworkMainForm.Designer.cs">
+      <DependentUpon>EntertainmentNetworkMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\BaseModule.cs">
       <SubType>UserControl</SubType>
@@ -98,28 +103,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\CinemaService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\CityService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\HallService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\SitService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="EntertainmentNetwork.resx">
-      <DependentUpon>EntertainmentNetwork.cs</DependentUpon>
+    <EmbeddedResource Include="EntertainmentNetworkMainForm.resx">
+      <DependentUpon>EntertainmentNetworkMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\Cities.resx">
       <DependentUpon>Cities.cs</DependentUpon>
@@ -145,7 +130,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CitiesViewModel.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CityViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -155,164 +143,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\CinemaService\CinemaService.wsdl" />
-    <None Include="Service References\CinemaService\CinemaService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CinemaService\CinemaWebService.wsdl" />
-    <None Include="Service References\CinemaService\EntertainmentNetworkClient.CinemaService.addCinemaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CinemaService\EntertainmentNetworkClient.CinemaService.cinema.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CinemaService\EntertainmentNetworkClient.CinemaService.findCinemaByIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CinemaService\EntertainmentNetworkClient.CinemaService.findCinemaByNameResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CinemaService\EntertainmentNetworkClient.CinemaService.getCinemasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CinemaService\EntertainmentNetworkClient.CinemaService.mergeCinemaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CinemaService\EntertainmentNetworkClient.CinemaService.removeCinemaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CityService\CityService.wsdl" />
-    <None Include="Service References\CityService\CityService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CityService\CityWebService.wsdl" />
-    <None Include="Service References\CityService\EntertainmentNetworkClient.CityService.addCityResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CityService\EntertainmentNetworkClient.CityService.city.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CityService\EntertainmentNetworkClient.CityService.findByNameResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CityService\EntertainmentNetworkClient.CityService.findCityByIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CityService\EntertainmentNetworkClient.CityService.getCitiesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CityService\EntertainmentNetworkClient.CityService.mergeCityResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CityService\EntertainmentNetworkClient.CityService.removeCityResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HallService\EntertainmentNetworkClient.HallService.addHallResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HallService\EntertainmentNetworkClient.HallService.findHallByIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HallService\EntertainmentNetworkClient.HallService.getHallsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HallService\EntertainmentNetworkClient.HallService.hall.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HallService\EntertainmentNetworkClient.HallService.mergeHallResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HallService\EntertainmentNetworkClient.HallService.removeHallResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HallService\HallService.wsdl" />
-    <None Include="Service References\HallService\HallService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\HallService\HallServiceService.wsdl" />
-    <None Include="Service References\SitService\EntertainmentNetworkClient.SitService.addSitResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SitService\EntertainmentNetworkClient.SitService.findSitByIdResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SitService\EntertainmentNetworkClient.SitService.getSitsResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SitService\EntertainmentNetworkClient.SitService.mergeSitResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SitService\EntertainmentNetworkClient.SitService.removeSitResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SitService\EntertainmentNetworkClient.SitService.sit.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SitService\SitService.wsdl" />
-    <None Include="Service References\SitService\SitService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SitService\SitsWebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\CinemaService\" />
-    <WCFMetadataStorage Include="Service References\CityService\" />
-    <WCFMetadataStorage Include="Service References\HallService\" />
-    <WCFMetadataStorage Include="Service References\SitService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CityService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CityService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CityService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CinemaService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CinemaService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\CinemaService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HallService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HallService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HallService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SitService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SitService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SitService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <ProjectReference Include="..\EntertainmentNetwork.BL\EntertainmentNetwork.BL.csproj">
+      <Project>{edd7c891-b7f0-4526-853d-43c4a7143c34}</Project>
+      <Name>EntertainmentNetwork.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntertainmentNetwork.DAL\EntertainmentNetwork.DAL.csproj">
+      <Project>{db211c84-b0bd-42c9-a214-1822b6815c3e}</Project>
+      <Name>EntertainmentNetwork.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

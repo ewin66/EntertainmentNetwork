@@ -2,7 +2,7 @@ package isd.dp.ua.EntertainmentNetworkServer.ServiceMessages;
 
 import java.math.BigDecimal;
 
-public class MergeCityRequest extends AddSitRequest
+public class MergeCityRequest extends AddCityRequest
 {
 	public BigDecimal getCitId()
 	{
