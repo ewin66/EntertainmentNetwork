@@ -1,8 +1,9 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
-using Interfaces = EntertainmentNetwork.DAL.Models.Interfaces;
 using EntertainmentNetwork.DAL.CityService;
+using EntertainmentNetwork.DAL.Models.Interfaces;
+using Interfaces = EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.DAL
 {
@@ -14,7 +15,7 @@ namespace EntertainmentNetwork.DAL
 
         public void AddCity(Interfaces.ICity city)
         {
-            cityService.addCity(new addCityRequest
+            this.cityService.addCity(new addCityRequest
             {
                 citCountry = city.CitCountry,
                 citName = city.CitName
@@ -23,12 +24,12 @@ namespace EntertainmentNetwork.DAL
 
         public void RemoveCity(decimal id)
         {
-            cityService.removeCity(id);
+            this.cityService.removeCity(id);
         }
 
-        public Models.City MergeCity(Interfaces.ICity city)
+        public ICity MergeCity(Interfaces.ICity city)
         {
-            return this.ToCity(cityService.mergeCity(new mergeCityRequest 
+            return this.ToCity(this.cityService.mergeCity(new mergeCityRequest 
             {
                 citId = city.CitId,
                 citCountry = city.CitCountry,
@@ -37,24 +38,24 @@ namespace EntertainmentNetwork.DAL
             }));
         }
 
-        public Models.City FindCityById(decimal id)
+        public ICity FindCityById(decimal id)
         {
-            return this.ToCity(cityService.findCityById(id));
+            return this.ToCity(this.cityService.findCityById(id));
         }
 
-        public List<Models.City> FindByName(string name)
+        public List<ICity> FindByName(string name)
         {
-            return cityService.findByName(name).Select(x => this.ToCity(x)).ToList();
+            return this.cityService.findByName(name).Select(x => this.ToCity(x)).ToList();
         }
 
-        public List<Models.City> GetCities()
+        public List<ICity> GetCities()
         {
-            return cityService.getCities().Select(x => this.ToCity(x)).ToList();
+            return this.cityService.getCities().Select(x => this.ToCity(x)).ToList();
         }
 
         #endregion
 
-        private Models.City ToCity(city city)
+        private ICity ToCity(city city)
         {
             return new Models.City(city.citId, city.citName, city.citCountry);
         }

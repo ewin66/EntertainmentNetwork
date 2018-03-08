@@ -13,15 +13,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="findCityById">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="getCities">
       <soap:operation soapAction="" />
       <input>
@@ -31,7 +22,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="removeCity">
+    <operation name="findCityById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addCity">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -49,7 +49,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="addCity">
+    <operation name="removeCity">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

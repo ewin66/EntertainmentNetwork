@@ -69,14 +69,6 @@
   <xs:complexType name="addSitResponse">
     <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="getSits">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="getSitsResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:sit" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="mergeSit">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="tns:mergeSitRequest" />
@@ -94,6 +86,14 @@
   <xs:complexType name="mergeSitResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:sit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSits">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getSitsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:sit" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

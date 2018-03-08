@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EntertainmentNetwork.DAL.Models.Interfaces;
+﻿using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.DAL.Models
 {
     public class City : BaseNotifyPropertyChanged, ICity
     {
-        public City()
-        {
-        }
+        public City() { }
 
         public City(decimal citId, string citName, string citCountry)
         {
@@ -23,7 +13,6 @@ namespace EntertainmentNetwork.DAL.Models
             this.CitCountry = citCountry;
         }
 
-        [Display(AutoGenerateField = false)]
         public bool IsNew
         {
             get
@@ -32,33 +21,29 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        [Display(AutoGenerateField = false)]
         public bool IsChanged { get; set; }
 
-        [ReadOnly(true)]
         public decimal CitId
         {
-            get { return citId; }
+            get { return this.citId; }
             set
             {
                 this.SetPropertyValue(out this.citId, this.citId, value);
             }
         }
 
-        [Required(AllowEmptyStrings = false)]
         public string CitName
         {
-            get { return citName; }
+            get { return this.citName; }
             set
             {
                 this.SetPropertyValue(out this.citName, this.citName, value);
             }
         }
 
-        [Required(AllowEmptyStrings = false)]
         public string CitCountry
         {
-            get { return citCountry; }
+            get { return this.citCountry; }
             set
             {
                 this.SetPropertyValue(out this.citCountry, this.citCountry, value);

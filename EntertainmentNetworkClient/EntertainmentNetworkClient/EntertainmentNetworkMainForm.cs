@@ -2,7 +2,6 @@
 using DevExpress.Utils.Taskbar.Core;
 using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
-using EntertainmentNetworkClient.Modules;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntertainmentNetwork.BL.ViewModels;
+using EntertainmentNetworkClient.Modules;
 
 namespace EntertainmentNetworkClient
 {
@@ -20,7 +21,7 @@ namespace EntertainmentNetworkClient
         public EntertainmentNetworkMainForm()
         {
             InitializeComponent();
-
+            this.ViewsManager = new ViewsManager();
             LoginFlyout.Action = CreateLoginAction();
             // closeFlyout.Action = CreateCloseAction();
             windowsUIView1.FlyoutHidden += windowsUIView_FlyoutHidden;
@@ -31,6 +32,8 @@ namespace EntertainmentNetworkClient
             windowsUIView1.NavigatedFrom += windowsUIView_NavigatedFrom;
             windowsUIView1.QueryControl += windowsUIView_QueryControl;
         }
+
+        private IViewsManager ViewsManager { get; set; }
 
         FlyoutAction CreateLoginAction()
         {
@@ -54,7 +57,7 @@ namespace EntertainmentNetworkClient
         void windowsUIView_QueryControl(object sender, QueryControlEventArgs e)
         {
             Type moduleType = typeof(EntertainmentNetworkMainForm).Assembly.GetType(e.Document.ControlTypeName);
-            BaseModule module = Activator.CreateInstance(moduleType) as BaseModule;
+            BaseModule module = Activator.CreateInstance(moduleType, this.ViewsManager) as BaseModule;
             //module.Init(barManager);
             e.Control = module;
         }

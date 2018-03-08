@@ -1,13 +1,16 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace EntertainmentNetwork.DAL.Models.Interfaces
 {
-    public interface ICity : INotifyPropertyChanged
+    public interface ICity : IBaseModel, INotifyPropertyChanged
     {
-        string CitCountry { get; set; }
+        [ReadOnly(true)]
         decimal CitId { get; set; }
+        [Required(AllowEmptyStrings = false)]
         string CitName { get; set; }
+        [Required(AllowEmptyStrings = false)]
+        string CitCountry { get; set; }
 
         void Update(ICity city);
     }

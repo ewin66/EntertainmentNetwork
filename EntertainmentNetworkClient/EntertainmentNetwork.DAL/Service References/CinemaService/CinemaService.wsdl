@@ -5,11 +5,23 @@
       <xsd:import schemaLocation="http://127.0.0.1:9998/CinemaService?xsd=1" namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" />
     </xsd:schema>
   </types>
+  <message name="addCinema">
+    <part name="parameters" element="tns:addCinema" />
+  </message>
+  <message name="addCinemaResponse">
+    <part name="parameters" element="tns:addCinemaResponse" />
+  </message>
   <message name="findCinemaByName">
     <part name="parameters" element="tns:findCinemaByName" />
   </message>
   <message name="findCinemaByNameResponse">
     <part name="parameters" element="tns:findCinemaByNameResponse" />
+  </message>
+  <message name="mergeCinema">
+    <part name="parameters" element="tns:mergeCinema" />
+  </message>
+  <message name="mergeCinemaResponse">
+    <part name="parameters" element="tns:mergeCinemaResponse" />
   </message>
   <message name="findCinemaById">
     <part name="parameters" element="tns:findCinemaById" />
@@ -23,48 +35,36 @@
   <message name="removeCinemaResponse">
     <part name="parameters" element="tns:removeCinemaResponse" />
   </message>
-  <message name="addCinema">
-    <part name="parameters" element="tns:addCinema" />
-  </message>
-  <message name="addCinemaResponse">
-    <part name="parameters" element="tns:addCinemaResponse" />
-  </message>
   <message name="getCinemas">
     <part name="parameters" element="tns:getCinemas" />
   </message>
   <message name="getCinemasResponse">
     <part name="parameters" element="tns:getCinemasResponse" />
   </message>
-  <message name="mergeCinema">
-    <part name="parameters" element="tns:mergeCinema" />
-  </message>
-  <message name="mergeCinemaResponse">
-    <part name="parameters" element="tns:mergeCinemaResponse" />
-  </message>
   <portType name="ICinemaService">
-    <operation name="findCinemaByName">
-      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByNameRequest" message="tns:findCinemaByName" />
-      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByNameResponse" message="tns:findCinemaByNameResponse" />
-    </operation>
-    <operation name="findCinemaById">
-      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByIdRequest" message="tns:findCinemaById" />
-      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByIdResponse" message="tns:findCinemaByIdResponse" />
-    </operation>
-    <operation name="removeCinema">
-      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/removeCinemaRequest" message="tns:removeCinema" />
-      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/removeCinemaResponse" message="tns:removeCinemaResponse" />
-    </operation>
     <operation name="addCinema">
-      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRequest" message="tns:addCinema" />
-      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaResponse" message="tns:addCinemaResponse" />
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRequest" message="tns:addCinema" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaResponse" message="tns:addCinemaResponse" />
     </operation>
-    <operation name="getCinemas">
-      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/getCinemasRequest" message="tns:getCinemas" />
-      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/getCinemasResponse" message="tns:getCinemasResponse" />
+    <operation name="findCinemaByName">
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByNameRequest" message="tns:findCinemaByName" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByNameResponse" message="tns:findCinemaByNameResponse" />
     </operation>
     <operation name="mergeCinema">
-      <input xmlns:ns11="http://www.w3.org/2007/05/addressing/metadata" ns11:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/mergeCinemaRequest" message="tns:mergeCinema" />
-      <output xmlns:ns12="http://www.w3.org/2007/05/addressing/metadata" ns12:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/mergeCinemaResponse" message="tns:mergeCinemaResponse" />
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/mergeCinemaRequest" message="tns:mergeCinema" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/mergeCinemaResponse" message="tns:mergeCinemaResponse" />
+    </operation>
+    <operation name="findCinemaById">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByIdRequest" message="tns:findCinemaById" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaByIdResponse" message="tns:findCinemaByIdResponse" />
+    </operation>
+    <operation name="removeCinema">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/removeCinemaRequest" message="tns:removeCinema" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/removeCinemaResponse" message="tns:removeCinemaResponse" />
+    </operation>
+    <operation name="getCinemas">
+      <input xmlns:ns11="http://www.w3.org/2007/05/addressing/metadata" ns11:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/getCinemasRequest" message="tns:getCinemas" />
+      <output xmlns:ns12="http://www.w3.org/2007/05/addressing/metadata" ns12:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/getCinemasResponse" message="tns:getCinemasResponse" />
     </operation>
   </portType>
 </definitions>

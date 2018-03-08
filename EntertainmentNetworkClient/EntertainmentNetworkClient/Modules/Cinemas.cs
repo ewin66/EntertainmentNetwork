@@ -1,25 +1,90 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using DevExpress.XtraLayout.Helpers;
-using DevExpress.XtraLayout;
+using DevExpress.XtraBars.Docking2010;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Base;
+using EntertainmentNetwork.BL.Interfaces;
+using EntertainmentNetwork.BL.ViewModels;
+using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetworkClient.Modules
 {
     public partial class Cinemas : BaseModule
     {
-        public Cinemas()
+        IViewModel<ICity> citiesView;
+        IViewModel<ICinema> cinemasView;
+
+        public Cinemas(IViewsManager viewsManager)
         {
             InitializeComponent();
+            this.citiesView = viewsManager.CitiesView.Value;
+            
+            if (!this.citiesView.IsDataLoaded)
+            {
+                this.citiesView.LoadData(x => true);                
+            }
+
+            viewsManager.CitiesBindingSource.CurrentChanged += CitiesBindingSource_CurrentChanged;
+
+            this.comboBoxCities.DataSource = viewsManager.CitiesBindingSource;
+            this.comboBoxCities.DisplayMember = "CitName";
+
+            this.cinemasView = viewsManager.CinemasView.Value;
+            this.cinemasView.LoadData(this.FilterCinemas);
+            this.gridCinemas.DataSource = viewsManager.CinemasBindingSource;
+        }
+
+        private bool FilterCinemas(ICinema cinema)
+        {
+            return this.citiesView.Selected != null && cinema.CityId == this.citiesView.Selected.CitId;
+        }
+
+        public void CinemaBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var bindingSource = sender as BindingSource;
+            if (bindingSource != null)
+            {
+                this.cinemasView.Selected = bindingSource.Current as ICinema;
+            }
+        }
+
+        private void CitiesBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            this.cinemasView.LoadData(this.FilterCinemas);
+        }
+
+        private void WindowsUIButtonPanelMain_ButtonClick(object sender, ButtonEventArgs e)
+        {
+            var button = e.Button as WindowsUIButton;
+            if (button != null)
+            {
+                if (button.Caption == Properties.Resources.ButtonSave)
+                {
+                    this.cinemasView.AddUpdateCommand.Execute(null);
+                }
+                else if (button.Caption == Properties.Resources.ButtonDelete)
+                {
+                    this.cinemasView.RemoveCommand.Execute(null);
+                }
+                else if (button.Caption == Properties.Resources.ButtonAddNew)
+                {
+                    this.layoutViewCinemas.AddNewRow();
+                }
+                else
+                {
+                    this.cinemasView.LoadData(this.FilterCinemas);
+                }
+            }
+        }
+
+        private void LayoutView_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            var view = sender as ColumnView;
+            if (view != null)
+            {
+                var city = this.comboBoxCities.SelectedItem as ICity;
+                view.SetRowCellValue(e.RowHandle, this.colCityId, city.CitId);
+            }
         }
     }
 }

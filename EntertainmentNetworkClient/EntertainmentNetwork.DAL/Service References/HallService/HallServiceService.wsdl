@@ -4,7 +4,7 @@
   <types />
   <binding xmlns:ns1="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" name="HallServicePortBinding" type="ns1:IHallService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="addHall">
+    <operation name="findHallById">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -22,16 +22,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="findHallById">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="removeHall">
+    <operation name="addHall">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -41,6 +32,15 @@
       </output>
     </operation>
     <operation name="mergeHall">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="removeHall">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

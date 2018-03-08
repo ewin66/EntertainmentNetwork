@@ -77,6 +77,13 @@
     <Compile Include="Modules\Cinemas.Designer.cs">
       <DependentUpon>Cinemas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\IViewsManager.cs" />
+    <Compile Include="Modules\ViewsManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ViewsManager.Designer.cs">
+      <DependentUpon>ViewsManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\Sits.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +128,9 @@
     <EmbeddedResource Include="Modules\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ViewsManager.resx">
+      <DependentUpon>ViewsManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -132,6 +142,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CinemasViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CitiesViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CityViewModel.datasource" />
     <None Include="Properties\Settings.settings">

@@ -42,9 +42,10 @@
   <ItemGroup>
     <Compile Include="Commands\AddUpdateCommand.cs" />
     <Compile Include="Commands\RemoveCommand.cs" />
-    <Compile Include="Interfaces\ICitiesViewModel.cs" />
+    <Compile Include="Interfaces\IBaseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CitiesViewModel.cs" />
+    <Compile Include="ViewModels\CinemasViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntertainmentNetwork.DAL\EntertainmentNetwork.DAL.csproj">

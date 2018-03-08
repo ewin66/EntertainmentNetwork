@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using EntertainmentNetwork.BL.Interfaces;
 using EntertainmentNetwork.BL.ViewModels;
+using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.BL.Commands
 {
-    internal class AddUpdateCommand : ICommand
+    internal class AddUpdateCommand<T> : ICommand where T : IBaseModel
     {
-        public AddUpdateCommand(ICitiesViewModel viewModel)
+        public AddUpdateCommand(IViewModel<T> viewModel)
         {
             this.vm = viewModel;
             this.vm.PropertyChanged += vm_PropertyChanged;
@@ -28,18 +29,18 @@ namespace EntertainmentNetwork.BL.Commands
 
         public bool CanExecute(object parameter)
         {
-            return vm.SelectedCity != null;
+            return vm.Selected != null;
         }
 
         public event EventHandler CanExecuteChanged = delegate { };
 
         public void Execute(object parameter)
         {
-            vm.AddUpdateCity();
+            vm.AddUpdate();
         }
 
         private const int ARE_EQUAL = 0;
         private const int NONE_SELECTED = -1;
-        private ICitiesViewModel vm;
+        private IViewModel<T> vm;
     }
 }

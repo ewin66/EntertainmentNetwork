@@ -44,9 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseNotifyPropertyChanged.cs" />
+    <Compile Include="CinemaServiceAdapter.cs" />
     <Compile Include="CityServiceAdapter.cs" />
     <Compile Include="Models\City.cs" />
+    <Compile Include="Models\Cinema.cs" />
+    <Compile Include="Models\Interfaces\IBaseModel.cs" />
+    <Compile Include="Models\Interfaces\ICinema.cs" />
+    <Compile Include="Models\Interfaces\ICinemaService.cs" />
     <Compile Include="Models\Interfaces\ICity.cs" />
+    <Compile Include="Models\Interfaces\IHall.cs" />
+    <Compile Include="Models\Interfaces\ISit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Interfaces\ICityService.cs" />
     <Compile Include="Service References\CinemaService\Reference.cs">

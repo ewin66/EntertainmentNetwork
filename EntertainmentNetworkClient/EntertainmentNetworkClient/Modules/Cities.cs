@@ -5,28 +5,18 @@ using EntertainmentNetwork.DAL;
 using DevExpress.XtraBars.Docking2010;
 using EntertainmentNetwork.DAL.Models.Interfaces;
 using EntertainmentNetwork.DAL.Models;
+using EntertainmentNetwork.BL.Interfaces;
 
 namespace EntertainmentNetworkClient.Modules
 {
     public partial class Cities : BaseModule
     {
-        CitiesViewModel citiesView;
-
-        public Cities()
+        public Cities(IViewsManager viewsManager)
         {
             InitializeComponent();
-            this.citiesView = new CitiesViewModel(ServiceManager.CityService.Value);
-            this.citiesView.LoadData();
-            citiesViewBindingSource.DataSource = citiesView;            
-        }
-
-        public void BindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            var bindingSource = sender as BindingSource;
-            if (bindingSource != null)
-            {
-                citiesView.SelectedCity = bindingSource.Current as City;
-            }
+            this.citiesView = viewsManager.CitiesView.Value;
+            this.citiesView.LoadData(x => true);
+            this.gridCities.DataSource = viewsManager.CitiesBindingSource;
         }
 
         private void WindowsUIButtonPanelMain_ButtonClick(object sender, ButtonEventArgs e)
@@ -44,7 +34,7 @@ namespace EntertainmentNetworkClient.Modules
                 }
                 else
                 {
-                    this.citiesView.LoadData();
+                    this.citiesView.LoadData(x => true);
                 }
             }
         }
@@ -54,5 +44,7 @@ namespace EntertainmentNetworkClient.Modules
             (this.windowsUIButtonPanelMain.Buttons[Properties.Resources.ButtonSave] as WindowsUIButton).Enabled = enable;
             (this.windowsUIButtonPanelMain.Buttons[Properties.Resources.ButtonRefresh] as WindowsUIButton).Enabled = enable;
         }
+
+         private IViewModel<ICity> citiesView;
     }
 }

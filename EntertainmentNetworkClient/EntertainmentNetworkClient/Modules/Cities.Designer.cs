@@ -31,11 +31,8 @@ namespace EntertainmentNetworkClient.Modules
         ///
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.gridCities = new DevExpress.XtraGrid.GridControl();
-            this.citiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.citiesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridCitiesView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCitId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCitName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,20 +41,16 @@ namespace EntertainmentNetworkClient.Modules
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutGridCities = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cityViewBindingSoure = new System.Windows.Forms.BindingSource(this.components);
             this.labelControl = new DevExpress.XtraEditors.LabelControl();
             this.windowsUIButtonPanelMain = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCities)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citiesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citiesViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCitiesView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutGridCities)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityViewBindingSoure)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -74,7 +67,6 @@ namespace EntertainmentNetworkClient.Modules
             // 
             // gridCities
             // 
-            this.gridCities.DataSource = this.citiesBindingSource;
             this.gridCities.Location = new System.Drawing.Point(12, 12);
             this.gridCities.MainView = this.gridCitiesView;
             this.gridCities.Name = "gridCities";
@@ -85,17 +77,6 @@ namespace EntertainmentNetworkClient.Modules
             this.gridCities.TabIndex = 4;
             this.gridCities.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCitiesView});
-            // 
-            // citiesBindingSource
-            // 
-            this.citiesBindingSource.AllowNew = true;
-            this.citiesBindingSource.DataMember = "Cities";
-            this.citiesBindingSource.DataSource = this.citiesViewBindingSource;
-            this.citiesBindingSource.CurrentChanged += new System.EventHandler(this.BindingSource_CurrentChanged);
-            // 
-            // citiesViewBindingSource
-            // 
-            this.citiesViewBindingSource.DataSource = typeof(EntertainmentNetwork.BL.ViewModels.CitiesViewModel);
             // 
             // gridCitiesView
             // 
@@ -114,16 +95,15 @@ namespace EntertainmentNetworkClient.Modules
             this.colCitCountry});
             this.gridCitiesView.GridControl = this.gridCities;
             this.gridCitiesView.Name = "gridCitiesView";
-            this.gridCitiesView.NewItemRowText = "new";
             this.gridCitiesView.OptionsView.EnableAppearanceOddRow = true;
             this.gridCitiesView.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridCitiesView.OptionsView.ShowGroupPanel = false;
-            this.gridCitiesView.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
             // 
             // colCitId
             // 
             this.colCitId.FieldName = "CitId";
             this.colCitId.Name = "colCitId";
+            this.colCitId.OptionsColumn.AllowEdit = false;
             this.colCitId.Visible = true;
             this.colCitId.VisibleIndex = 0;
             this.colCitId.Width = 128;
@@ -173,10 +153,6 @@ namespace EntertainmentNetworkClient.Modules
             this.layoutGridCities.Size = new System.Drawing.Size(780, 490);
             this.layoutGridCities.TextSize = new System.Drawing.Size(0, 0);
             this.layoutGridCities.TextVisible = false;
-            // 
-            // cityViewBindingSoure
-            // 
-            this.cityViewBindingSoure.DataSource = typeof(EntertainmentNetwork.DAL.Models.City);
             // 
             // labelControl
             // 
@@ -243,14 +219,11 @@ namespace EntertainmentNetworkClient.Modules
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridCities)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citiesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citiesViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCitiesView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutGridCities)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cityViewBindingSoure)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,10 +238,7 @@ namespace EntertainmentNetworkClient.Modules
         private DevExpress.XtraLayout.LayoutControlItem layoutGridCities;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private System.Windows.Forms.BindingSource citiesViewBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridCitiesView;
-        private System.Windows.Forms.BindingSource citiesBindingSource;
-        private System.Windows.Forms.BindingSource cityViewBindingSoure;
         private DevExpress.XtraGrid.Columns.GridColumn colCitId;
         private DevExpress.XtraGrid.Columns.GridColumn colCitName;
         private DevExpress.XtraGrid.Columns.GridColumn colCitCountry;

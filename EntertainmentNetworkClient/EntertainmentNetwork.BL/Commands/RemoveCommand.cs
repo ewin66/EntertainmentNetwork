@@ -11,9 +11,9 @@ using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.BL.Commands
 {
-    internal class RemoveCommand : ICommand
+    internal class RemoveCommand<T> : ICommand where T : IBaseModel
     {
-        public RemoveCommand(ICitiesViewModel viewModel)
+        public RemoveCommand(IViewModel<T> viewModel)
         {
             this.vm = viewModel;
             this.vm.PropertyChanged += vm_PropertyChanged;
@@ -29,18 +29,18 @@ namespace EntertainmentNetwork.BL.Commands
 
         public bool CanExecute(object parameter)
         {
-            return vm.SelectedCity == null ? false : ((ICity)vm.SelectedCity).CitId > NONE_SELECTED;
+            return vm.Selected == null ? false : ((ICity)vm.Selected).CitId > NONE_SELECTED;
         }
 
         public event EventHandler CanExecuteChanged = delegate { };
 
         public void Execute(object parameter)
         {
-            vm.RemoveCity();
+            vm.Remove();
         }
 
         private const int ARE_EQUAL = 0;
         private const int NONE_SELECTED = -1;
-        private ICitiesViewModel vm;
+        private IViewModel<T> vm;
     }
 }

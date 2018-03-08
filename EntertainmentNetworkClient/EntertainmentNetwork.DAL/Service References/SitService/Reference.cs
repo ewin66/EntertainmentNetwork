@@ -28,6 +28,21 @@ namespace EntertainmentNetwork.DAL.SitService {
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.addSitResponse> addSitAsync(EntertainmentNetwork.DAL.SitService.addSitRequest1 request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitRespon" +
+            "se")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        EntertainmentNetwork.DAL.SitService.mergeSitResponse mergeSit(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitRespon" +
+            "se")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.mergeSitResponse> mergeSitAsync(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/findSitByIdReq" +
             "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/findSitByIdRes" +
             "ponse")]
@@ -70,21 +85,6 @@ namespace EntertainmentNetwork.DAL.SitService {
             "st", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/removeSitRespo" +
             "nse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.removeSitResponse> removeSitAsync(EntertainmentNetwork.DAL.SitService.removeSitRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitRespon" +
-            "se")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        EntertainmentNetwork.DAL.SitService.mergeSitResponse mergeSit(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISitService/mergeSitRespon" +
-            "se")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.mergeSitResponse> mergeSitAsync(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request);
     }
     
     /// <remarks/>
@@ -521,6 +521,42 @@ namespace EntertainmentNetwork.DAL.SitService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSit", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class mergeSitRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0;
+        
+        public mergeSitRequest1() {
+        }
+        
+        public mergeSitRequest1(EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSitResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class mergeSitResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.SitService.sit @return;
+        
+        public mergeSitResponse() {
+        }
+        
+        public mergeSitResponse(EntertainmentNetwork.DAL.SitService.sit @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="findSitById", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
     public partial class findSitByIdRequest {
         
@@ -610,42 +646,6 @@ namespace EntertainmentNetwork.DAL.SitService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSit", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class mergeSitRequest1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0;
-        
-        public mergeSitRequest1() {
-        }
-        
-        public mergeSitRequest1(EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSitResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class mergeSitResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.SitService.sit @return;
-        
-        public mergeSitResponse() {
-        }
-        
-        public mergeSitResponse(EntertainmentNetwork.DAL.SitService.sit @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ISitServiceChannel : EntertainmentNetwork.DAL.SitService.ISitService, System.ServiceModel.IClientChannel {
     }
@@ -693,6 +693,29 @@ namespace EntertainmentNetwork.DAL.SitService {
             EntertainmentNetwork.DAL.SitService.addSitRequest1 inValue = new EntertainmentNetwork.DAL.SitService.addSitRequest1();
             inValue.arg0 = arg0;
             return ((EntertainmentNetwork.DAL.SitService.ISitService)(this)).addSitAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EntertainmentNetwork.DAL.SitService.mergeSitResponse EntertainmentNetwork.DAL.SitService.ISitService.mergeSit(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request) {
+            return base.Channel.mergeSit(request);
+        }
+        
+        public EntertainmentNetwork.DAL.SitService.sit mergeSit(EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0) {
+            EntertainmentNetwork.DAL.SitService.mergeSitRequest1 inValue = new EntertainmentNetwork.DAL.SitService.mergeSitRequest1();
+            inValue.arg0 = arg0;
+            EntertainmentNetwork.DAL.SitService.mergeSitResponse retVal = ((EntertainmentNetwork.DAL.SitService.ISitService)(this)).mergeSit(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.mergeSitResponse> EntertainmentNetwork.DAL.SitService.ISitService.mergeSitAsync(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request) {
+            return base.Channel.mergeSitAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.mergeSitResponse> mergeSitAsync(EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0) {
+            EntertainmentNetwork.DAL.SitService.mergeSitRequest1 inValue = new EntertainmentNetwork.DAL.SitService.mergeSitRequest1();
+            inValue.arg0 = arg0;
+            return ((EntertainmentNetwork.DAL.SitService.ISitService)(this)).mergeSitAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -759,29 +782,6 @@ namespace EntertainmentNetwork.DAL.SitService {
             EntertainmentNetwork.DAL.SitService.removeSitRequest inValue = new EntertainmentNetwork.DAL.SitService.removeSitRequest();
             inValue.arg0 = arg0;
             return ((EntertainmentNetwork.DAL.SitService.ISitService)(this)).removeSitAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.SitService.mergeSitResponse EntertainmentNetwork.DAL.SitService.ISitService.mergeSit(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request) {
-            return base.Channel.mergeSit(request);
-        }
-        
-        public EntertainmentNetwork.DAL.SitService.sit mergeSit(EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0) {
-            EntertainmentNetwork.DAL.SitService.mergeSitRequest1 inValue = new EntertainmentNetwork.DAL.SitService.mergeSitRequest1();
-            inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.SitService.mergeSitResponse retVal = ((EntertainmentNetwork.DAL.SitService.ISitService)(this)).mergeSit(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.mergeSitResponse> EntertainmentNetwork.DAL.SitService.ISitService.mergeSitAsync(EntertainmentNetwork.DAL.SitService.mergeSitRequest1 request) {
-            return base.Channel.mergeSitAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SitService.mergeSitResponse> mergeSitAsync(EntertainmentNetwork.DAL.SitService.mergeSitRequest arg0) {
-            EntertainmentNetwork.DAL.SitService.mergeSitRequest1 inValue = new EntertainmentNetwork.DAL.SitService.mergeSitRequest1();
-            inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.SitService.ISitService)(this)).mergeSitAsync(inValue);
         }
     }
 }

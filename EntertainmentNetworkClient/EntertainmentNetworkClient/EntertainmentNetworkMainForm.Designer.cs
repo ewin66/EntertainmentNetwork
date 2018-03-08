@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 506);
+            this.ClientSize = new System.Drawing.Size(1033, 674);
             this.Name = "EntertainmentNetworkMainForm";
             this.Text = "EntertainmentNetwork";
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();

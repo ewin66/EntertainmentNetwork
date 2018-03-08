@@ -12,6 +12,29 @@
   <xs:element name="mergeCinemaResponse" type="tns:mergeCinemaResponse" />
   <xs:element name="removeCinema" type="tns:removeCinema" />
   <xs:element name="removeCinemaResponse" type="tns:removeCinemaResponse" />
+  <xs:complexType name="addCinema">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addCinemaRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addCinemaRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="citId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cinName" type="xs:string" />
+          <xs:element minOccurs="0" name="cinIcon" type="xs:string" />
+          <xs:element minOccurs="0" name="cinAddress" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addCinemaResponse">
+    <xs:sequence />
+  </xs:complexType>
   <xs:complexType name="findCinemaByName">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:string" />
@@ -65,29 +88,6 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="addCinema">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="tns:addCinemaRequest" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="addCinemaRequest">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:baseDto">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="citId" type="xs:decimal" />
-          <xs:element minOccurs="0" name="cinName" type="xs:string" />
-          <xs:element minOccurs="0" name="cinIcon" type="xs:string" />
-          <xs:element minOccurs="0" name="cinAddress" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="baseDto">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="addCinemaResponse">
-    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="findCinemaById">
     <xs:sequence>

@@ -4,7 +4,25 @@
   <types />
   <binding xmlns:ns1="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" name="CinemaServicePortBinding" type="ns1:ICinemaService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="addCinema">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="findCinemaByName">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mergeCinema">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -31,25 +49,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="addCinema">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="getCinemas">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="mergeCinema">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

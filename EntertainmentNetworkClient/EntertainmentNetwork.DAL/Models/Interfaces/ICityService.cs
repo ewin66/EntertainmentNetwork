@@ -8,12 +8,12 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
 
         void RemoveCity(decimal id);
 
-        City MergeCity(ICity detachedInstance);
+        ICity MergeCity(ICity detachedInstance);
 
-        City FindCityById(decimal id);
+        ICity FindCityById(decimal id);
 
-        List<City> FindByName(string name);
+        List<ICity> FindByName(string name);
 
-        List<City> GetCities();      
+        List<ICity> GetCities();      
     }
 }

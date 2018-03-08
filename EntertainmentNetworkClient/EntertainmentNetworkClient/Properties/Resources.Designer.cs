@@ -61,6 +61,15 @@ namespace EntertainmentNetworkClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New.
+        /// </summary>
+        internal static string ButtonAddNew {
+            get {
+                return ResourceManager.GetString("ButtonAddNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         internal static string ButtonDelete {
