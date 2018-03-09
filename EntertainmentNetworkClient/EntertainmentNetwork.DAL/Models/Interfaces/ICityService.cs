@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EntertainmentNetwork.DAL.Models.Interfaces
 {
     public interface ICityService
     {
-        void AddCity(ICity transientInstance);
+        Task AddCity(ICity transientInstance);
 
-        void RemoveCity(decimal id);
+        Task RemoveCity(decimal id);
 
-        ICity MergeCity(ICity detachedInstance);
+        Task<ICity> MergeCity(ICity detachedInstance);
 
-        ICity FindCityById(decimal id);
+        Task<ICity> FindCityById(decimal id);
 
-        List<ICity> FindByName(string name);
+        Task<List<ICity>> FindByName(string name);
 
-        List<ICity> GetCities();      
+        Task<List<ICity>> GetCities();      
     }
 }

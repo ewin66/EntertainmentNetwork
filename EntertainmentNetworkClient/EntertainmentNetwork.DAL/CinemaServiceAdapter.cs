@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using EntertainmentNetwork.DAL.CinemaService;
 using EntertainmentNetwork.DAL.Models.Interfaces;
 using EntertainmentNetwork.DAL.Models;
@@ -13,9 +14,9 @@ namespace EntertainmentNetwork.DAL
 
         #region ICinemaService
 
-        public void AddCinema(ICinema cinema)
+        public async Task AddCinema(ICinema cinema)
         {
-            cinemaService.addCinema(new addCinemaRequest
+            await cinemaService.addCinemaAsync(new addCinemaRequest
             {
                 citIdSpecified = true,
                 citId = cinema.CityId,
@@ -25,24 +26,27 @@ namespace EntertainmentNetwork.DAL
             });
         }
 
-        public ICinema FindCinemaById(decimal id)
+        public async Task<ICinema> FindCinemaById(decimal id)
         {
-            return this.ToCinema(this.cinemaService.findCinemaById(id));
+            var result = await this.cinemaService.findCinemaByIdAsync(id);
+            return this.ToCinema(result.@return);
         }
 
-        public List<ICinema> FindCinemaByName(string name)
+        public async Task<List<ICinema>> FindCinemaByName(string name)
         {
-            return this.cinemaService.findCinemaByName(name).Select(x => this.ToCinema(x)).ToList();
+            var result = await this.cinemaService.findCinemaByNameAsync(name);
+            return result.@return.Select(x => this.ToCinema(x)).ToList();
         }
 
-        public List<ICinema> GetCinemas()
+        public async Task<List<ICinema>> GetCinemas()
         {
-            return this.cinemaService.getCinemas().Select(x => this.ToCinema(x)).ToList();
+            var result = await this.cinemaService.getCinemasAsync();
+            return result.@return.Select(x => this.ToCinema(x)).ToList();
         }
 
-        public ICinema MergeCinema(ICinema cinema)
+        public async Task<ICinema> MergeCinema(ICinema cinema)
         {
-            return this.ToCinema(this.cinemaService.mergeCinema(new mergeCinemaRequest
+            var result = await this.cinemaService.mergeCinemaAsync(new mergeCinemaRequest
             {
                 citId = cinema.CityId,
                 cinId = cinema.CinId,
@@ -51,12 +55,14 @@ namespace EntertainmentNetwork.DAL
                 cinIcon = cinema.CinIcon,
                 cinIdSpecified = true,
                 citIdSpecified = true
-            }));
+            });
+
+            return this.ToCinema(result.@return);
         }
 
-        public void RemoveCinema(decimal id)
+        public async Task RemoveCinema(decimal id)
         {
-            this.cinemaService.removeCinema(id);
+            await this.cinemaService.removeCinemaAsync(id);
         }
 
         #endregion

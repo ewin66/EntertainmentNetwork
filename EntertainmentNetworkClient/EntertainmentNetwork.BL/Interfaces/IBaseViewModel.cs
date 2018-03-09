@@ -17,8 +17,8 @@ namespace EntertainmentNetwork.BL.Interfaces
         ICommand AddUpdateCommand { get; }
         ICommand RemoveCommand { get; }
 
-        void AddUpdate();
-        void LoadData(Func<T, bool> filter);
-        void Remove();
+        Task AddUpdate();
+        Task LoadData(Func<T, bool> filter);
+        Task Remove();
     }
 }

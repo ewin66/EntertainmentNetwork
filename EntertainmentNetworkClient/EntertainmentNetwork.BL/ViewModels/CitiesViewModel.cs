@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using EntertainmentNetwork.BL.Commands;
 using EntertainmentNetwork.BL.Interfaces;
@@ -46,37 +47,41 @@ namespace EntertainmentNetwork.BL.ViewModels
             }
         }
 
-        public void AddUpdate()
+        public async Task AddUpdate()
         {
             foreach (var item in this.Models.Where(x => x.IsNew))
             {
-                this.cityService.AddCity(item);
-                var added = this.cityService.FindByName(item.CitName).FirstOrDefault(x => x.CitCountry == item.CitCountry);
+                await this.cityService.AddCity(item);
+                var task = await this.cityService.FindByName(item.CitName);
+                var added = task.FirstOrDefault(x => x.CitCountry == item.CitCountry);
                 item.Update(added);
             }
 
             foreach (var item in this.Models.Where(x => x.IsChanged && !x.IsNew))
             {
                 this.GetCity(item.CitId).Update(item);
-                this.cityService.MergeCity(item);
+                await this.cityService.MergeCity(item);
             }
         }
 
-        public void LoadData(Func<ICity, bool> filter)
+        public async Task LoadData(Func<ICity, bool> filter)
         {
             this.citiesViewCollection.ListChanged -= CitiesViewCollection_ListChanged;      
             this.citiesViewCollection.Clear();
-            foreach (ICity item in this.cityService.GetCities().Where(filter))
+            var task = await this.cityService.GetCities();
+            
+            foreach (ICity item in task.Where(filter))
             {
                 this.citiesViewCollection.Add(item);
             }
+
             this.IsDataLoaded = true;
             this.citiesViewCollection.ListChanged += CitiesViewCollection_ListChanged;
         }
 
-        public void Remove()
+        public async Task Remove()
         {
-            this.cityService.RemoveCity(this.Selected.CitId);
+            await this.cityService.RemoveCity(this.Selected.CitId);
             this.Models.Remove(this.Selected);
         }
 

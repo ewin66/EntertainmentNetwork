@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using EntertainmentNetwork.DAL.CityService;
 using EntertainmentNetwork.DAL.Models.Interfaces;
 using Interfaces = EntertainmentNetwork.DAL.Models.Interfaces;
@@ -13,44 +14,49 @@ namespace EntertainmentNetwork.DAL
 
         #region ICityService
 
-        public void AddCity(Interfaces.ICity city)
+        public async Task AddCity(Interfaces.ICity city)
         {
-            this.cityService.addCity(new addCityRequest
+            await this.cityService.addCityAsync(new addCityRequest
             {
                 citCountry = city.CitCountry,
                 citName = city.CitName
             });
         }
 
-        public void RemoveCity(decimal id)
+        public async Task RemoveCity(decimal id)
         {
-            this.cityService.removeCity(id);
+            await this.cityService.removeCityAsync(id);
         }
 
-        public ICity MergeCity(Interfaces.ICity city)
+        public async Task<ICity> MergeCity(Interfaces.ICity city)
         {
-            return this.ToCity(this.cityService.mergeCity(new mergeCityRequest 
+            var result = await this.cityService.mergeCityAsync(new mergeCityRequest 
             {
                 citId = city.CitId,
                 citCountry = city.CitCountry,
                 citName = city.CitName,
                 citIdSpecified = true
-            }));
+            });
+
+            return this.ToCity(result.@return);
         }
 
-        public ICity FindCityById(decimal id)
+        public async Task<ICity> FindCityById(decimal id)
         {
-            return this.ToCity(this.cityService.findCityById(id));
+            var result = await this.cityService.findCityByIdAsync(id);
+            return this.ToCity(result.@return);
         }
 
-        public List<ICity> FindByName(string name)
+        public async Task<List<ICity>> FindByName(string name)
         {
-            return this.cityService.findByName(name).Select(x => this.ToCity(x)).ToList();
+            var result = await this.cityService.findByNameAsync(name);
+            return result.@return.Select(x => this.ToCity(x)).ToList();
         }
 
-        public List<ICity> GetCities()
+        public async Task<List<ICity>> GetCities()
         {
-            return this.cityService.getCities().Select(x => this.ToCity(x)).ToList();
+            var result = await this.cityService.getCitiesAsync();
+            return result.@return.Select(x => this.ToCity(x)).ToList();
         }
 
         #endregion

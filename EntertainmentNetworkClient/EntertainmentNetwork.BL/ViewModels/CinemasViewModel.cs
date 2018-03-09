@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using EntertainmentNetwork.BL.Commands;
 using EntertainmentNetwork.BL.Interfaces;
@@ -46,27 +47,29 @@ namespace EntertainmentNetwork.BL.ViewModels
             }
         }
 
-        public void AddUpdate()
+        public async Task AddUpdate()
         {
             foreach (var item in this.Models.Where(x => x.IsNew))
             {
-                this.cinemaService.AddCinema(item);
-                var added = this.cinemaService.FindCinemaByName(item.CinName).FirstOrDefault(x => x.CityId == item.CityId);
+                await this.cinemaService.AddCinema(item);
+                var task = await this.cinemaService.FindCinemaByName(item.CinName);
+                var added = task.FirstOrDefault(x => x.CityId == item.CityId);
                 item.Update(added);
             }
 
             foreach (var item in this.Models.Where(x => x.IsChanged && !x.IsNew))
             {
                 this.GetCinema(item.CinId).Update(item);
-                this.cinemaService.MergeCinema(item);
+                await this.cinemaService.MergeCinema(item);
             }
         }
 
-        public void LoadData(Func<ICinema, bool> filter)
+        public async Task LoadData(Func<ICinema, bool> filter)
         {
             this.cinemasViewCollection.ListChanged -= CinemasViewCollection_ListChanged;      
             this.cinemasViewCollection.Clear();
-            var cinemas = this.cinemaService.GetCinemas().Where(filter);
+            var result = await this.cinemaService.GetCinemas();
+            var cinemas = result.Where(filter);
 
             foreach (ICinema item in cinemas)
             {
@@ -77,9 +80,9 @@ namespace EntertainmentNetwork.BL.ViewModels
             this.cinemasViewCollection.ListChanged += CinemasViewCollection_ListChanged;
         }
 
-        public void Remove()
+        public async Task Remove()
         {
-            this.cinemaService.RemoveCinema(this.Selected.CinId);
+            await this.cinemaService.RemoveCinema(this.Selected.CinId);
             this.Models.Remove(this.Selected);
         }
 

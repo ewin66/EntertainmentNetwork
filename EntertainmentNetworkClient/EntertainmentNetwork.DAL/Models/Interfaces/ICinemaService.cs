@@ -8,16 +8,16 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
 {
     public interface ICinemaService
     {
-        void AddCinema(ICinema cinema);
+        Task AddCinema(ICinema cinema);
 
-        ICinema FindCinemaById(decimal id);
+        Task<ICinema> FindCinemaById(decimal id);
 
-        List<ICinema> FindCinemaByName(string name);
+        Task<List<ICinema>> FindCinemaByName(string name);
 
-        List<ICinema> GetCinemas();
+        Task<List<ICinema>> GetCinemas();
 
-        ICinema MergeCinema(ICinema cinema);
+        Task<ICinema> MergeCinema(ICinema cinema);
 
-        void RemoveCinema(decimal id);
+        Task RemoveCinema(decimal id);
     }
 }
