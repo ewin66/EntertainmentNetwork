@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EntertainmentNetwork.DAL.CinemaService;
 using EntertainmentNetwork.DAL.Models.Interfaces;
-using Interfaces = EntertainmentNetwork.DAL.Models.Interfaces;
 using EntertainmentNetwork.DAL.Models;
-using System.Security;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using Interfaces = EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.DAL
 {
@@ -26,7 +21,7 @@ namespace EntertainmentNetwork.DAL
                 citId = cinema.CityId,
                 cinName = cinema.CinName,
                 cinAddress = cinema.CinAddress,
-                cinIcon = cinema.CinIcon == null ? null : GetBytesToString(cinema.CinIcon)
+                cinIcon = cinema.CinIcon
             });
         }
 
@@ -53,7 +48,7 @@ namespace EntertainmentNetwork.DAL
                 cinId = cinema.CinId,
                 cinName = cinema.CinName,
                 cinAddress = cinema.CinAddress,
-                cinIcon = cinema.CinIcon == null ? null : GetBytesToString(cinema.CinIcon),
+                cinIcon = cinema.CinIcon,
                 cinIdSpecified = true,
                 citIdSpecified = true
             }));
@@ -68,20 +63,7 @@ namespace EntertainmentNetwork.DAL
 
         private ICinema ToCinema(cinema city)
         {
-            return new Cinema(city.cinId, city.cityId, city.cinName, city.cinAddress,
-                    city.cinIcon == null ? null : GetStringToBytes(city.cinIcon));
-        }
-
-        public static string GetBytesToString(byte[] value)
-        {
-            SoapHexBinary shb = new SoapHexBinary(value);
-            return shb.ToString();
-        }
-
-        public static byte[] GetStringToBytes(string value)
-        {
-            SoapHexBinary shb = SoapHexBinary.Parse(value);
-            return shb.Value;
+            return new Cinema(city.cinId, city.cityId, city.cinName, city.cinAddress, city.cinIcon);
         }
     }
 }

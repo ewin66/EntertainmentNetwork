@@ -39,12 +39,6 @@ namespace EntertainmentNetworkClient.Modules
             }
         }
 
-        private void EnableUIButtons(bool enable)
-        {
-            (this.windowsUIButtonPanelMain.Buttons[Properties.Resources.ButtonSave] as WindowsUIButton).Enabled = enable;
-            (this.windowsUIButtonPanelMain.Buttons[Properties.Resources.ButtonRefresh] as WindowsUIButton).Enabled = enable;
-        }
-
          private IViewModel<ICity> citiesView;
     }
 }

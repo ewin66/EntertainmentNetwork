@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Base;
 using EntertainmentNetwork.BL.Interfaces;
@@ -26,8 +27,9 @@ namespace EntertainmentNetworkClient.Modules
 
             viewsManager.CitiesBindingSource.CurrentChanged += CitiesBindingSource_CurrentChanged;
 
-            this.comboBoxCities.DataSource = viewsManager.CitiesBindingSource;
-            this.comboBoxCities.DisplayMember = "CitName";
+            this.lookUpEditCities.Properties.DataSource = viewsManager.CitiesBindingSource;
+            this.lookUpEditCities.DataBindings.Add(
+                new Binding("EditValue", viewsManager.CitiesBindingSource, "CitId", true, DataSourceUpdateMode.OnPropertyChanged));
 
             this.cinemasView = viewsManager.CinemasView.Value;
             this.cinemasView.LoadData(this.FilterCinemas);
@@ -37,15 +39,6 @@ namespace EntertainmentNetworkClient.Modules
         private bool FilterCinemas(ICinema cinema)
         {
             return this.citiesView.Selected != null && cinema.CityId == this.citiesView.Selected.CitId;
-        }
-
-        public void CinemaBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            var bindingSource = sender as BindingSource;
-            if (bindingSource != null)
-            {
-                this.cinemasView.Selected = bindingSource.Current as ICinema;
-            }
         }
 
         private void CitiesBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -82,8 +75,17 @@ namespace EntertainmentNetworkClient.Modules
             var view = sender as ColumnView;
             if (view != null)
             {
-                var city = this.comboBoxCities.SelectedItem as ICity;
-                view.SetRowCellValue(e.RowHandle, this.colCityId, city.CitId);
+                view.SetRowCellValue(e.RowHandle, this.colCityId, this.lookUpEditCities.EditValue);
+            }
+        }
+
+        private void LookUpEditCities_EditValueChanged(object sender, EventArgs e)
+        {
+            var lookup = sender as LookUpEdit;
+            if (lookup != null)
+            {
+                int index = lookup.Properties.GetDataSourceRowIndex(lookup.Properties.ValueMember, lookup.EditValue);
+                ((BindingSource)lookup.Properties.DataSource).Position = index;
             }
         }
     }

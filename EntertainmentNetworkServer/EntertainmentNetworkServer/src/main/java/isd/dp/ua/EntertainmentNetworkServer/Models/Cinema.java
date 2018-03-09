@@ -14,25 +14,11 @@ package isd.dp.ua.EntertainmentNetworkServer.Models;
 // Generated Feb 9, 2018 5:32:55 PM by Hibernate Tools 3.5.0.Final
 
 import java.math.BigDecimal;
-import java.sql.Blob;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModel;
 
@@ -50,8 +36,7 @@ public class Cinema extends BaseModel implements java.io.Serializable
 	@XmlTransient
 	private City city;	
 	private String cinName;
-	@XmlJavaTypeAdapter(BlobXmlAdapter.class)
-	private Blob cinIcon;
+	private byte[] cinIcon;
 	private String cinAddress;
 	private Set<Hall> halls = new HashSet<Hall>(0);
 
@@ -67,7 +52,7 @@ public class Cinema extends BaseModel implements java.io.Serializable
 		this.cinAddress = cinAddress;
 	}
 
-	public Cinema(BigDecimal cinId, City city, String cinName, Blob cinIcon, String cinAddress, Set<Hall> halls)
+	public Cinema(BigDecimal cinId, City city, String cinName, byte[] cinIcon, String cinAddress, Set<Hall> halls)
 	{
 		this.cinId = cinId;
 		this.city = city;
@@ -122,12 +107,12 @@ public class Cinema extends BaseModel implements java.io.Serializable
 	}
 
 	@Column(name = "CIN_ICON")
-	public Blob getCinIcon()
+	public byte[] getCinIcon()
 	{
 		return this.cinIcon;
 	}
 
-	public void setCinIcon(Blob cinIcon)
+	public void setCinIcon(byte[] cinIcon)
 	{
 		this.cinIcon = cinIcon;
 	}

@@ -1,13 +1,10 @@
 package isd.dp.ua.EntertainmentNetworkServer.ServiceMessages;
 
 import java.math.BigDecimal;
-import java.sql.Blob;
 
 import javax.xml.bind.annotation.*;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.BaseDto;
-import isd.dp.ua.EntertainmentNetworkServer.Models.BlobXmlAdapter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType
@@ -33,12 +30,12 @@ public class AddCinemaRequest extends BaseDto
 		this.cinName = cinName;
 	}
 
-	public Blob getCinIcon()
+	public byte[] getCinIcon()
 	{
 		return this.cinIcon;
 	}
 
-	public void setCinIcon(Blob cinIcon)
+	public void setCinIcon(byte[] cinIcon)
 	{
 		this.cinIcon = cinIcon;
 	}
@@ -55,7 +52,6 @@ public class AddCinemaRequest extends BaseDto
 	
 	private BigDecimal citId;
 	private String cinName;
-	@XmlJavaTypeAdapter(BlobXmlAdapter.class)
-	private Blob cinIcon;
+	private byte[] cinIcon;
 	private String cinAddress;
 }

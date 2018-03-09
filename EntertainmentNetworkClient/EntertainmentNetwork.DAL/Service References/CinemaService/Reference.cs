@@ -15,27 +15,13 @@ namespace EntertainmentNetwork.DAL.CinemaService {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", ConfigurationName="CinemaService.ICinemaService")]
     public interface ICinemaService {
         
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
-            "quest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
-            "sponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        EntertainmentNetwork.DAL.CinemaService.addCinemaResponse addCinema(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
-            "quest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.addCinemaResponse> addCinemaAsync(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request);
-        
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
             "yNameRequest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
             "yNameResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         EntertainmentNetwork.DAL.CinemaService.findCinemaByNameResponse findCinemaByName(EntertainmentNetwork.DAL.CinemaService.findCinemaByNameRequest request);
         
@@ -49,8 +35,8 @@ namespace EntertainmentNetwork.DAL.CinemaService {
             "Request", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/mergeCinema" +
             "Response")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         EntertainmentNetwork.DAL.CinemaService.mergeCinemaResponse mergeCinema(EntertainmentNetwork.DAL.CinemaService.mergeCinemaRequest1 request);
         
@@ -59,28 +45,13 @@ namespace EntertainmentNetwork.DAL.CinemaService {
             "Response")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.mergeCinemaResponse> mergeCinemaAsync(EntertainmentNetwork.DAL.CinemaService.mergeCinemaRequest1 request);
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
-            "yIdRequest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
-            "yIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse findCinemaById(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
-            "yIdRequest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
-            "yIdResponse")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse> findCinemaByIdAsync(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request);
-        
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/removeCinem" +
             "aRequest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/removeCinem" +
             "aResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         EntertainmentNetwork.DAL.CinemaService.removeCinemaResponse removeCinema(EntertainmentNetwork.DAL.CinemaService.removeCinemaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/removeCinem" +
@@ -88,13 +59,27 @@ namespace EntertainmentNetwork.DAL.CinemaService {
             "aResponse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.removeCinemaResponse> removeCinemaAsync(EntertainmentNetwork.DAL.CinemaService.removeCinemaRequest request);
         
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
+            "quest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
+            "sponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        EntertainmentNetwork.DAL.CinemaService.addCinemaResponse addCinema(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
+            "quest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/addCinemaRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.addCinemaResponse> addCinemaAsync(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request);
+        
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/getCinemasR" +
             "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/getCinemasR" +
             "esponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         EntertainmentNetwork.DAL.CinemaService.getCinemasResponse getCinemas(EntertainmentNetwork.DAL.CinemaService.getCinemasRequest request);
         
@@ -102,48 +87,68 @@ namespace EntertainmentNetwork.DAL.CinemaService {
             "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/getCinemasR" +
             "esponse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.getCinemasResponse> getCinemasAsync(EntertainmentNetwork.DAL.CinemaService.getCinemasRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
+            "yIdRequest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
+            "yIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse findCinemaById(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
+            "yIdRequest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICinemaService/findCinemaB" +
+            "yIdResponse")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse> findCinemaByIdAsync(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request);
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeCinemaRequest))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class addCinemaRequest : baseDto {
+    public partial class cinema : baseModel {
         
-        private decimal citIdField;
+        private decimal cinIdField;
         
-        private bool citIdFieldSpecified;
+        private bool cinIdFieldSpecified;
         
         private string cinNameField;
         
-        private string cinIconField;
+        private byte[] cinIconField;
         
         private string cinAddressField;
         
+        private hall[] hallsField;
+        
+        private decimal cityIdField;
+        
+        private bool cityIdFieldSpecified;
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public decimal citId {
+        public decimal cinId {
             get {
-                return this.citIdField;
+                return this.cinIdField;
             }
             set {
-                this.citIdField = value;
-                this.RaisePropertyChanged("citId");
+                this.cinIdField = value;
+                this.RaisePropertyChanged("cinId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool citIdSpecified {
+        public bool cinIdSpecified {
             get {
-                return this.citIdFieldSpecified;
+                return this.cinIdFieldSpecified;
             }
             set {
-                this.citIdFieldSpecified = value;
-                this.RaisePropertyChanged("citIdSpecified");
+                this.cinIdFieldSpecified = value;
+                this.RaisePropertyChanged("cinIdSpecified");
             }
         }
         
@@ -160,8 +165,8 @@ namespace EntertainmentNetwork.DAL.CinemaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string cinIcon {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=2)]
+        public byte[] cinIcon {
             get {
                 return this.cinIconField;
             }
@@ -182,45 +187,161 @@ namespace EntertainmentNetwork.DAL.CinemaService {
                 this.RaisePropertyChanged("cinAddress");
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(addCinemaRequest))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeCinemaRequest))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class baseDto : object, System.ComponentModel.INotifyPropertyChanged {
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("halls", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
+        public hall[] halls {
+            get {
+                return this.hallsField;
+            }
+            set {
+                this.hallsField = value;
+                this.RaisePropertyChanged("halls");
+            }
+        }
         
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public decimal cityId {
+            get {
+                return this.cityIdField;
+            }
+            set {
+                this.cityIdField = value;
+                this.RaisePropertyChanged("cityId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool cityIdSpecified {
+            get {
+                return this.cityIdFieldSpecified;
+            }
+            set {
+                this.cityIdFieldSpecified = value;
+                this.RaisePropertyChanged("cityIdSpecified");
             }
         }
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(sit))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(hall))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(cinema))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class baseModel : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class hall : baseModel {
         
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        private decimal halIdField;
         
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+        private bool halIdFieldSpecified;
+        
+        private string halNameField;
+        
+        private decimal halSitscountField;
+        
+        private bool halSitscountFieldSpecified;
+        
+        private sit[] sitsField;
+        
+        private decimal cinemaIdField;
+        
+        private bool cinemaIdFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public decimal halId {
+            get {
+                return this.halIdField;
+            }
+            set {
+                this.halIdField = value;
+                this.RaisePropertyChanged("halId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool halIdSpecified {
+            get {
+                return this.halIdFieldSpecified;
+            }
+            set {
+                this.halIdFieldSpecified = value;
+                this.RaisePropertyChanged("halIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string halName {
+            get {
+                return this.halNameField;
+            }
+            set {
+                this.halNameField = value;
+                this.RaisePropertyChanged("halName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public decimal halSitscount {
+            get {
+                return this.halSitscountField;
+            }
+            set {
+                this.halSitscountField = value;
+                this.RaisePropertyChanged("halSitscount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool halSitscountSpecified {
+            get {
+                return this.halSitscountFieldSpecified;
+            }
+            set {
+                this.halSitscountFieldSpecified = value;
+                this.RaisePropertyChanged("halSitscountSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("sits", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public sit[] sits {
+            get {
+                return this.sitsField;
+            }
+            set {
+                this.sitsField = value;
+                this.RaisePropertyChanged("sits");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public decimal cinemaId {
+            get {
+                return this.cinemaIdField;
+            }
+            set {
+                this.cinemaIdField = value;
+                this.RaisePropertyChanged("cinemaId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool cinemaIdSpecified {
+            get {
+                return this.cinemaIdFieldSpecified;
+            }
+            set {
+                this.cinemaIdFieldSpecified = value;
+                this.RaisePropertyChanged("cinemaIdSpecified");
             }
         }
     }
@@ -403,171 +524,86 @@ namespace EntertainmentNetwork.DAL.CinemaService {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(sit))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(hall))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(cinema))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class hall : baseModel {
+    public partial class baseModel : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private decimal halIdField;
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        private bool halIdFieldSpecified;
-        
-        private string halNameField;
-        
-        private decimal halSitscountField;
-        
-        private bool halSitscountFieldSpecified;
-        
-        private sit[] sitsField;
-        
-        private decimal cinemaIdField;
-        
-        private bool cinemaIdFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public decimal halId {
-            get {
-                return this.halIdField;
-            }
-            set {
-                this.halIdField = value;
-                this.RaisePropertyChanged("halId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool halIdSpecified {
-            get {
-                return this.halIdFieldSpecified;
-            }
-            set {
-                this.halIdFieldSpecified = value;
-                this.RaisePropertyChanged("halIdSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string halName {
-            get {
-                return this.halNameField;
-            }
-            set {
-                this.halNameField = value;
-                this.RaisePropertyChanged("halName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public decimal halSitscount {
-            get {
-                return this.halSitscountField;
-            }
-            set {
-                this.halSitscountField = value;
-                this.RaisePropertyChanged("halSitscount");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool halSitscountSpecified {
-            get {
-                return this.halSitscountFieldSpecified;
-            }
-            set {
-                this.halSitscountFieldSpecified = value;
-                this.RaisePropertyChanged("halSitscountSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("sits", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
-        public sit[] sits {
-            get {
-                return this.sitsField;
-            }
-            set {
-                this.sitsField = value;
-                this.RaisePropertyChanged("sits");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public decimal cinemaId {
-            get {
-                return this.cinemaIdField;
-            }
-            set {
-                this.cinemaIdField = value;
-                this.RaisePropertyChanged("cinemaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool cinemaIdSpecified {
-            get {
-                return this.cinemaIdFieldSpecified;
-            }
-            set {
-                this.cinemaIdFieldSpecified = value;
-                this.RaisePropertyChanged("cinemaIdSpecified");
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(addCinemaRequest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeCinemaRequest))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class cinema : baseModel {
+    public partial class baseDto : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private decimal cinIdField;
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        private bool cinIdFieldSpecified;
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeCinemaRequest))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
+    public partial class addCinemaRequest : baseDto {
+        
+        private decimal citIdField;
+        
+        private bool citIdFieldSpecified;
         
         private string cinNameField;
         
-        private string cinIconField;
+        private byte[] cinIconField;
         
         private string cinAddressField;
         
-        private hall[] hallsField;
-        
-        private decimal cityIdField;
-        
-        private bool cityIdFieldSpecified;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public decimal cinId {
+        public decimal citId {
             get {
-                return this.cinIdField;
+                return this.citIdField;
             }
             set {
-                this.cinIdField = value;
-                this.RaisePropertyChanged("cinId");
+                this.citIdField = value;
+                this.RaisePropertyChanged("citId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool cinIdSpecified {
+        public bool citIdSpecified {
             get {
-                return this.cinIdFieldSpecified;
+                return this.citIdFieldSpecified;
             }
             set {
-                this.cinIdFieldSpecified = value;
-                this.RaisePropertyChanged("cinIdSpecified");
+                this.citIdFieldSpecified = value;
+                this.RaisePropertyChanged("citIdSpecified");
             }
         }
         
@@ -584,8 +620,8 @@ namespace EntertainmentNetwork.DAL.CinemaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string cinIcon {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=2)]
+        public byte[] cinIcon {
             get {
                 return this.cinIconField;
             }
@@ -604,42 +640,6 @@ namespace EntertainmentNetwork.DAL.CinemaService {
             set {
                 this.cinAddressField = value;
                 this.RaisePropertyChanged("cinAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("halls", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=4)]
-        public hall[] halls {
-            get {
-                return this.hallsField;
-            }
-            set {
-                this.hallsField = value;
-                this.RaisePropertyChanged("halls");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public decimal cityId {
-            get {
-                return this.cityIdField;
-            }
-            set {
-                this.cityIdField = value;
-                this.RaisePropertyChanged("cityId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool cityIdSpecified {
-            get {
-                return this.cityIdFieldSpecified;
-            }
-            set {
-                this.cityIdFieldSpecified = value;
-                this.RaisePropertyChanged("cityIdSpecified");
             }
         }
     }
@@ -678,34 +678,6 @@ namespace EntertainmentNetwork.DAL.CinemaService {
                 this.cinIdFieldSpecified = value;
                 this.RaisePropertyChanged("cinIdSpecified");
             }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addCinema", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addCinemaRequest1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0;
-        
-        public addCinemaRequest1() {
-        }
-        
-        public addCinemaRequest1(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addCinemaResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addCinemaResponse {
-        
-        public addCinemaResponse() {
         }
     }
     
@@ -784,6 +756,90 @@ namespace EntertainmentNetwork.DAL.CinemaService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="removeCinema", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class removeCinemaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal arg0;
+        
+        public removeCinemaRequest() {
+        }
+        
+        public removeCinemaRequest(decimal arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="removeCinemaResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class removeCinemaResponse {
+        
+        public removeCinemaResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addCinema", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addCinemaRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0;
+        
+        public addCinemaRequest1() {
+        }
+        
+        public addCinemaRequest1(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addCinemaResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addCinemaResponse {
+        
+        public addCinemaResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCinemas", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class getCinemasRequest {
+        
+        public getCinemasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCinemasResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class getCinemasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.CinemaService.cinema[] @return;
+        
+        public getCinemasResponse() {
+        }
+        
+        public getCinemasResponse(EntertainmentNetwork.DAL.CinemaService.cinema[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="findCinemaById", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
     public partial class findCinemaByIdRequest {
         
@@ -817,62 +873,6 @@ namespace EntertainmentNetwork.DAL.CinemaService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="removeCinema", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class removeCinemaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal arg0;
-        
-        public removeCinemaRequest() {
-        }
-        
-        public removeCinemaRequest(decimal arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="removeCinemaResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class removeCinemaResponse {
-        
-        public removeCinemaResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCinemas", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class getCinemasRequest {
-        
-        public getCinemasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCinemasResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class getCinemasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.CinemaService.cinema[] @return;
-        
-        public getCinemasResponse() {
-        }
-        
-        public getCinemasResponse(EntertainmentNetwork.DAL.CinemaService.cinema[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ICinemaServiceChannel : EntertainmentNetwork.DAL.CinemaService.ICinemaService, System.ServiceModel.IClientChannel {
     }
@@ -898,28 +898,6 @@ namespace EntertainmentNetwork.DAL.CinemaService {
         
         public CinemaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.CinemaService.addCinemaResponse EntertainmentNetwork.DAL.CinemaService.ICinemaService.addCinema(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request) {
-            return base.Channel.addCinema(request);
-        }
-        
-        public void addCinema(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0) {
-            EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 inValue = new EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1();
-            inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.CinemaService.addCinemaResponse retVal = ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).addCinema(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.addCinemaResponse> EntertainmentNetwork.DAL.CinemaService.ICinemaService.addCinemaAsync(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request) {
-            return base.Channel.addCinemaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.addCinemaResponse> addCinemaAsync(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0) {
-            EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 inValue = new EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1();
-            inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).addCinemaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -969,29 +947,6 @@ namespace EntertainmentNetwork.DAL.CinemaService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse EntertainmentNetwork.DAL.CinemaService.ICinemaService.findCinemaById(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request) {
-            return base.Channel.findCinemaById(request);
-        }
-        
-        public EntertainmentNetwork.DAL.CinemaService.cinema findCinemaById(decimal arg0) {
-            EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest inValue = new EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest();
-            inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse retVal = ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).findCinemaById(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse> EntertainmentNetwork.DAL.CinemaService.ICinemaService.findCinemaByIdAsync(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request) {
-            return base.Channel.findCinemaByIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse> findCinemaByIdAsync(decimal arg0) {
-            EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest inValue = new EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest();
-            inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).findCinemaByIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         EntertainmentNetwork.DAL.CinemaService.removeCinemaResponse EntertainmentNetwork.DAL.CinemaService.ICinemaService.removeCinema(EntertainmentNetwork.DAL.CinemaService.removeCinemaRequest request) {
             return base.Channel.removeCinema(request);
         }
@@ -1014,6 +969,28 @@ namespace EntertainmentNetwork.DAL.CinemaService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EntertainmentNetwork.DAL.CinemaService.addCinemaResponse EntertainmentNetwork.DAL.CinemaService.ICinemaService.addCinema(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request) {
+            return base.Channel.addCinema(request);
+        }
+        
+        public void addCinema(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0) {
+            EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 inValue = new EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1();
+            inValue.arg0 = arg0;
+            EntertainmentNetwork.DAL.CinemaService.addCinemaResponse retVal = ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).addCinema(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.addCinemaResponse> EntertainmentNetwork.DAL.CinemaService.ICinemaService.addCinemaAsync(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 request) {
+            return base.Channel.addCinemaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.addCinemaResponse> addCinemaAsync(EntertainmentNetwork.DAL.CinemaService.addCinemaRequest arg0) {
+            EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1 inValue = new EntertainmentNetwork.DAL.CinemaService.addCinemaRequest1();
+            inValue.arg0 = arg0;
+            return ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).addCinemaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         EntertainmentNetwork.DAL.CinemaService.getCinemasResponse EntertainmentNetwork.DAL.CinemaService.ICinemaService.getCinemas(EntertainmentNetwork.DAL.CinemaService.getCinemasRequest request) {
             return base.Channel.getCinemas(request);
         }
@@ -1032,6 +1009,29 @@ namespace EntertainmentNetwork.DAL.CinemaService {
         public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.getCinemasResponse> getCinemasAsync() {
             EntertainmentNetwork.DAL.CinemaService.getCinemasRequest inValue = new EntertainmentNetwork.DAL.CinemaService.getCinemasRequest();
             return ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).getCinemasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse EntertainmentNetwork.DAL.CinemaService.ICinemaService.findCinemaById(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request) {
+            return base.Channel.findCinemaById(request);
+        }
+        
+        public EntertainmentNetwork.DAL.CinemaService.cinema findCinemaById(decimal arg0) {
+            EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest inValue = new EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest();
+            inValue.arg0 = arg0;
+            EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse retVal = ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).findCinemaById(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse> EntertainmentNetwork.DAL.CinemaService.ICinemaService.findCinemaByIdAsync(EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest request) {
+            return base.Channel.findCinemaByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CinemaService.findCinemaByIdResponse> findCinemaByIdAsync(decimal arg0) {
+            EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest inValue = new EntertainmentNetwork.DAL.CinemaService.findCinemaByIdRequest();
+            inValue.arg0 = arg0;
+            return ((EntertainmentNetwork.DAL.CinemaService.ICinemaService)(this)).findCinemaByIdAsync(inValue);
         }
     }
 }

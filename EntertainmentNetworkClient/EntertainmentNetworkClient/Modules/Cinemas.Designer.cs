@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.lookUpEditCities = new DevExpress.XtraEditors.LookUpEdit();
             this.gridCinemas = new DevExpress.XtraGrid.GridControl();
             this.layoutViewCinemas = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.colCinId = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
@@ -44,14 +45,14 @@
             this.colCityId = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colCityId = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
-            this.comboBoxCities = new System.Windows.Forms.ComboBox();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.labelControl = new DevExpress.XtraEditors.LabelControl();
             this.windowsUIButtonPanelMain = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCities.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCinemas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCinemas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colCinId)).BeginInit();
@@ -62,21 +63,45 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colCityId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.AllowCustomization = false;
+            this.dataLayoutControl1.Controls.Add(this.lookUpEditCities);
             this.dataLayoutControl1.Controls.Add(this.gridCinemas);
-            this.dataLayoutControl1.Controls.Add(this.comboBoxCities);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(0, 30);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
             this.dataLayoutControl1.Root = this.layoutControlGroup1;
             this.dataLayoutControl1.Size = new System.Drawing.Size(800, 510);
             this.dataLayoutControl1.TabIndex = 0;
+            // 
+            // lookUpEditCities
+            // 
+            this.lookUpEditCities.Location = new System.Drawing.Point(12, 12);
+            this.lookUpEditCities.Name = "lookUpEditCities";
+            this.lookUpEditCities.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lookUpEditCities.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lookUpEditCities.Properties.Appearance.Options.UseBackColor = true;
+            this.lookUpEditCities.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditCities.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditCities.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lookUpEditCities.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.lookUpEditCities.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditCities.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CitId", "Cit Id", 49, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CitName", "Cit Name", 30, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CitCountry", "Cit Country", 30, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lookUpEditCities.Properties.DisplayMember = "CitName";
+            this.lookUpEditCities.Properties.ValueMember = "CitId";
+            this.lookUpEditCities.Size = new System.Drawing.Size(776, 24);
+            this.lookUpEditCities.StyleController = this.dataLayoutControl1;
+            this.lookUpEditCities.TabIndex = 6;
+            this.lookUpEditCities.EditValueChanged += new System.EventHandler(this.LookUpEditCities_EditValueChanged);
             // 
             // gridCinemas
             // 
@@ -85,12 +110,12 @@
             this.gridCinemas.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridCinemas.EmbeddedNavigator.Buttons.Remove.Visible = false;
             this.gridCinemas.EmbeddedNavigator.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.gridCinemas.Location = new System.Drawing.Point(12, 42);
+            this.gridCinemas.Location = new System.Drawing.Point(12, 40);
             this.gridCinemas.MainView = this.layoutViewCinemas;
             this.gridCinemas.Name = "gridCinemas";
             this.gridCinemas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCinemaIcon});
-            this.gridCinemas.Size = new System.Drawing.Size(776, 456);
+            this.gridCinemas.Size = new System.Drawing.Size(776, 458);
             this.gridCinemas.TabIndex = 5;
             this.gridCinemas.UseEmbeddedNavigator = true;
             this.gridCinemas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -117,6 +142,7 @@
             this.layoutViewCinemas.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.layoutViewCinemas.OptionsBehavior.AllowExpandCollapse = false;
             this.layoutViewCinemas.OptionsBehavior.AutoFocusNewCard = true;
+            this.layoutViewCinemas.OptionsCarouselMode.Radius = 1000;
             this.layoutViewCinemas.OptionsCustomization.AllowFilter = false;
             this.layoutViewCinemas.OptionsCustomization.AllowSort = false;
             this.layoutViewCinemas.OptionsItemText.TextToControlDistance = 3;
@@ -138,7 +164,7 @@
             this.layoutViewField_colCinId.EditorPreferredWidth = 70;
             this.layoutViewField_colCinId.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_colCinId.Name = "layoutViewField_colCinId";
-            this.layoutViewField_colCinId.Size = new System.Drawing.Size(103, 42);
+            this.layoutViewField_colCinId.Size = new System.Drawing.Size(76, 42);
             this.layoutViewField_colCinId.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutViewField_colCinId.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutViewField_colCinId.TextSize = new System.Drawing.Size(61, 13);
@@ -152,7 +178,7 @@
             // layoutViewField_colCinName
             // 
             this.layoutViewField_colCinName.EditorPreferredWidth = 468;
-            this.layoutViewField_colCinName.Location = new System.Drawing.Point(103, 0);
+            this.layoutViewField_colCinName.Location = new System.Drawing.Point(76, 0);
             this.layoutViewField_colCinName.Name = "layoutViewField_colCinName";
             this.layoutViewField_colCinName.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutViewField_colCinName.Size = new System.Drawing.Size(474, 42);
@@ -172,7 +198,7 @@
             this.layoutViewField_colCinAddress.Location = new System.Drawing.Point(0, 42);
             this.layoutViewField_colCinAddress.Name = "layoutViewField_colCinAddress";
             this.layoutViewField_colCinAddress.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutViewField_colCinAddress.Size = new System.Drawing.Size(577, 42);
+            this.layoutViewField_colCinAddress.Size = new System.Drawing.Size(550, 42);
             this.layoutViewField_colCinAddress.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutViewField_colCinAddress.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutViewField_colCinAddress.TextSize = new System.Drawing.Size(61, 13);
@@ -198,7 +224,7 @@
             this.layoutViewField_colCinIcon.Name = "layoutViewField_colCinIcon";
             this.layoutViewField_colCinIcon.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutViewField_colCinIcon.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutViewField_colCinIcon.Size = new System.Drawing.Size(577, 62);
+            this.layoutViewField_colCinIcon.Size = new System.Drawing.Size(550, 44);
             this.layoutViewField_colCinIcon.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutViewField_colCinIcon.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutViewField_colCinIcon.TextSize = new System.Drawing.Size(61, 13);
@@ -229,53 +255,39 @@
             this.layoutViewField_colCinName,
             this.layoutViewField_colCinIcon,
             this.layoutViewField_colCinAddress});
-            this.layoutViewCard1.Name = "layoutViewCard1";
+            this.layoutViewCard1.Name = "layoutViewTemplateCard";
             this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutViewCard1.Text = "TemplateCard";
-            // 
-            // comboBoxCities
-            // 
-            this.comboBoxCities.DisplayMember = "CitName";
-            this.comboBoxCities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCities.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.comboBoxCities.FormattingEnabled = true;
-            this.comboBoxCities.Location = new System.Drawing.Point(12, 12);
-            this.comboBoxCities.Name = "comboBoxCities";
-            this.comboBoxCities.Size = new System.Drawing.Size(776, 26);
-            this.comboBoxCities.Sorted = true;
-            this.comboBoxCities.TabIndex = 4;
-            this.comboBoxCities.ValueMember = "CitName";
             // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2});
+            this.layoutControlItem2,
+            this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(800, 510);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.comboBoxCities;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 7);
-            this.layoutControlItem1.Size = new System.Drawing.Size(780, 30);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.gridCinemas;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(780, 460);
+            this.layoutControlItem2.Size = new System.Drawing.Size(780, 462);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.lookUpEditCities;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(780, 28);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
             // 
             // labelControl
             // 
@@ -342,6 +354,7 @@
             this.Size = new System.Drawing.Size(800, 600);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCities.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCinemas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCinemas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colCinId)).EndInit();
@@ -352,8 +365,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colCityId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,8 +377,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl1;
-        private System.Windows.Forms.ComboBox comboBoxCities;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraGrid.GridControl gridCinemas;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraGrid.Views.Layout.LayoutView layoutViewCinemas;
@@ -381,5 +392,7 @@
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colCityId;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemCinemaIcon;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditCities;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }
