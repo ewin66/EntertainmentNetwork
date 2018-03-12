@@ -12,9 +12,6 @@ namespace EntertainmentNetworkClient.Modules
 {
     public partial class Cinemas : BaseModule
     {
-        IViewModel<ICity> citiesView;
-        IViewModel<ICinema> cinemasView;
-
         public Cinemas(IViewsManager viewsManager)
         {
             InitializeComponent();
@@ -88,5 +85,8 @@ namespace EntertainmentNetworkClient.Modules
                 ((BindingSource)lookup.Properties.DataSource).Position = index;
             }
         }
+
+        IViewModel<ICity> citiesView;
+        IViewModel<ICinema> cinemasView;
     }
 }
