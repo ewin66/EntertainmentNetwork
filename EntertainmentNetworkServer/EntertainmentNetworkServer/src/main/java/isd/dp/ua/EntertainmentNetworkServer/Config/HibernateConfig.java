@@ -23,6 +23,13 @@ public class HibernateConfig
 	@Autowired
 	private Environment env;
 
+	@Autowired
+	@Bean
+	public org.hibernate.cfg.Configuration getConfiguration(LocalSessionFactoryBean sessionFactory) 
+	{
+		return sessionFactory.getConfiguration();
+	}
+	
 	/**
 	 * Initialize dataSource 
 	 * @return DataSource

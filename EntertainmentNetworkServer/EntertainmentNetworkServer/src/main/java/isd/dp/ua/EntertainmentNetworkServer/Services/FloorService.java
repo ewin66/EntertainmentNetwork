@@ -24,65 +24,65 @@ import org.springframework.stereotype.Service;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.*;
 import isd.dp.ua.EntertainmentNetworkServer.Dao.*;
-import isd.dp.ua.EntertainmentNetworkServer.Interfaces.IHallService;
+import isd.dp.ua.EntertainmentNetworkServer.Interfaces.IFloorService;
 import isd.dp.ua.EntertainmentNetworkServer.Models.*;
 import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 
-@WebService(serviceName="HallWebService", endpointInterface="isd.dp.ua.EntertainmentNetworkServer.Interfaces.IHallService")
+@WebService(serviceName="FloorWebService", endpointInterface="isd.dp.ua.EntertainmentNetworkServer.Interfaces.IFloorService")
 @Service
-public class HallService extends BaseModelService implements IHallService
+public class FloorService extends BaseModelService implements IFloorService
 {
 	@Autowired
-	public HallService(HallDao hallOperations, CinemaDao cinemaOperations, ModelMapper modelMapper)
+	public FloorService(FloorDao floorOperations, HallDao hallOperations, ModelMapper modelMapper)
 	{
 		super(modelMapper);
 		this.hallOperations = hallOperations;
-		this.cinemaOperations = cinemaOperations;
+		this.floorOperations = floorOperations;
 	}
 
 	@Override
-	public void addHall(AddHallRequest addRequest) 
+	public void addFloor(AddFloorRequest addRequest) 
 	{
-		this.hallOperations.persist(this.prepareHall(addRequest));
+		this.floorOperations.persist(this.prepareFloor(addRequest));
 	}
 
 	@Override
-	public Hall findHallById(BigDecimal id) 
+	public Floor findFloorById(BigDecimal id) 
 	{
-		return this.hallOperations.findById(id);
+		return this.floorOperations.findById(id);
 	}
 
 	@Override
-	public List<Hall> getHalls() 
+	public List<Floor> getFloors() 
 	{
-		return this.hallOperations.getAll();
+		return this.floorOperations.getAll();
 	}
 
 	@Override
-	public Hall mergeHall(MergeHallRequest mergeRequest) 
+	public Floor mergeFloor(MergeFloorRequest mergeRequest) 
 	{
-		return this.hallOperations.merge(this.prepareHall(mergeRequest));
+		return this.floorOperations.merge(this.prepareFloor(mergeRequest));
 	}
 
 	@Override
-	public void removeHall(BigDecimal halId) 
+	public void removeFloor(BigDecimal flrId) 
 	{
-		Hall hall = new Hall();
-		hall.setHalId(halId);
-		this.hallOperations.remove(hall);
+		Floor floor = new Floor();
+		floor.setFlrId(flrId);
+		this.floorOperations.remove(floor);
 	}
 	
 	/*
 	 * Prepares hall: find cinema add it to hall entity
 	 */
-	protected Hall prepareHall(AddHallRequest request)
+	protected Floor prepareFloor(AddFloorRequest request)
 	{		
-		Cinema cinema = this.cinemaOperations.findById(request.getCinId());
-		Hall hall = this.convertToEntity(request, Hall.class);
-		hall.setCinema(cinema);
-		return hall;
+		Hall hall = this.hallOperations.findById(request.getHalId());
+		Floor floor = this.convertToEntity(request, Floor.class);
+		floor.setHall(hall);
+		return floor;
 	}
 	
-	private CinemaDao cinemaOperations;	
+	private FloorDao floorOperations;	
 	private HallDao hallOperations;
 }

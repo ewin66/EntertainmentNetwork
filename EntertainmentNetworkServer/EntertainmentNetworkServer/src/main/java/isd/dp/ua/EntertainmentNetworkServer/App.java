@@ -22,16 +22,25 @@ public class App extends SpringBootServletInitializer implements WebApplicationI
     	@SuppressWarnings("resource")
     	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);   
     	
-    	CityDao dao = context.getBean("cityDao", CityDao.class);	
-    	CinemaDao cinemadao = context.getBean("cinemaDao", CinemaDao.class);
-    	SitDao sitdao = context.getBean("sitDao", SitDao.class);
-    	HallDao hallDao = context.getBean("hallDao", HallDao.class);
-    	
-    	ModelMapper mapper = context.getBean("modelMapper", ModelMapper.class);
+    	CityDao dao = context.getBean(CityDao.class);	
+    	CinemaDao cinemadao = context.getBean(CinemaDao.class);
+    	SeatDao seatdao = context.getBean(SeatDao.class);
+    	HallDao hallDao = context.getBean(HallDao.class);
+    	FloorDao floorDao = context.getBean(FloorDao.class);
+    	OrderDao orderDao = context.getBean(OrderDao.class);
+    	ShowDao showDao = context.getBean(ShowDao.class);
+    	SchedulerDao schedulerDao = context.getBean(SchedulerDao.class);
+    	TicketDao ticketDao = context.getBean(TicketDao.class);
+    	ModelMapper mapper = context.getBean(ModelMapper.class);
     	
     	Endpoint.publish("http://127.0.0.1:9998/CityService", new CityService(dao, mapper)); 
     	Endpoint.publish("http://127.0.0.1:9998/CinemaService", new CinemaService(cinemadao, dao, mapper));  	
-    	Endpoint.publish("http://127.0.0.1:9998/SitService", new SitService(sitdao, hallDao, mapper)); 
+    	Endpoint.publish("http://127.0.0.1:9998/SitService", new SeatService(seatdao, floorDao, mapper)); 
     	Endpoint.publish("http://127.0.0.1:9998/HallService", new HallService(hallDao, cinemadao, mapper)); 
+    	Endpoint.publish("http://127.0.0.1:9998/FloorService", new FloorService(floorDao, hallDao, mapper)); 
+    	Endpoint.publish("http://127.0.0.1:9998/OrderService", new OrderService(orderDao, mapper)); 
+    	Endpoint.publish("http://127.0.0.1:9998/ShowService", new ShowService(showDao, mapper)); 
+    	Endpoint.publish("http://127.0.0.1:9998/SchedulerService", new SchedulerService(showDao, hallDao, schedulerDao, mapper)); 
+    	Endpoint.publish("http://127.0.0.1:9998/TicketService", new TicketService(seatdao, orderDao, schedulerDao, ticketDao, mapper)); 
     }
 }

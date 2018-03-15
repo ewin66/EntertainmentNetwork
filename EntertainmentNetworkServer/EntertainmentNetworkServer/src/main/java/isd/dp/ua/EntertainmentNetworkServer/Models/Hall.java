@@ -18,11 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlTransient;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModel;
 
@@ -41,7 +37,9 @@ public class Hall extends BaseModel implements java.io.Serializable
 	private Cinema cinema;
 	private String halName;
 	private BigDecimal halSitscount;
-	private Set<Sit> sits = new HashSet<Sit>(0);
+	private Set<Floor> floors = new HashSet<Floor>(0);
+	@XmlTransient
+	private Set<Scheduler> schedulers = new HashSet<Scheduler>(0);
 
 	public Hall()
 	{
@@ -55,13 +53,14 @@ public class Hall extends BaseModel implements java.io.Serializable
 		this.halSitscount = halSitscount;
 	}
 
-	public Hall(BigDecimal halId, Cinema cinema, String halName, BigDecimal halSitscount, Set<Sit> sits)
-	{
+	public Hall(BigDecimal halId, Cinema cinema, String halName, BigDecimal halSitscount, Set<Floor> floors,
+			Set<Scheduler> schedulers) {
 		this.halId = halId;
 		this.cinema = cinema;
 		this.halName = halName;
 		this.halSitscount = halSitscount;
-		this.sits = sits;
+		this.floors = floors;
+		this.schedulers = schedulers;
 	}
 
 	@Id
@@ -120,16 +119,25 @@ public class Hall extends BaseModel implements java.io.Serializable
 	}
 
 	@OneToMany(cascade={CascadeType.MERGE}, fetch = FetchType.EAGER, mappedBy = "hall")
-	public Set<Sit> getSits()
+	public Set<Floor> getFloors()
 	{
-		return this.sits;
+		return this.floors;
 	}
 
-	public void setSits(Set<Sit> sits)
+	public void setFloors(Set<Floor> floors)
 	{
-		this.sits = sits;
+		this.floors = floors;
 	}
 
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hall")
+	public Set<Scheduler> getSchedulers() {
+		return this.schedulers;
+	}
+
+	public void setSchedulers(Set<Scheduler> schedulers) {
+		this.schedulers = schedulers;
+	}
+	
 	@Override
 	public String toString()
 	{

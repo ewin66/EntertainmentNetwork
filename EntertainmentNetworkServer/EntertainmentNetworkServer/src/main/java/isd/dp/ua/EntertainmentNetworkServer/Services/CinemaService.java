@@ -19,7 +19,6 @@ import javax.jws.WebService;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModelService;
@@ -33,7 +32,7 @@ import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 public class CinemaService extends BaseModelService implements ICinemaService
 {
 	@Autowired
-	public CinemaService(@Qualifier("cinemaDao") CinemaDao cinemaOperations, CityDao cityOperations, ModelMapper modelMapper)
+	public CinemaService(CinemaDao cinemaOperations, CityDao cityOperations, ModelMapper modelMapper)
 	{
 		super(modelMapper);
 		this.cityOperations = cityOperations;

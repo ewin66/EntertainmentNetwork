@@ -17,19 +17,19 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.HibernateDaoOperations;
-import isd.dp.ua.EntertainmentNetworkServer.Models.*;
+import isd.dp.ua.EntertainmentNetworkServer.Models.Floor;
 
 /**
- * Home object for domain model class Sit.
- * @see isd.dp.ua.EntertainmentNetworkServer.Models.Sit
+ * Home object for domain model class Hall.
+ * @see isd.dp.ua.EntertainmentNetworkServer.Models.Hall
  * @author Hibernate Tools
  */
 @Repository
 @Transactional
-public class SitDao extends HibernateDaoOperations<Sit>
+public class FloorDao extends HibernateDaoOperations<Floor>
 {
-	public SitDao()
+	public FloorDao()
 	{
-		super(Sit.class);
+		super(Floor.class);
 	}
 }

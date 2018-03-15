@@ -19,7 +19,6 @@ import javax.jws.WebService;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import isd.dp.ua.EntertainmentNetworkServer.Common.*;
@@ -33,7 +32,7 @@ import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 public class CityService extends BaseModelService implements ICityService
 {	
 	@Autowired
-	public CityService(@Qualifier("cityDao")CityDao cityOperations, ModelMapper modelMapper)
+	public CityService(CityDao cityOperations, ModelMapper modelMapper)
 	{
 		super(modelMapper);
 		this.cityOperations = cityOperations;

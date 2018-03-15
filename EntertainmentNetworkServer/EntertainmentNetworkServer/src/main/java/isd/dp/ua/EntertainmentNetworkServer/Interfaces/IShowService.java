@@ -9,15 +9,15 @@ import isd.dp.ua.EntertainmentNetworkServer.Models.*;
 import isd.dp.ua.EntertainmentNetworkServer.ServiceMessages.*;
 
 @WebService
-public interface ISitService 
+public interface IShowService 
 {
-	void addSit(AddSitRequest transientInstance);
+	void addShow(AddShowRequest show);
 
-	Sit findSitById(BigDecimal id);
+	Show findShowById(BigDecimal id);
 	
-	public List<Sit> getSits();
+	List<Show> getShows();
 	
-	Sit mergeSit(MergeSitRequest detachedInstance);
+	Show mergeShow(MergeShowRequest show);
 	
-	void removeSit(BigDecimal id);
+	void removeShow(BigDecimal id);
 }

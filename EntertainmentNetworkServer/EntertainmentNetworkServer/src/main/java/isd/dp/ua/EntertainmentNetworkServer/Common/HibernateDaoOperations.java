@@ -20,8 +20,10 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.CriteriaSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
@@ -141,6 +143,11 @@ public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperati
 	    		.setResultTransformer(CriteriaSpecification.DISTINCT_ROOT_ENTITY));
 	}
 	
+	protected Configuration getSessionConfig()
+	{
+		return this.config;
+	}
+	
 	protected Session getSeession()
 	{
 		return this.factory.getCurrentSession();
@@ -163,6 +170,10 @@ public class HibernateDaoOperations<T extends BaseModel> implements ICrudOperati
 	 */	
 	@Autowired
 	private SessionFactory factory;
+	
+	@Autowired
+	private Configuration config;
+
 	
 	/*
 	 * Represents type of model that is handled
