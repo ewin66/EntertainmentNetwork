@@ -62,15 +62,6 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public List<ISeat> Sits
-        {
-            get { return this.sits; }
-            set
-            {
-                this.SetPropertyValue(out this.sits, this.sits, value);
-            }
-        }
-
         public void Update(IHall hall)
         {
             this.HalId = hall.HalId;
@@ -94,6 +85,5 @@ namespace EntertainmentNetwork.DAL.Models
         private decimal halId;
         private string halName;
         private decimal halSitscount;
-        private List<ISeat> sits;
     }
 }

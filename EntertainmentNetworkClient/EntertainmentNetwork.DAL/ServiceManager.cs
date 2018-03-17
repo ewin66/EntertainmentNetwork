@@ -12,6 +12,6 @@ namespace EntertainmentNetwork.DAL
         public static readonly Lazy<CityServiceAdapter> CityService = new Lazy<CityServiceAdapter>();
         public static readonly Lazy<CinemaServiceAdapter> CinemaService = new Lazy<CinemaServiceAdapter>();
         public static readonly Lazy<HallServiceAdapter> HallService = new Lazy<HallServiceAdapter>();
-
+        public static readonly Lazy<FloorServiceAdapter> FloorService = new Lazy<FloorServiceAdapter>();
     }
 }

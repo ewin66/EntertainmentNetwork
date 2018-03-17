@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace EntertainmentNetwork.DAL.Models.Interfaces
 {
-    public interface ISitService
+    public interface ISeatService
     {
-        Task AddSit(ISeat seat);
+        Task AddSeat(ISeat seat);
 
-        Task<ISeat> FindSitById(decimal id);
+        Task<ISeat> FindSeatById(decimal id);
 
-        Task<List<ISeat>> GetSits();
+        Task GenerateSeats(decimal flrId, int seatRows, int seatColumns);
 
-        Task<ISeat> MergeSit(ISeat seat);
+        Task<List<ISeat>> GetSeats();
 
-        Task RemoveSit(decimal id);
+        Task<ISeat> MergeSeat(ISeat seat);
+
+        Task RemoveSeat(decimal id);
     }
 }

@@ -35,13 +35,6 @@ import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModel;
 @Table(name = "FLOOR", schema = "PBAB")
 public class Floor extends BaseModel implements java.io.Serializable
 {
-	private BigDecimal flrId;
-	@XmlTransient
-	private Hall hall;
-	private String flrName;
-	@XmlTransient
-	private Set<Seat> seats = new HashSet<Seat>(0);
-
 	public Floor()
 	{
 	}
@@ -120,4 +113,11 @@ public class Floor extends BaseModel implements java.io.Serializable
 	{
 		return "Floor [flrId=" + this.getFlrId() + ", flrName=" + this.getFlrName() + "]";
 	}
+	
+	private BigDecimal flrId;
+	@XmlTransient
+	private Hall hall;
+	private String flrName;
+	@XmlTransient
+	private Set<Seat> seats = new HashSet<Seat>(0);
 }

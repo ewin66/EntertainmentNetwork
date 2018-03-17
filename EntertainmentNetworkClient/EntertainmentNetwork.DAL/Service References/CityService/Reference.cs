@@ -31,21 +31,6 @@ namespace EntertainmentNetwork.DAL.CityService {
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.findByNameResponse> findByNameAsync(EntertainmentNetwork.DAL.CityService.findByNameRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesRequ" +
-            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesResp" +
-            "onse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        EntertainmentNetwork.DAL.CityService.getCitiesResponse getCities(EntertainmentNetwork.DAL.CityService.getCitiesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesRequ" +
-            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesResp" +
-            "onse")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.getCitiesResponse> getCitiesAsync(EntertainmentNetwork.DAL.CityService.getCitiesRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/findCityByIdR" +
             "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/findCityByIdR" +
             "esponse")]
@@ -59,20 +44,6 @@ namespace EntertainmentNetwork.DAL.CityService {
             "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/findCityByIdR" +
             "esponse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.findCityByIdResponse> findCityByIdAsync(EntertainmentNetwork.DAL.CityService.findCityByIdRequest request);
-        
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityRespon" +
-            "se")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        EntertainmentNetwork.DAL.CityService.addCityResponse addCity(EntertainmentNetwork.DAL.CityService.addCityRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityRespon" +
-            "se")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.addCityResponse> addCityAsync(EntertainmentNetwork.DAL.CityService.addCityRequest1 request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/mergeCityRequ" +
@@ -89,6 +60,21 @@ namespace EntertainmentNetwork.DAL.CityService {
             "onse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.mergeCityResponse> mergeCityAsync(EntertainmentNetwork.DAL.CityService.mergeCityRequest1 request);
         
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesRequ" +
+            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesResp" +
+            "onse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        EntertainmentNetwork.DAL.CityService.getCitiesResponse getCities(EntertainmentNetwork.DAL.CityService.getCitiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesRequ" +
+            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/getCitiesResp" +
+            "onse")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.getCitiesResponse> getCitiesAsync(EntertainmentNetwork.DAL.CityService.getCitiesRequest request);
+        
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/removeCityReq" +
             "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/removeCityRes" +
@@ -102,6 +88,20 @@ namespace EntertainmentNetwork.DAL.CityService {
             "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/removeCityRes" +
             "ponse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.removeCityResponse> removeCityAsync(EntertainmentNetwork.DAL.CityService.removeCityRequest request);
+        
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityRespon" +
+            "se")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        EntertainmentNetwork.DAL.CityService.addCityResponse addCity(EntertainmentNetwork.DAL.CityService.addCityRequest1 request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ICityService/addCityRespon" +
+            "se")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.addCityResponse> addCityAsync(EntertainmentNetwork.DAL.CityService.addCityRequest1 request);
     }
     
     /// <remarks/>
@@ -197,7 +197,7 @@ namespace EntertainmentNetwork.DAL.CityService {
         
         private string cinNameField;
         
-        private string cinIconField;
+        private byte[] cinIconField;
         
         private string cinAddressField;
         
@@ -244,8 +244,8 @@ namespace EntertainmentNetwork.DAL.CityService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string cinIcon {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", Order=2)]
+        public byte[] cinIcon {
             get {
                 return this.cinIconField;
             }
@@ -322,7 +322,7 @@ namespace EntertainmentNetwork.DAL.CityService {
         
         private bool halSitscountFieldSpecified;
         
-        private sit[] sitsField;
+        private floor[] floorsField;
         
         private decimal cinemaIdField;
         
@@ -389,14 +389,14 @@ namespace EntertainmentNetwork.DAL.CityService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("sits", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
-        public sit[] sits {
+        [System.Xml.Serialization.XmlElementAttribute("floors", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public floor[] floors {
             get {
-                return this.sitsField;
+                return this.floorsField;
             }
             set {
-                this.sitsField = value;
-                this.RaisePropertyChanged("sits");
+                this.floorsField = value;
+                this.RaisePropertyChanged("floors");
             }
         }
         
@@ -431,179 +431,81 @@ namespace EntertainmentNetwork.DAL.CityService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class sit : baseModel {
+    public partial class floor : baseModel {
         
-        private decimal sitIdField;
+        private decimal flrIdField;
         
-        private bool sitIdFieldSpecified;
+        private bool flrIdFieldSpecified;
         
-        private decimal sitNumField;
+        private string flrNameField;
         
-        private bool sitNumFieldSpecified;
+        private decimal hallIdField;
         
-        private decimal sitRowField;
-        
-        private bool sitRowFieldSpecified;
-        
-        private decimal sitFloorField;
-        
-        private bool sitFloorFieldSpecified;
-        
-        private decimal sitTypeField;
-        
-        private bool sitTypeFieldSpecified;
-        
-        private decimal cinemaIdField;
-        
-        private bool cinemaIdFieldSpecified;
+        private bool hallIdFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public decimal sitId {
+        public decimal flrId {
             get {
-                return this.sitIdField;
+                return this.flrIdField;
             }
             set {
-                this.sitIdField = value;
-                this.RaisePropertyChanged("sitId");
+                this.flrIdField = value;
+                this.RaisePropertyChanged("flrId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitIdSpecified {
+        public bool flrIdSpecified {
             get {
-                return this.sitIdFieldSpecified;
+                return this.flrIdFieldSpecified;
             }
             set {
-                this.sitIdFieldSpecified = value;
-                this.RaisePropertyChanged("sitIdSpecified");
+                this.flrIdFieldSpecified = value;
+                this.RaisePropertyChanged("flrIdSpecified");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public decimal sitNum {
+        public string flrName {
             get {
-                return this.sitNumField;
+                return this.flrNameField;
             }
             set {
-                this.sitNumField = value;
-                this.RaisePropertyChanged("sitNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitNumSpecified {
-            get {
-                return this.sitNumFieldSpecified;
-            }
-            set {
-                this.sitNumFieldSpecified = value;
-                this.RaisePropertyChanged("sitNumSpecified");
+                this.flrNameField = value;
+                this.RaisePropertyChanged("flrName");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public decimal sitRow {
+        public decimal hallId {
             get {
-                return this.sitRowField;
+                return this.hallIdField;
             }
             set {
-                this.sitRowField = value;
-                this.RaisePropertyChanged("sitRow");
+                this.hallIdField = value;
+                this.RaisePropertyChanged("hallId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitRowSpecified {
+        public bool hallIdSpecified {
             get {
-                return this.sitRowFieldSpecified;
+                return this.hallIdFieldSpecified;
             }
             set {
-                this.sitRowFieldSpecified = value;
-                this.RaisePropertyChanged("sitRowSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public decimal sitFloor {
-            get {
-                return this.sitFloorField;
-            }
-            set {
-                this.sitFloorField = value;
-                this.RaisePropertyChanged("sitFloor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitFloorSpecified {
-            get {
-                return this.sitFloorFieldSpecified;
-            }
-            set {
-                this.sitFloorFieldSpecified = value;
-                this.RaisePropertyChanged("sitFloorSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public decimal sitType {
-            get {
-                return this.sitTypeField;
-            }
-            set {
-                this.sitTypeField = value;
-                this.RaisePropertyChanged("sitType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitTypeSpecified {
-            get {
-                return this.sitTypeFieldSpecified;
-            }
-            set {
-                this.sitTypeFieldSpecified = value;
-                this.RaisePropertyChanged("sitTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public decimal cinemaId {
-            get {
-                return this.cinemaIdField;
-            }
-            set {
-                this.cinemaIdField = value;
-                this.RaisePropertyChanged("cinemaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool cinemaIdSpecified {
-            get {
-                return this.cinemaIdFieldSpecified;
-            }
-            set {
-                this.cinemaIdFieldSpecified = value;
-                this.RaisePropertyChanged("cinemaIdSpecified");
+                this.hallIdFieldSpecified = value;
+                this.RaisePropertyChanged("hallIdSpecified");
             }
         }
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(sit))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(floor))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(hall))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(cinema))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(city))]
@@ -758,34 +660,6 @@ namespace EntertainmentNetwork.DAL.CityService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCities", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class getCitiesRequest {
-        
-        public getCitiesRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="getCitiesResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class getCitiesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.CityService.city[] @return;
-        
-        public getCitiesResponse() {
-        }
-        
-        public getCitiesResponse(EntertainmentNetwork.DAL.CityService.city[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="findCityById", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
     public partial class findCityByIdRequest {
         
@@ -816,34 +690,6 @@ namespace EntertainmentNetwork.DAL.CityService {
         
         public findCityByIdResponse(EntertainmentNetwork.DAL.CityService.city @return) {
             this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addCity", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addCityRequest1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.CityService.addCityRequest arg0;
-        
-        public addCityRequest1() {
-        }
-        
-        public addCityRequest1(EntertainmentNetwork.DAL.CityService.addCityRequest arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addCityResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addCityResponse {
-        
-        public addCityResponse() {
         }
     }
     
@@ -886,6 +732,34 @@ namespace EntertainmentNetwork.DAL.CityService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCities", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class getCitiesRequest {
+        
+        public getCitiesRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="getCitiesResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class getCitiesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.CityService.city[] @return;
+        
+        public getCitiesResponse() {
+        }
+        
+        public getCitiesResponse(EntertainmentNetwork.DAL.CityService.city[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="removeCity", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
     public partial class removeCityRequest {
         
@@ -908,6 +782,34 @@ namespace EntertainmentNetwork.DAL.CityService {
     public partial class removeCityResponse {
         
         public removeCityResponse() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addCity", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addCityRequest1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.CityService.addCityRequest arg0;
+        
+        public addCityRequest1() {
+        }
+        
+        public addCityRequest1(EntertainmentNetwork.DAL.CityService.addCityRequest arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addCityResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addCityResponse {
+        
+        public addCityResponse() {
         }
     }
     
@@ -962,27 +864,6 @@ namespace EntertainmentNetwork.DAL.CityService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.CityService.getCitiesResponse EntertainmentNetwork.DAL.CityService.ICityService.getCities(EntertainmentNetwork.DAL.CityService.getCitiesRequest request) {
-            return base.Channel.getCities(request);
-        }
-        
-        public EntertainmentNetwork.DAL.CityService.city[] getCities() {
-            EntertainmentNetwork.DAL.CityService.getCitiesRequest inValue = new EntertainmentNetwork.DAL.CityService.getCitiesRequest();
-            EntertainmentNetwork.DAL.CityService.getCitiesResponse retVal = ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).getCities(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.getCitiesResponse> EntertainmentNetwork.DAL.CityService.ICityService.getCitiesAsync(EntertainmentNetwork.DAL.CityService.getCitiesRequest request) {
-            return base.Channel.getCitiesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.getCitiesResponse> getCitiesAsync() {
-            EntertainmentNetwork.DAL.CityService.getCitiesRequest inValue = new EntertainmentNetwork.DAL.CityService.getCitiesRequest();
-            return ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).getCitiesAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         EntertainmentNetwork.DAL.CityService.findCityByIdResponse EntertainmentNetwork.DAL.CityService.ICityService.findCityById(EntertainmentNetwork.DAL.CityService.findCityByIdRequest request) {
             return base.Channel.findCityById(request);
         }
@@ -1003,28 +884,6 @@ namespace EntertainmentNetwork.DAL.CityService {
             EntertainmentNetwork.DAL.CityService.findCityByIdRequest inValue = new EntertainmentNetwork.DAL.CityService.findCityByIdRequest();
             inValue.arg0 = arg0;
             return ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).findCityByIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.CityService.addCityResponse EntertainmentNetwork.DAL.CityService.ICityService.addCity(EntertainmentNetwork.DAL.CityService.addCityRequest1 request) {
-            return base.Channel.addCity(request);
-        }
-        
-        public void addCity(EntertainmentNetwork.DAL.CityService.addCityRequest arg0) {
-            EntertainmentNetwork.DAL.CityService.addCityRequest1 inValue = new EntertainmentNetwork.DAL.CityService.addCityRequest1();
-            inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.CityService.addCityResponse retVal = ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).addCity(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.addCityResponse> EntertainmentNetwork.DAL.CityService.ICityService.addCityAsync(EntertainmentNetwork.DAL.CityService.addCityRequest1 request) {
-            return base.Channel.addCityAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.addCityResponse> addCityAsync(EntertainmentNetwork.DAL.CityService.addCityRequest arg0) {
-            EntertainmentNetwork.DAL.CityService.addCityRequest1 inValue = new EntertainmentNetwork.DAL.CityService.addCityRequest1();
-            inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).addCityAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1051,6 +910,27 @@ namespace EntertainmentNetwork.DAL.CityService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EntertainmentNetwork.DAL.CityService.getCitiesResponse EntertainmentNetwork.DAL.CityService.ICityService.getCities(EntertainmentNetwork.DAL.CityService.getCitiesRequest request) {
+            return base.Channel.getCities(request);
+        }
+        
+        public EntertainmentNetwork.DAL.CityService.city[] getCities() {
+            EntertainmentNetwork.DAL.CityService.getCitiesRequest inValue = new EntertainmentNetwork.DAL.CityService.getCitiesRequest();
+            EntertainmentNetwork.DAL.CityService.getCitiesResponse retVal = ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).getCities(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.getCitiesResponse> EntertainmentNetwork.DAL.CityService.ICityService.getCitiesAsync(EntertainmentNetwork.DAL.CityService.getCitiesRequest request) {
+            return base.Channel.getCitiesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.getCitiesResponse> getCitiesAsync() {
+            EntertainmentNetwork.DAL.CityService.getCitiesRequest inValue = new EntertainmentNetwork.DAL.CityService.getCitiesRequest();
+            return ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).getCitiesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         EntertainmentNetwork.DAL.CityService.removeCityResponse EntertainmentNetwork.DAL.CityService.ICityService.removeCity(EntertainmentNetwork.DAL.CityService.removeCityRequest request) {
             return base.Channel.removeCity(request);
         }
@@ -1070,6 +950,28 @@ namespace EntertainmentNetwork.DAL.CityService {
             EntertainmentNetwork.DAL.CityService.removeCityRequest inValue = new EntertainmentNetwork.DAL.CityService.removeCityRequest();
             inValue.arg0 = arg0;
             return ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).removeCityAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EntertainmentNetwork.DAL.CityService.addCityResponse EntertainmentNetwork.DAL.CityService.ICityService.addCity(EntertainmentNetwork.DAL.CityService.addCityRequest1 request) {
+            return base.Channel.addCity(request);
+        }
+        
+        public void addCity(EntertainmentNetwork.DAL.CityService.addCityRequest arg0) {
+            EntertainmentNetwork.DAL.CityService.addCityRequest1 inValue = new EntertainmentNetwork.DAL.CityService.addCityRequest1();
+            inValue.arg0 = arg0;
+            EntertainmentNetwork.DAL.CityService.addCityResponse retVal = ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).addCity(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.addCityResponse> EntertainmentNetwork.DAL.CityService.ICityService.addCityAsync(EntertainmentNetwork.DAL.CityService.addCityRequest1 request) {
+            return base.Channel.addCityAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.CityService.addCityResponse> addCityAsync(EntertainmentNetwork.DAL.CityService.addCityRequest arg0) {
+            EntertainmentNetwork.DAL.CityService.addCityRequest1 inValue = new EntertainmentNetwork.DAL.CityService.addCityRequest1();
+            inValue.arg0 = arg0;
+            return ((EntertainmentNetwork.DAL.CityService.ICityService)(this)).addCityAsync(inValue);
         }
     }
 }

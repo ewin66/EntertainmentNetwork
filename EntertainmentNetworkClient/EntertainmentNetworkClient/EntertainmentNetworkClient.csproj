@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -44,10 +45,15 @@
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -84,17 +90,17 @@
     <Compile Include="Modules\ViewsManager.Designer.cs">
       <DependentUpon>ViewsManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Sits.cs">
+    <Compile Include="Modules\Seats.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Sits.Designer.cs">
-      <DependentUpon>Sits.cs</DependentUpon>
+    <Compile Include="Modules\Seats.Designer.cs">
+      <DependentUpon>Seats.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Halls.cs">
+    <Compile Include="Modules\HallsFloors.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modules\Halls.Designer.cs">
-      <DependentUpon>Halls.cs</DependentUpon>
+    <Compile Include="Modules\HallsFloors.Designer.cs">
+      <DependentUpon>HallsFloors.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\LoginForm.cs">
       <SubType>UserControl</SubType>
@@ -119,11 +125,11 @@
     <EmbeddedResource Include="Modules\Cinemas.resx">
       <DependentUpon>Cinemas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Sits.resx">
-      <DependentUpon>Sits.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\Seats.resx">
+      <DependentUpon>Seats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modules\Halls.resx">
-      <DependentUpon>Halls.cs</DependentUpon>
+    <EmbeddedResource Include="Modules\HallsFloors.resx">
+      <DependentUpon>HallsFloors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -145,6 +151,8 @@
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CinemasViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CitiesViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CityViewModel.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.FloorsViewModel.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.HallsViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

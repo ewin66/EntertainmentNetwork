@@ -8,14 +8,15 @@ namespace EntertainmentNetwork.DAL.Models
     {
         public Seat() { }
 
-        public Seat(decimal seatId, int seatNum, int seatRow, int seatFloor, int seatType, decimal hallId)
+        public Seat(decimal seatId, int seatColumn, int seatNum, int seatRow, int seatType, decimal floorId, bool isActive)
         {
             this.SeatId = seatId;
+            this.SeatColumn = seatColumn;
             this.SeatNum = seatNum;
             this.SeatRow = seatRow;
-            this.SeatFloor = seatFloor;
+            this.IsActive = isActive;
             this.SeatType = seatType;
-            this.HallId = hallId;
+            this.FloorId = floorId;
         }
 
         public bool IsChanged { get; set; }
@@ -25,12 +26,30 @@ namespace EntertainmentNetwork.DAL.Models
             get { return this.SeatId == 0; }
         }
 
+        public bool IsActive
+        {
+            get { return this.isActive; }
+            set
+            {
+                this.SetPropertyValue(out this.isActive, this.isActive, value);
+            }
+        }
+
         public decimal SeatId
         {
             get { return this.seatId; }
             set
             {
                 this.SetPropertyValue(out this.seatId, this.seatId, value);
+            }
+        }
+
+        public int SeatColumn
+        {
+            get { return this.seatColumn; }
+            set
+            {
+                this.SetPropertyValue(out this.seatColumn, this.seatColumn, value);
             }
         }
 
@@ -52,15 +71,6 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public int SeatFloor
-        {
-            get { return this.seatFloor; }
-            set
-            {
-                this.SetPropertyValue(out this.seatFloor, this.seatFloor, value);
-            }
-        }
-
         public int SeatType
         {
             get { return this.seatType; }
@@ -70,23 +80,24 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public decimal HallId
+        public decimal FloorId
         {
-            get { return this.hallId; }
+            get { return this.flrId; }
             set
             {
-                this.SetPropertyValue(out this.hallId, this.hallId, value);
+                this.SetPropertyValue(out this.flrId, this.flrId, value);
             }
         }
 
         public void Update(ISeat seat)
         {
             this.SeatId = seat.SeatId;
+            this.SeatColumn = seat.SeatColumn;
             this.SeatNum = seat.SeatNum;
             this.SeatRow = seat.SeatRow;
-            this.SeatFloor = seat.SeatFloor;
+            this.IsActive = seat.IsActive;           
             this.SeatType = seat.SeatType;
-            this.HallId = seat.HallId;
+            this.FloorId = seat.FloorId;
         }
 
         public override bool Equals(object seat)
@@ -101,10 +112,11 @@ namespace EntertainmentNetwork.DAL.Models
         }
 
         private decimal seatId;
+        private int seatColumn;
         private int seatNum;
         private int seatRow;
-        private int seatFloor;
         private int seatType;
-        private decimal hallId;
+        private decimal flrId;
+        private bool isActive;
     }
 }

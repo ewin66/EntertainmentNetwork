@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addFloor" type="tns:addFloor" />
+  <xs:element name="addFloorResponse" type="tns:addFloorResponse" />
+  <xs:element name="findFloorById" type="tns:findFloorById" />
+  <xs:element name="findFloorByIdResponse" type="tns:findFloorByIdResponse" />
+  <xs:element name="getFloors" type="tns:getFloors" />
+  <xs:element name="getFloorsResponse" type="tns:getFloorsResponse" />
+  <xs:element name="mergeFloor" type="tns:mergeFloor" />
+  <xs:element name="mergeFloorResponse" type="tns:mergeFloorResponse" />
+  <xs:element name="removeFloor" type="tns:removeFloor" />
+  <xs:element name="removeFloorResponse" type="tns:removeFloorResponse" />
+  <xs:complexType name="removeFloor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeFloorResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeFloor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:mergeFloorRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeFloorRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:addFloorRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="flrId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="addFloorRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="flrName" type="xs:string" />
+          <xs:element minOccurs="0" name="halId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeFloorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:floor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="floor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="flrId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="flrName" type="xs:string" />
+          <xs:element minOccurs="0" name="hallId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getFloors">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getFloorsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:floor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addFloor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addFloorRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addFloorResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findFloorById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findFloorByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:floor" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

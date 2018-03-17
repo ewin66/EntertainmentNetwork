@@ -34,8 +34,8 @@
             this.hubGroup = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup(this.components);
             this.docCities = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.docCinemas = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.docHalls = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.docSits = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docHallsFloors = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docSeats = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.LoginFlyout = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
             this.docLoginPage = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.flyout1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
@@ -44,8 +44,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hubGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docCities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docCinemas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docHalls)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docSits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docHallsFloors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docSeats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginFlyout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docLoginPage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyout1)).BeginInit();
@@ -69,8 +69,8 @@
             this.docCities,
             this.docLoginPage,
             this.docCinemas,
-            this.docHalls,
-            this.docSits});
+            this.docHallsFloors,
+            this.docSeats});
             this.windowsUIView1.UseSplashScreen = DevExpress.Utils.DefaultBoolean.False;
             // 
             // hubGroup
@@ -78,8 +78,8 @@
             this.hubGroup.Items.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document[] {
             this.docCities,
             this.docCinemas,
-            this.docHalls,
-            this.docSits});
+            this.docHallsFloors,
+            this.docSeats});
             this.hubGroup.Name = "hubGroup";
             this.hubGroup.Parent = this.LoginFlyout;
             this.hubGroup.Properties.AllowHtmlDrawHeaders = DevExpress.Utils.DefaultBoolean.True;
@@ -102,17 +102,17 @@
             this.docCinemas.ControlTypeName = "EntertainmentNetworkClient.Modules.Cinemas";
             this.docCinemas.Header = "Cinemas";
             // 
-            // docHalls
+            // docHallsFloors
             // 
-            this.docHalls.Caption = "Halls";
-            this.docHalls.ControlName = "Halls";
-            this.docHalls.ControlTypeName = "EntertainmentNetworkClient.Modules.Halls";
+            this.docHallsFloors.Caption = "Halls & Floors";
+            this.docHallsFloors.ControlName = "HallsFloors";
+            this.docHallsFloors.ControlTypeName = "EntertainmentNetworkClient.Modules.HallsFloors";
             // 
-            // docSits
+            // docSeats
             // 
-            this.docSits.Caption = "Sits";
-            this.docSits.ControlName = "Sits";
-            this.docSits.ControlTypeName = "EntertainmentNetworkClient.Modules.Sits";
+            this.docSeats.Caption = "Seats";
+            this.docSeats.ControlName = "Seats";
+            this.docSeats.ControlTypeName = "EntertainmentNetworkClient.Modules.Seats";
             // 
             // LoginFlyout
             // 
@@ -141,8 +141,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hubGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docCities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docCinemas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docHalls)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docSits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docHallsFloors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docSeats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginFlyout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docLoginPage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flyout1)).EndInit();
@@ -160,8 +160,8 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout flyout1;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docLoginPage;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docCinemas;
-        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docHalls;
-        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docSits;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docHallsFloors;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docSeats;
 
 
 

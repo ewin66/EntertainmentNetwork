@@ -12,6 +12,7 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         [Required(AllowEmptyStrings = false)]
         string HalName { get; set; }
         decimal HalSitscount { get; set; }
-        List<ISeat> Sits { get; set; }
+
+        void Update(IHall hall);
     }
 }

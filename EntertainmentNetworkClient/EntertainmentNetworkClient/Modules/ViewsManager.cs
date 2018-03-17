@@ -23,21 +23,20 @@ namespace EntertainmentNetworkClient.Modules
             InitializeComponent();
             this.CitiesView = new Lazy<IViewModel<ICity>>(() => new CitiesViewModel(ServiceManager.CityService.Value));
             this.CinemasView = new Lazy<IViewModel<ICinema>>(() => new CinemasViewModel(ServiceManager.CinemaService.Value));
+            this.HallsView = new Lazy<IViewModel<IHall>>(() => new HallsViewModel(ServiceManager.HallService.Value));
+            this.FloorsView = new Lazy<IViewModel<IFloor>>(() => new FloorsViewModel(ServiceManager.FloorService.Value));
         }
 
         public Lazy<IViewModel<ICity>> CitiesView { get; private set; }
         public Lazy<IViewModel<ICinema>> CinemasView { get; private set; }
-       
+        public Lazy<IViewModel<IHall>> HallsView { get; private set; }
+        public Lazy<IViewModel<IFloor>> FloorsView { get; private set; }
+
         public BindingSource CitiesBindingSource 
         {
             get 
             {
-                if (this.citiesBindingSource.DataSource == null)
-                {
-                    this.citiesBindingSource.DataSource = this.CityViewBindingSource;
-                    this.citiesBindingSource.DataMember = modelsDatamember;
-                }
-
+                this.SetDataSource(this.citiesBindingSource, this.CityViewBindingSource, true);
                 return this.citiesBindingSource;
             }
         }
@@ -46,11 +45,7 @@ namespace EntertainmentNetworkClient.Modules
         {
             get
             {
-                if (this.citiesViewBindingSource.DataSource == null)
-                {
-                    this.citiesViewBindingSource.DataSource = this.CitiesView.Value;
-                }
-
+                this.SetDataSource(this.citiesViewBindingSource, this.CitiesView.Value);
                 return this.citiesViewBindingSource;
             }
         }
@@ -59,12 +54,7 @@ namespace EntertainmentNetworkClient.Modules
         {
             get
             {
-                if (this.cinemasBindingSource.DataSource == null)
-                {
-                    this.cinemasBindingSource.DataSource = this.CinemaViewBindingSource;
-                    this.cinemasBindingSource.DataMember = modelsDatamember;
-                }
-
+                this.SetDataSource(this.cinemasBindingSource, this.CinemaViewBindingSource, true);
                 return this.cinemasBindingSource;
             }
         }
@@ -73,14 +63,47 @@ namespace EntertainmentNetworkClient.Modules
         {
             get
             {
-                if (this.cinemaViewBindingSource.DataSource == null)
-                {
-                    this.cinemaViewBindingSource.DataSource = this.CinemasView.Value;
-                }
-
+                this.SetDataSource(this.cinemaViewBindingSource, this.CinemasView.Value);
                 return this.cinemaViewBindingSource;
             }
         }
+
+        public BindingSource HallsBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.hallsbindingSource, this.HallViewBindingSource, true);
+                return this.hallsbindingSource;
+            }
+        }
+
+        public BindingSource HallViewBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.hallViewbindingSource, this.HallsView.Value);
+                return this.hallViewbindingSource;
+            }
+        }
+
+        public BindingSource FloorsBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.floorsBindingSource, this.FloorViewBindingSource, true);
+                return this.floorsBindingSource;
+            }
+        }
+
+        public BindingSource FloorViewBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.floorViewBindingSource, this.FloorsView.Value);
+                return this.floorViewBindingSource;
+            }
+        }
+
 
         public void CitiesBindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -100,6 +123,24 @@ namespace EntertainmentNetworkClient.Modules
             }
         }
 
+        public void HallsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var bindingSource = sender as BindingSource;
+            if (bindingSource != null)
+            {
+                this.HallsView.Value.Selected = bindingSource.Current as IHall;
+            }
+        }
+
+        public void FloorsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var bindingSource = sender as BindingSource;
+            if (bindingSource != null)
+            {
+                this.FloorsView.Value.Selected = bindingSource.Current as IFloor;
+            }
+        }
+
         private void CitiesBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             e.NewObject = new City();
@@ -108,6 +149,30 @@ namespace EntertainmentNetworkClient.Modules
         private void CinemasBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             e.NewObject = new Cinema();
+        }
+
+        private void HallsBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            e.NewObject = new Hall();
+        }
+
+        private void FloorsBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            e.NewObject = new Floor();
+        }
+
+        /// <summary>
+        /// Sets dataSource for source
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="dataSource"></param>
+        private void SetDataSource(BindingSource source, object dataSource, bool isSetDataMember = false)
+        {
+            if (source.DataSource == null)
+            {
+                source.DataSource = dataSource;
+                source.DataMember = isSetDataMember ? modelsDatamember : String.Empty;
+            }
         }
 
         private const string modelsDatamember = "Models";

@@ -12,12 +12,13 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using DevExpress.XtraLayout.Helpers;
 using DevExpress.XtraLayout;
+using EntertainmentNetwork.BL.ViewModels;
 
 namespace EntertainmentNetworkClient.Modules
 {
-    public partial class Halls : BaseModule
+    public partial class Seats : BaseModule
     {
-        public Halls()
+        public Seats(IViewsManager viewsManager)
         {
             InitializeComponent();
         }

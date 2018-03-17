@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addSeat" type="tns:addSeat" />
+  <xs:element name="addSeatResponse" type="tns:addSeatResponse" />
+  <xs:element name="findSeatById" type="tns:findSeatById" />
+  <xs:element name="findSeatByIdResponse" type="tns:findSeatByIdResponse" />
+  <xs:element name="generateSeats" type="tns:generateSeats" />
+  <xs:element name="generateSeatsResponse" type="tns:generateSeatsResponse" />
+  <xs:element name="getSeats" type="tns:getSeats" />
+  <xs:element name="getSeatsResponse" type="tns:getSeatsResponse" />
+  <xs:element name="mergeSeat" type="tns:mergeSeat" />
+  <xs:element name="mergeSeatResponse" type="tns:mergeSeatResponse" />
+  <xs:element name="removeSeat" type="tns:removeSeat" />
+  <xs:element name="removeSeatResponse" type="tns:removeSeatResponse" />
+  <xs:complexType name="getSeats">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getSeatsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:seat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="seat">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="seatId" type="xs:decimal" />
+          <xs:element name="seatIsactive" type="xs:boolean" />
+          <xs:element name="seatColumn" type="xs:int" />
+          <xs:element name="seatNum" type="xs:int" />
+          <xs:element name="seatRow" type="xs:int" />
+          <xs:element name="seatType" type="xs:int" />
+          <xs:element minOccurs="0" name="floorId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addSeat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addSeatRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSeatRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="flrId" type="xs:decimal" />
+          <xs:element name="seatNum" type="xs:int" />
+          <xs:element name="seatRow" type="xs:int" />
+          <xs:element name="seatType" type="xs:int" />
+          <xs:element name="seatColumn" type="xs:int" />
+          <xs:element name="seatIsactive" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addSeatResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findSeatById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSeatByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:seat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generateSeats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:generateSeatRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generateSeatRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="flrId" type="xs:decimal" />
+          <xs:element name="seatRows" type="xs:int" />
+          <xs:element name="seatColumns" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="generateSeatsResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="removeSeat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeSeatResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeSeat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:mergeSeatRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeSeatRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:addSeatRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="seatId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="mergeSeatResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:seat" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

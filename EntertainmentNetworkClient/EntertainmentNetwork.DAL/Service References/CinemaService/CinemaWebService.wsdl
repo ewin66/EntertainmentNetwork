@@ -13,7 +13,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="mergeCinema">
+    <operation name="getCinemas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCinemaById">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -40,16 +49,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getCinemas">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="findCinemaById">
+    <operation name="mergeCinema">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

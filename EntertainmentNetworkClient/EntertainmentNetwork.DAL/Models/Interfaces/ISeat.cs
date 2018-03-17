@@ -12,14 +12,16 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
     {
         [ReadOnly(true)]
         decimal SeatId { get; set; }
+        [Range(0, 999)]
+        int SeatColumn { get; set; }
         [Range(0, 9999)]
         int SeatNum { get; set; }
         [Range(0, 999)]
         int SeatRow { get; set; }
-        [Range(0, 999)]
-        int SeatFloor { get; set; }
         [Range(0, 10)]
         int SeatType { get; set; }
-        decimal HallId { get; set; }
+        decimal FloorId { get; set; }
+        [Range(0, 10)]
+        bool IsActive { get; set; }
     }
 }

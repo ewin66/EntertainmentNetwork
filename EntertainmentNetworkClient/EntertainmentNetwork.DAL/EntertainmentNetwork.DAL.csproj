@@ -46,9 +46,13 @@
     <Compile Include="BaseNotifyPropertyChanged.cs" />
     <Compile Include="CinemaServiceAdapter.cs" />
     <Compile Include="CityServiceAdapter.cs" />
+    <Compile Include="FloorServiceAdapter.cs" />
     <Compile Include="HallServiceAdapter.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Cinema.cs" />
+    <Compile Include="Models\Floor.cs" />
+    <Compile Include="Models\Interfaces\IFloor.cs" />
+    <Compile Include="Models\Interfaces\IFloorService.cs" />
     <Compile Include="Models\Seat.cs" />
     <Compile Include="Models\Hall.cs" />
     <Compile Include="Models\Interfaces\IBaseModel.cs" />
@@ -71,12 +75,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\FloorService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\HallService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\SitService\Reference.cs">
+    <Compile Include="Service References\SeatService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -140,6 +149,29 @@
     <None Include="Service References\CityService\EntertainmentNetwork.DAL.CityService.removeCityResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\FloorService\EntertainmentNetwork.DAL.FloorService.addFloorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FloorService\EntertainmentNetwork.DAL.FloorService.findFloorByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FloorService\EntertainmentNetwork.DAL.FloorService.floor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FloorService\EntertainmentNetwork.DAL.FloorService.getFloorsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FloorService\EntertainmentNetwork.DAL.FloorService.mergeFloorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FloorService\EntertainmentNetwork.DAL.FloorService.removeFloorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FloorService\FloorService.wsdl" />
+    <None Include="Service References\FloorService\FloorService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FloorService\FloorWebService.wsdl" />
     <None Include="Service References\HallService\EntertainmentNetwork.DAL.HallService.addHallResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -163,35 +195,39 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HallService\HallServiceService.wsdl" />
-    <None Include="Service References\SitService\EntertainmentNetwork.DAL.SitService.addSitResponse.datasource">
+    <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.addSeatResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SitService\EntertainmentNetwork.DAL.SitService.findSitByIdResponse.datasource">
+    <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SitService\EntertainmentNetwork.DAL.SitService.getSitsResponse.datasource">
+    <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.generateSeatsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SitService\EntertainmentNetwork.DAL.SitService.mergeSitResponse.datasource">
+    <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.getSeatsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SitService\EntertainmentNetwork.DAL.SitService.removeSitResponse.datasource">
+    <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.mergeSeatResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SitService\EntertainmentNetwork.DAL.SitService.sit.datasource">
+    <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.removeSeatResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SitService\SitService.wsdl" />
-    <None Include="Service References\SitService\SitService.xsd">
+    <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.seat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SeatService\SitService.wsdl" />
+    <None Include="Service References\SeatService\SitService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SitService\SitsWebService.wsdl" />
+    <None Include="Service References\SeatService\SitsWebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CinemaService\" />
     <WCFMetadataStorage Include="Service References\CityService\" />
+    <WCFMetadataStorage Include="Service References\FloorService\" />
     <WCFMetadataStorage Include="Service References\HallService\" />
-    <WCFMetadataStorage Include="Service References\SitService\" />
+    <WCFMetadataStorage Include="Service References\SeatService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CinemaService\configuration91.svcinfo" />
@@ -205,7 +241,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Service References\FloorService\configuration91.svcinfo" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CityService\configuration91.svcinfo" />
   </ItemGroup>
@@ -231,13 +269,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SitService\configuration91.svcinfo" />
+    <None Include="Service References\SeatService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SitService\configuration.svcinfo" />
+    <None Include="Service References\SeatService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SitService\Reference.svcmap">
+    <None Include="Service References\SeatService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FloorService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FloorService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

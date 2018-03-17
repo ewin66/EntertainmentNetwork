@@ -46,22 +46,19 @@
           <xs:element minOccurs="0" name="halId" type="xs:decimal" />
           <xs:element minOccurs="0" name="halName" type="xs:string" />
           <xs:element minOccurs="0" name="halSitscount" type="xs:decimal" />
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="sits" nillable="true" type="tns:sit" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="floors" nillable="true" type="tns:floor" />
           <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="sit">
+  <xs:complexType name="floor">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:baseModel">
         <xs:sequence>
-          <xs:element minOccurs="0" name="sitId" type="xs:decimal" />
-          <xs:element minOccurs="0" name="sitNum" type="xs:decimal" />
-          <xs:element minOccurs="0" name="sitRow" type="xs:decimal" />
-          <xs:element minOccurs="0" name="sitFloor" type="xs:decimal" />
-          <xs:element minOccurs="0" name="sitType" type="xs:decimal" />
-          <xs:element minOccurs="0" name="cinemaId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="flrId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="flrName" type="xs:string" />
+          <xs:element minOccurs="0" name="hallId" type="xs:decimal" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -89,14 +86,6 @@
   <xs:complexType name="addCinemaResponse">
     <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="removeCinema">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="removeCinemaResponse">
-    <xs:sequence />
-  </xs:complexType>
   <xs:complexType name="findCinemaById">
     <xs:sequence>
       <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
@@ -106,6 +95,14 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:cinema" />
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeCinema">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeCinemaResponse">
+    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="mergeCinema">
     <xs:sequence>

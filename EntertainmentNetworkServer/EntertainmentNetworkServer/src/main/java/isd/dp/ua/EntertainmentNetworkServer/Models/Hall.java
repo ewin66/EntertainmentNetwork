@@ -130,11 +130,13 @@ public class Hall extends BaseModel implements java.io.Serializable
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hall")
-	public Set<Scheduler> getSchedulers() {
+	public Set<Scheduler> getSchedulers()
+	{
 		return this.schedulers;
 	}
 
-	public void setSchedulers(Set<Scheduler> schedulers) {
+	public void setSchedulers(Set<Scheduler> schedulers) 
+	{
 		this.schedulers = schedulers;
 	}
 	

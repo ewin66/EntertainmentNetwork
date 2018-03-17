@@ -15,6 +15,18 @@ namespace EntertainmentNetwork.DAL.HallService {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", ConfigurationName="HallService.IHallService")]
     public interface IHallService {
         
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallReq" +
+            "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallRes" +
+            "ponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        EntertainmentNetwork.DAL.HallService.removeHallResponse removeHall(EntertainmentNetwork.DAL.HallService.removeHallRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallReq" +
+            "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.removeHallResponse> removeHallAsync(EntertainmentNetwork.DAL.HallService.removeHallRequest request);
+        
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/findHallByIdR" +
             "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/findHallByIdR" +
@@ -45,20 +57,6 @@ namespace EntertainmentNetwork.DAL.HallService {
             "nse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.getHallsResponse> getHallsAsync(EntertainmentNetwork.DAL.HallService.getHallsRequest request);
         
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallRespon" +
-            "se")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        EntertainmentNetwork.DAL.HallService.addHallResponse addHall(EntertainmentNetwork.DAL.HallService.addHallRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallRespon" +
-            "se")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.addHallResponse> addHallAsync(EntertainmentNetwork.DAL.HallService.addHallRequest1 request);
-        
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/mergeHallRequ" +
             "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/mergeHallResp" +
@@ -75,18 +73,46 @@ namespace EntertainmentNetwork.DAL.HallService {
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.mergeHallResponse> mergeHallAsync(EntertainmentNetwork.DAL.HallService.mergeHallRequest1 request);
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallReq" +
-            "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallRes" +
-            "ponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallRespon" +
+            "se")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        EntertainmentNetwork.DAL.HallService.removeHallResponse removeHall(EntertainmentNetwork.DAL.HallService.removeHallRequest request);
+        EntertainmentNetwork.DAL.HallService.addHallResponse addHall(EntertainmentNetwork.DAL.HallService.addHallRequest1 request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallReq" +
-            "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/removeHallRes" +
-            "ponse")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.removeHallResponse> removeHallAsync(EntertainmentNetwork.DAL.HallService.removeHallRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IHallService/addHallRespon" +
+            "se")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.addHallResponse> addHallAsync(EntertainmentNetwork.DAL.HallService.addHallRequest1 request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="removeHall", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class removeHallRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal arg0;
+        
+        public removeHallRequest() {
+        }
+        
+        public removeHallRequest(decimal arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="removeHallResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class removeHallResponse {
+        
+        public removeHallResponse() {
+        }
     }
     
     /// <remarks/>
@@ -107,7 +133,7 @@ namespace EntertainmentNetwork.DAL.HallService {
         
         private bool halSitscountFieldSpecified;
         
-        private sit[] sitsField;
+        private floor[] floorsField;
         
         private decimal cinemaIdField;
         
@@ -174,14 +200,14 @@ namespace EntertainmentNetwork.DAL.HallService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("sits", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
-        public sit[] sits {
+        [System.Xml.Serialization.XmlElementAttribute("floors", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=3)]
+        public floor[] floors {
             get {
-                return this.sitsField;
+                return this.floorsField;
             }
             set {
-                this.sitsField = value;
-                this.RaisePropertyChanged("sits");
+                this.floorsField = value;
+                this.RaisePropertyChanged("floors");
             }
         }
         
@@ -216,179 +242,81 @@ namespace EntertainmentNetwork.DAL.HallService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class sit : baseModel {
+    public partial class floor : baseModel {
         
-        private decimal sitIdField;
+        private decimal flrIdField;
         
-        private bool sitIdFieldSpecified;
+        private bool flrIdFieldSpecified;
         
-        private decimal sitNumField;
+        private string flrNameField;
         
-        private bool sitNumFieldSpecified;
+        private decimal hallIdField;
         
-        private decimal sitRowField;
-        
-        private bool sitRowFieldSpecified;
-        
-        private decimal sitFloorField;
-        
-        private bool sitFloorFieldSpecified;
-        
-        private decimal sitTypeField;
-        
-        private bool sitTypeFieldSpecified;
-        
-        private decimal cinemaIdField;
-        
-        private bool cinemaIdFieldSpecified;
+        private bool hallIdFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public decimal sitId {
+        public decimal flrId {
             get {
-                return this.sitIdField;
+                return this.flrIdField;
             }
             set {
-                this.sitIdField = value;
-                this.RaisePropertyChanged("sitId");
+                this.flrIdField = value;
+                this.RaisePropertyChanged("flrId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitIdSpecified {
+        public bool flrIdSpecified {
             get {
-                return this.sitIdFieldSpecified;
+                return this.flrIdFieldSpecified;
             }
             set {
-                this.sitIdFieldSpecified = value;
-                this.RaisePropertyChanged("sitIdSpecified");
+                this.flrIdFieldSpecified = value;
+                this.RaisePropertyChanged("flrIdSpecified");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public decimal sitNum {
+        public string flrName {
             get {
-                return this.sitNumField;
+                return this.flrNameField;
             }
             set {
-                this.sitNumField = value;
-                this.RaisePropertyChanged("sitNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitNumSpecified {
-            get {
-                return this.sitNumFieldSpecified;
-            }
-            set {
-                this.sitNumFieldSpecified = value;
-                this.RaisePropertyChanged("sitNumSpecified");
+                this.flrNameField = value;
+                this.RaisePropertyChanged("flrName");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public decimal sitRow {
+        public decimal hallId {
             get {
-                return this.sitRowField;
+                return this.hallIdField;
             }
             set {
-                this.sitRowField = value;
-                this.RaisePropertyChanged("sitRow");
+                this.hallIdField = value;
+                this.RaisePropertyChanged("hallId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitRowSpecified {
+        public bool hallIdSpecified {
             get {
-                return this.sitRowFieldSpecified;
+                return this.hallIdFieldSpecified;
             }
             set {
-                this.sitRowFieldSpecified = value;
-                this.RaisePropertyChanged("sitRowSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public decimal sitFloor {
-            get {
-                return this.sitFloorField;
-            }
-            set {
-                this.sitFloorField = value;
-                this.RaisePropertyChanged("sitFloor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitFloorSpecified {
-            get {
-                return this.sitFloorFieldSpecified;
-            }
-            set {
-                this.sitFloorFieldSpecified = value;
-                this.RaisePropertyChanged("sitFloorSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public decimal sitType {
-            get {
-                return this.sitTypeField;
-            }
-            set {
-                this.sitTypeField = value;
-                this.RaisePropertyChanged("sitType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool sitTypeSpecified {
-            get {
-                return this.sitTypeFieldSpecified;
-            }
-            set {
-                this.sitTypeFieldSpecified = value;
-                this.RaisePropertyChanged("sitTypeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public decimal cinemaId {
-            get {
-                return this.cinemaIdField;
-            }
-            set {
-                this.cinemaIdField = value;
-                this.RaisePropertyChanged("cinemaId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool cinemaIdSpecified {
-            get {
-                return this.cinemaIdFieldSpecified;
-            }
-            set {
-                this.cinemaIdFieldSpecified = value;
-                this.RaisePropertyChanged("cinemaIdSpecified");
+                this.hallIdFieldSpecified = value;
+                this.RaisePropertyChanged("hallIdSpecified");
             }
         }
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(sit))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(floor))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(hall))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
@@ -611,34 +539,6 @@ namespace EntertainmentNetwork.DAL.HallService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addHall", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addHallRequest1 {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.HallService.addHallRequest arg0;
-        
-        public addHallRequest1() {
-        }
-        
-        public addHallRequest1(EntertainmentNetwork.DAL.HallService.addHallRequest arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addHallResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addHallResponse {
-        
-        public addHallResponse() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="mergeHall", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
     public partial class mergeHallRequest1 {
         
@@ -675,17 +575,17 @@ namespace EntertainmentNetwork.DAL.HallService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="removeHall", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class removeHallRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addHall", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addHallRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal arg0;
+        public EntertainmentNetwork.DAL.HallService.addHallRequest arg0;
         
-        public removeHallRequest() {
+        public addHallRequest1() {
         }
         
-        public removeHallRequest(decimal arg0) {
+        public addHallRequest1(EntertainmentNetwork.DAL.HallService.addHallRequest arg0) {
             this.arg0 = arg0;
         }
     }
@@ -693,10 +593,10 @@ namespace EntertainmentNetwork.DAL.HallService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="removeHallResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class removeHallResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addHallResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addHallResponse {
         
-        public removeHallResponse() {
+        public addHallResponse() {
         }
     }
     
@@ -725,6 +625,28 @@ namespace EntertainmentNetwork.DAL.HallService {
         
         public HallServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EntertainmentNetwork.DAL.HallService.removeHallResponse EntertainmentNetwork.DAL.HallService.IHallService.removeHall(EntertainmentNetwork.DAL.HallService.removeHallRequest request) {
+            return base.Channel.removeHall(request);
+        }
+        
+        public void removeHall(decimal arg0) {
+            EntertainmentNetwork.DAL.HallService.removeHallRequest inValue = new EntertainmentNetwork.DAL.HallService.removeHallRequest();
+            inValue.arg0 = arg0;
+            EntertainmentNetwork.DAL.HallService.removeHallResponse retVal = ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).removeHall(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.removeHallResponse> EntertainmentNetwork.DAL.HallService.IHallService.removeHallAsync(EntertainmentNetwork.DAL.HallService.removeHallRequest request) {
+            return base.Channel.removeHallAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.removeHallResponse> removeHallAsync(decimal arg0) {
+            EntertainmentNetwork.DAL.HallService.removeHallRequest inValue = new EntertainmentNetwork.DAL.HallService.removeHallRequest();
+            inValue.arg0 = arg0;
+            return ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).removeHallAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -772,28 +694,6 @@ namespace EntertainmentNetwork.DAL.HallService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.HallService.addHallResponse EntertainmentNetwork.DAL.HallService.IHallService.addHall(EntertainmentNetwork.DAL.HallService.addHallRequest1 request) {
-            return base.Channel.addHall(request);
-        }
-        
-        public void addHall(EntertainmentNetwork.DAL.HallService.addHallRequest arg0) {
-            EntertainmentNetwork.DAL.HallService.addHallRequest1 inValue = new EntertainmentNetwork.DAL.HallService.addHallRequest1();
-            inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.HallService.addHallResponse retVal = ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).addHall(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.addHallResponse> EntertainmentNetwork.DAL.HallService.IHallService.addHallAsync(EntertainmentNetwork.DAL.HallService.addHallRequest1 request) {
-            return base.Channel.addHallAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.addHallResponse> addHallAsync(EntertainmentNetwork.DAL.HallService.addHallRequest arg0) {
-            EntertainmentNetwork.DAL.HallService.addHallRequest1 inValue = new EntertainmentNetwork.DAL.HallService.addHallRequest1();
-            inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).addHallAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         EntertainmentNetwork.DAL.HallService.mergeHallResponse EntertainmentNetwork.DAL.HallService.IHallService.mergeHall(EntertainmentNetwork.DAL.HallService.mergeHallRequest1 request) {
             return base.Channel.mergeHall(request);
         }
@@ -817,25 +717,25 @@ namespace EntertainmentNetwork.DAL.HallService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.HallService.removeHallResponse EntertainmentNetwork.DAL.HallService.IHallService.removeHall(EntertainmentNetwork.DAL.HallService.removeHallRequest request) {
-            return base.Channel.removeHall(request);
+        EntertainmentNetwork.DAL.HallService.addHallResponse EntertainmentNetwork.DAL.HallService.IHallService.addHall(EntertainmentNetwork.DAL.HallService.addHallRequest1 request) {
+            return base.Channel.addHall(request);
         }
         
-        public void removeHall(decimal arg0) {
-            EntertainmentNetwork.DAL.HallService.removeHallRequest inValue = new EntertainmentNetwork.DAL.HallService.removeHallRequest();
+        public void addHall(EntertainmentNetwork.DAL.HallService.addHallRequest arg0) {
+            EntertainmentNetwork.DAL.HallService.addHallRequest1 inValue = new EntertainmentNetwork.DAL.HallService.addHallRequest1();
             inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.HallService.removeHallResponse retVal = ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).removeHall(inValue);
+            EntertainmentNetwork.DAL.HallService.addHallResponse retVal = ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).addHall(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.removeHallResponse> EntertainmentNetwork.DAL.HallService.IHallService.removeHallAsync(EntertainmentNetwork.DAL.HallService.removeHallRequest request) {
-            return base.Channel.removeHallAsync(request);
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.addHallResponse> EntertainmentNetwork.DAL.HallService.IHallService.addHallAsync(EntertainmentNetwork.DAL.HallService.addHallRequest1 request) {
+            return base.Channel.addHallAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.removeHallResponse> removeHallAsync(decimal arg0) {
-            EntertainmentNetwork.DAL.HallService.removeHallRequest inValue = new EntertainmentNetwork.DAL.HallService.removeHallRequest();
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.HallService.addHallResponse> addHallAsync(EntertainmentNetwork.DAL.HallService.addHallRequest arg0) {
+            EntertainmentNetwork.DAL.HallService.addHallRequest1 inValue = new EntertainmentNetwork.DAL.HallService.addHallRequest1();
             inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).removeHallAsync(inValue);
+            return ((EntertainmentNetwork.DAL.HallService.IHallService)(this)).addHallAsync(inValue);
         }
     }
 }

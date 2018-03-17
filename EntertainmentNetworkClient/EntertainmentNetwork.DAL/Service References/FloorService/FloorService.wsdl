@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://127.0.0.1:9998/FloorService?xsd=1" namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" />
+    </xsd:schema>
+  </types>
+  <message name="getFloors">
+    <part name="parameters" element="tns:getFloors" />
+  </message>
+  <message name="getFloorsResponse">
+    <part name="parameters" element="tns:getFloorsResponse" />
+  </message>
+  <message name="addFloor">
+    <part name="parameters" element="tns:addFloor" />
+  </message>
+  <message name="addFloorResponse">
+    <part name="parameters" element="tns:addFloorResponse" />
+  </message>
+  <message name="findFloorById">
+    <part name="parameters" element="tns:findFloorById" />
+  </message>
+  <message name="findFloorByIdResponse">
+    <part name="parameters" element="tns:findFloorByIdResponse" />
+  </message>
+  <message name="removeFloor">
+    <part name="parameters" element="tns:removeFloor" />
+  </message>
+  <message name="removeFloorResponse">
+    <part name="parameters" element="tns:removeFloorResponse" />
+  </message>
+  <message name="mergeFloor">
+    <part name="parameters" element="tns:mergeFloor" />
+  </message>
+  <message name="mergeFloorResponse">
+    <part name="parameters" element="tns:mergeFloorResponse" />
+  </message>
+  <portType name="IFloorService">
+    <operation name="getFloors">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/getFloorsRequest" message="tns:getFloors" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/getFloorsResponse" message="tns:getFloorsResponse" />
+    </operation>
+    <operation name="addFloor">
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/addFloorRequest" message="tns:addFloor" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/addFloorResponse" message="tns:addFloorResponse" />
+    </operation>
+    <operation name="findFloorById">
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/findFloorByIdRequest" message="tns:findFloorById" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/findFloorByIdResponse" message="tns:findFloorByIdResponse" />
+    </operation>
+    <operation name="removeFloor">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/removeFloorRequest" message="tns:removeFloor" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/removeFloorResponse" message="tns:removeFloorResponse" />
+    </operation>
+    <operation name="mergeFloor">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/mergeFloorRequest" message="tns:mergeFloor" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IFloorService/mergeFloorResponse" message="tns:mergeFloorResponse" />
+    </operation>
+  </portType>
+</definitions>

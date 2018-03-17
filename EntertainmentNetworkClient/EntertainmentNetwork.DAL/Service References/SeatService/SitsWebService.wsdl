@@ -2,9 +2,9 @@
 <definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://Services.EntertainmentNetworkServer.ua.dp.isd/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="SitsWebService" targetNamespace="http://Services.EntertainmentNetworkServer.ua.dp.isd/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <import namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" location="http://127.0.0.1:9998/SitService?wsdl=1" />
   <types />
-  <binding xmlns:ns1="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" name="SitServicePortBinding" type="ns1:ISitService">
+  <binding xmlns:ns1="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" name="SeatServicePortBinding" type="ns1:ISeatService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="addSit">
+    <operation name="mergeSeat">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -13,7 +13,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="mergeSit">
+    <operation name="getSeats">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -22,7 +22,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="findSitById">
+    <operation name="findSeatById">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -31,7 +31,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="getSits">
+    <operation name="generateSeats">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -40,7 +40,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="removeSit">
+    <operation name="removeSeat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addSeat">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -51,7 +60,7 @@
     </operation>
   </binding>
   <service name="SitsWebService">
-    <port name="SitServicePort" binding="tns:SitServicePortBinding">
+    <port name="SeatServicePort" binding="tns:SeatServicePortBinding">
       <soap:address location="http://127.0.0.1:9998/SitService" />
     </port>
   </service>
