@@ -123,10 +123,22 @@
   <data name="ButtonDelete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="ButtonGenerate" xml:space="preserve">
+    <value>Generate</value>
+  </data>
   <data name="ButtonRefresh" xml:space="preserve">
     <value>Refresh</value>
   </data>
   <data name="ButtonSave" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="FlyoutSeats" xml:space="preserve">
+    <value>flyoutSeats</value>
+  </data>
+  <data name="ModelsDataMember" xml:space="preserve">
+    <value>Models</value>
+  </data>
+  <data name="SeatsModelDataMember" xml:space="preserve">
+    <value>SeatsMap</value>
   </data>
 </root>

@@ -10,8 +10,6 @@ namespace EntertainmentNetwork.DAL
 {
     public class CityServiceAdapter : Interfaces.ICityService
     {
-        private readonly CityServiceClient cityService = new CityServiceClient();
-
         #region ICityService
 
         public async Task AddCity(Interfaces.ICity city)
@@ -65,5 +63,7 @@ namespace EntertainmentNetwork.DAL
         {
             return new Models.City(city.citId, city.citName, city.citCountry);
         }
+
+        private readonly CityServiceClient cityService = new CityServiceClient();
     }
 }

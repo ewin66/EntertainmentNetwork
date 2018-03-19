@@ -79,6 +79,15 @@ namespace EntertainmentNetworkClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate.
+        /// </summary>
+        internal static string ButtonGenerate {
+            get {
+                return ResourceManager.GetString("ButtonGenerate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         internal static string ButtonRefresh {
@@ -93,6 +102,33 @@ namespace EntertainmentNetworkClient.Properties {
         internal static string ButtonSave {
             get {
                 return ResourceManager.GetString("ButtonSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to flyoutSeats.
+        /// </summary>
+        internal static string FlyoutSeats {
+            get {
+                return ResourceManager.GetString("FlyoutSeats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Models.
+        /// </summary>
+        internal static string ModelsDataMember {
+            get {
+                return ResourceManager.GetString("ModelsDataMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SeatsMap.
+        /// </summary>
+        internal static string SeatsModelDataMember {
+            get {
+                return ResourceManager.GetString("SeatsModelDataMember", resourceCulture);
             }
         }
     }

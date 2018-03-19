@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://127.0.0.1:9998/SitService?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://127.0.0.1:9998/SeatService?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SitService.xsd" MetadataType="Schema" ID="3893c7f4-b8b4-4dd1-a743-d47cc906b633" SourceId="1" SourceUrl="http://127.0.0.1:9998/SitService?xsd=1" />
-    <MetadataFile FileName="SitService.wsdl" MetadataType="Wsdl" ID="368b6a05-9620-4d94-9743-ca53a2fe63d1" SourceId="1" SourceUrl="http://127.0.0.1:9998/SitService?wsdl=1" />
-    <MetadataFile FileName="SitsWebService.wsdl" MetadataType="Wsdl" ID="f5f81b00-bcec-4604-aef3-7a59d5db20df" SourceId="1" SourceUrl="http://127.0.0.1:9998/SitService?wsdl" />
+    <MetadataFile FileName="SeatService.wsdl" MetadataType="Wsdl" ID="368b6a05-9620-4d94-9743-ca53a2fe63d1" SourceId="1" SourceUrl="http://127.0.0.1:9998/SeatService?wsdl=1" />
+    <MetadataFile FileName="SeatsWebService.wsdl" MetadataType="Wsdl" ID="f5f81b00-bcec-4604-aef3-7a59d5db20df" SourceId="1" SourceUrl="http://127.0.0.1:9998/SeatService?wsdl" />
+    <MetadataFile FileName="SeatService.xsd" MetadataType="Schema" ID="3893c7f4-b8b4-4dd1-a743-d47cc906b633" SourceId="1" SourceUrl="http://127.0.0.1:9998/SeatService?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

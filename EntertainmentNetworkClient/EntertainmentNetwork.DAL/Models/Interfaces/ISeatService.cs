@@ -18,6 +18,8 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
 
         Task<ISeat> MergeSeat(ISeat seat);
 
-        Task RemoveSeat(decimal id);
+        Task RemoveSeatAsync(decimal id);
+
+        void RemoveSeat(decimal id);
     }
 }

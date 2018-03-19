@@ -35,7 +35,7 @@ public class App extends SpringBootServletInitializer implements WebApplicationI
     	
     	Endpoint.publish("http://127.0.0.1:9998/CityService", new CityService(dao, mapper)); 
     	Endpoint.publish("http://127.0.0.1:9998/CinemaService", new CinemaService(cinemadao, dao, mapper));  	
-    	Endpoint.publish("http://127.0.0.1:9998/SitService", new SeatService(seatdao, floorDao, mapper)); 
+    	Endpoint.publish("http://127.0.0.1:9998/SeatService", new SeatService(seatdao, floorDao, mapper)); 
     	Endpoint.publish("http://127.0.0.1:9998/HallService", new HallService(hallDao, cinemadao, mapper)); 
     	Endpoint.publish("http://127.0.0.1:9998/FloorService", new FloorService(floorDao, hallDao, mapper)); 
     	Endpoint.publish("http://127.0.0.1:9998/OrderService", new OrderService(orderDao, mapper)); 

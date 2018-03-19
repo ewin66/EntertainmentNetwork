@@ -31,7 +31,7 @@ namespace EntertainmentNetworkClient.Modules
 
             if (!this.cinemasView.IsDataLoaded)
             {
-                this.cinemasView.LoadData(x => true);
+                this.cinemasView.LoadData(x => true); //TODO: filter is temporary
             }
 
             viewsManager.CinemasBindingSource.CurrentChanged += CinemasBindingSource_CurrentChanged;

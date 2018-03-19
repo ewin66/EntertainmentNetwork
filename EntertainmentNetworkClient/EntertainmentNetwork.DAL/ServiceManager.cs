@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.DAL
 {
@@ -13,5 +8,6 @@ namespace EntertainmentNetwork.DAL
         public static readonly Lazy<CinemaServiceAdapter> CinemaService = new Lazy<CinemaServiceAdapter>();
         public static readonly Lazy<HallServiceAdapter> HallService = new Lazy<HallServiceAdapter>();
         public static readonly Lazy<FloorServiceAdapter> FloorService = new Lazy<FloorServiceAdapter>();
+        public static readonly Lazy<SeatServiceAdapter> SeatService = new Lazy<SeatServiceAdapter>();
     }
 }

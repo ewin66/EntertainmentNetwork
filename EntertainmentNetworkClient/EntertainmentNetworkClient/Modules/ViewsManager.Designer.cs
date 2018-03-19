@@ -37,6 +37,8 @@
             this.hallsbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.floorViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.floorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.seatViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.seatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.citiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.citiesViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaViewBindingSource)).BeginInit();
@@ -45,6 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hallsbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.floorViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.floorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seatViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // citiesBindingSource
@@ -71,6 +75,10 @@
             this.floorsBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.FloorsBindingSource_AddingNew);
             this.floorsBindingSource.CurrentChanged += new System.EventHandler(this.FloorsBindingSource_CurrentChanged);
             // 
+            // seatsBindingSource
+            // 
+            this.seatsBindingSource.AllowNew = true;
+            // 
             // ViewsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -85,6 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hallsbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.floorViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.floorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seatViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -99,6 +109,8 @@
         private System.Windows.Forms.BindingSource hallsbindingSource;
         private System.Windows.Forms.BindingSource floorViewBindingSource;
         private System.Windows.Forms.BindingSource floorsBindingSource;
+        private System.Windows.Forms.BindingSource seatViewBindingSource;
+        private System.Windows.Forms.BindingSource seatsBindingSource;
 
     }
 }

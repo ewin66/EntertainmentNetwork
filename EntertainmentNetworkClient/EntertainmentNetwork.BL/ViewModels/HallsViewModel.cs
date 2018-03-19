@@ -58,7 +58,7 @@ namespace EntertainmentNetwork.BL.ViewModels
 
         public async Task LoadData(Func<IHall, bool> filter)
         {
-            this.hallsViewCollection.ListChanged -= CitiesViewCollection_ListChanged;      
+            this.hallsViewCollection.ListChanged -= HallsViewCollection_ListChanged;      
             this.hallsViewCollection.Clear();
             var task = await this.hallService.GetHalls();
 
@@ -68,7 +68,7 @@ namespace EntertainmentNetwork.BL.ViewModels
             }
 
             this.IsDataLoaded = true;
-            this.hallsViewCollection.ListChanged += CitiesViewCollection_ListChanged;
+            this.hallsViewCollection.ListChanged += HallsViewCollection_ListChanged;
         }
 
         public async Task Remove()
@@ -82,7 +82,7 @@ namespace EntertainmentNetwork.BL.ViewModels
             return this.Models.FirstOrDefault(x => x.HalId == hallId);
         }
 
-        private void CitiesViewCollection_ListChanged(object sender, ListChangedEventArgs e)
+        private void HallsViewCollection_ListChanged(object sender, ListChangedEventArgs e)
         {
             var changedList = sender as BindingList<IHall>;
             if (changedList != null && e.ListChangedType != ListChangedType.ItemDeleted)

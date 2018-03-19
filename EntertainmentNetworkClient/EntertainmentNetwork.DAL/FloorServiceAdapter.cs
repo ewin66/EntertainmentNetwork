@@ -10,8 +10,6 @@ namespace EntertainmentNetwork.DAL
 {
     public class FloorServiceAdapter : Interfaces.IFloorService
     {
-        private readonly FloorServiceClient floorService = new FloorServiceClient();
-
         #region IFloorService
 
         public async Task AddFloor(IFloor floor)
@@ -61,5 +59,7 @@ namespace EntertainmentNetwork.DAL
         {
             return new Floor(floor.flrId, floor.flrName, floor.hallId);
         }
+
+        private readonly FloorServiceClient floorService = new FloorServiceClient();
     }
 }

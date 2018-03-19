@@ -14,7 +14,6 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         string CinAddress { get; set; }
         byte[] CinIcon { get; set; }
         decimal CityId { get; set; }
-        List<IHall> Halls { get; set; }
 
         void Update(ICinema city);
     }

@@ -21,7 +21,7 @@ namespace EntertainmentNetworkClient
         public EntertainmentNetworkMainForm()
         {
             InitializeComponent();
-            this.ViewsManager = new ViewsManager();
+            this.ViewsManager = new ViewsManager(this.documentManager1);
             LoginFlyout.Action = CreateLoginAction();
             // closeFlyout.Action = CreateCloseAction();
             windowsUIView1.FlyoutHidden += windowsUIView_FlyoutHidden;
@@ -31,6 +31,7 @@ namespace EntertainmentNetworkClient
             windowsUIView1.NavigatedTo += windowsUIView_NavigatedTo;
             windowsUIView1.NavigatedFrom += windowsUIView_NavigatedFrom;
             windowsUIView1.QueryControl += windowsUIView_QueryControl;
+            // Handling the QueryControl event that will populate all automatically generated Documents
         }
 
         private IViewsManager ViewsManager { get; set; }

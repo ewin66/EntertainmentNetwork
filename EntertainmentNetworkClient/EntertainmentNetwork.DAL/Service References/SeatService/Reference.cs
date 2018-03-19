@@ -16,27 +16,12 @@ namespace EntertainmentNetwork.DAL.SeatService {
     public interface ISeatService {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatRequ" +
-            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatResp" +
-            "onse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        EntertainmentNetwork.DAL.SeatService.mergeSeatResponse mergeSeat(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatRequ" +
-            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatResp" +
-            "onse")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.mergeSeatResponse> mergeSeatAsync(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/getSeatsReque" +
             "st", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/getSeatsRespo" +
             "nse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         EntertainmentNetwork.DAL.SeatService.getSeatsResponse getSeats(EntertainmentNetwork.DAL.SeatService.getSeatsRequest request);
         
@@ -45,28 +30,27 @@ namespace EntertainmentNetwork.DAL.SeatService {
             "nse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.getSeatsResponse> getSeatsAsync(EntertainmentNetwork.DAL.SeatService.getSeatsRequest request);
         
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
-            "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
-            "esponse")]
+        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatRespon" +
+            "se")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse findSeatById(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        EntertainmentNetwork.DAL.SeatService.addSeatResponse addSeat(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
-            "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
-            "esponse")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse> findSeatByIdAsync(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatReques" +
+            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatRespon" +
+            "se")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.addSeatResponse> addSeatAsync(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request);
         
         // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/generateSeats" +
             "Request", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/generateSeats" +
             "Response")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         EntertainmentNetwork.DAL.SeatService.generateSeatsResponse generateSeats(EntertainmentNetwork.DAL.SeatService.generateSeatsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/generateSeats" +
@@ -79,8 +63,8 @@ namespace EntertainmentNetwork.DAL.SeatService {
             "uest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/removeSeatRes" +
             "ponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         EntertainmentNetwork.DAL.SeatService.removeSeatResponse removeSeat(EntertainmentNetwork.DAL.SeatService.removeSeatRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/removeSeatReq" +
@@ -88,204 +72,35 @@ namespace EntertainmentNetwork.DAL.SeatService {
             "ponse")]
         System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.removeSeatResponse> removeSeatAsync(EntertainmentNetwork.DAL.SeatService.removeSeatRequest request);
         
-        // CODEGEN: Parameter 'arg0' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatRespon" +
-            "se")]
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatRequ" +
+            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatResp" +
+            "onse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
-        EntertainmentNetwork.DAL.SeatService.addSeatResponse addSeat(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        EntertainmentNetwork.DAL.SeatService.mergeSeatResponse mergeSeat(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatReques" +
-            "t", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/addSeatRespon" +
-            "se")]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.addSeatResponse> addSeatAsync(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request);
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class mergeSeatRequest : addSeatRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatRequ" +
+            "est", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/mergeSeatResp" +
+            "onse")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.mergeSeatResponse> mergeSeatAsync(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request);
         
-        private decimal seatIdField;
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
+            "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
+            "esponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseDto))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(baseModel))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse findSeatById(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request);
         
-        private bool seatIdFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public decimal seatId {
-            get {
-                return this.seatIdField;
-            }
-            set {
-                this.seatIdField = value;
-                this.RaisePropertyChanged("seatId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool seatIdSpecified {
-            get {
-                return this.seatIdFieldSpecified;
-            }
-            set {
-                this.seatIdFieldSpecified = value;
-                this.RaisePropertyChanged("seatIdSpecified");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeSeatRequest))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class addSeatRequest : baseDto {
-        
-        private decimal flrIdField;
-        
-        private bool flrIdFieldSpecified;
-        
-        private int seatNumField;
-        
-        private int seatRowField;
-        
-        private int seatTypeField;
-        
-        private int seatColumnField;
-        
-        private bool seatIsactiveField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public decimal flrId {
-            get {
-                return this.flrIdField;
-            }
-            set {
-                this.flrIdField = value;
-                this.RaisePropertyChanged("flrId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool flrIdSpecified {
-            get {
-                return this.flrIdFieldSpecified;
-            }
-            set {
-                this.flrIdFieldSpecified = value;
-                this.RaisePropertyChanged("flrIdSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int seatNum {
-            get {
-                return this.seatNumField;
-            }
-            set {
-                this.seatNumField = value;
-                this.RaisePropertyChanged("seatNum");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public int seatRow {
-            get {
-                return this.seatRowField;
-            }
-            set {
-                this.seatRowField = value;
-                this.RaisePropertyChanged("seatRow");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public int seatType {
-            get {
-                return this.seatTypeField;
-            }
-            set {
-                this.seatTypeField = value;
-                this.RaisePropertyChanged("seatType");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public int seatColumn {
-            get {
-                return this.seatColumnField;
-            }
-            set {
-                this.seatColumnField = value;
-                this.RaisePropertyChanged("seatColumn");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public bool seatIsactive {
-            get {
-                return this.seatIsactiveField;
-            }
-            set {
-                this.seatIsactiveField = value;
-                this.RaisePropertyChanged("seatIsactive");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(generateSeatRequest))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(addSeatRequest))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeSeatRequest))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class baseDto : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(seat))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
-    public partial class baseModel : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
+            "equest", ReplyAction="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISeatService/findSeatByIdR" +
+            "esponse")]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse> findSeatByIdAsync(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request);
     }
     
     /// <remarks/>
@@ -424,6 +239,46 @@ namespace EntertainmentNetwork.DAL.SeatService {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(seat))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
+    public partial class baseModel : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(generateSeatRequest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(addSeatRequest))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeSeatRequest))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
+    public partial class baseDto : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -488,39 +343,148 @@ namespace EntertainmentNetwork.DAL.SeatService {
         }
     }
     
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(mergeSeatRequest))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSeat", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class mergeSeatRequest1 {
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
+    public partial class addSeatRequest : baseDto {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0;
+        private decimal flrIdField;
         
-        public mergeSeatRequest1() {
+        private bool flrIdFieldSpecified;
+        
+        private int seatNumField;
+        
+        private int seatRowField;
+        
+        private int seatTypeField;
+        
+        private int seatColumnField;
+        
+        private bool seatIsactiveField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public decimal flrId {
+            get {
+                return this.flrIdField;
+            }
+            set {
+                this.flrIdField = value;
+                this.RaisePropertyChanged("flrId");
+            }
         }
         
-        public mergeSeatRequest1(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0) {
-            this.arg0 = arg0;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool flrIdSpecified {
+            get {
+                return this.flrIdFieldSpecified;
+            }
+            set {
+                this.flrIdFieldSpecified = value;
+                this.RaisePropertyChanged("flrIdSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int seatNum {
+            get {
+                return this.seatNumField;
+            }
+            set {
+                this.seatNumField = value;
+                this.RaisePropertyChanged("seatNum");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int seatRow {
+            get {
+                return this.seatRowField;
+            }
+            set {
+                this.seatRowField = value;
+                this.RaisePropertyChanged("seatRow");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public int seatType {
+            get {
+                return this.seatTypeField;
+            }
+            set {
+                this.seatTypeField = value;
+                this.RaisePropertyChanged("seatType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public int seatColumn {
+            get {
+                return this.seatColumnField;
+            }
+            set {
+                this.seatColumnField = value;
+                this.RaisePropertyChanged("seatColumn");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public bool seatIsactive {
+            get {
+                return this.seatIsactiveField;
+            }
+            set {
+                this.seatIsactiveField = value;
+                this.RaisePropertyChanged("seatIsactive");
+            }
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSeatResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class mergeSeatResponse {
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/")]
+    public partial class mergeSeatRequest : addSeatRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.SeatService.seat @return;
+        private decimal seatIdField;
         
-        public mergeSeatResponse() {
+        private bool seatIdFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public decimal seatId {
+            get {
+                return this.seatIdField;
+            }
+            set {
+                this.seatIdField = value;
+                this.RaisePropertyChanged("seatId");
+            }
         }
         
-        public mergeSeatResponse(EntertainmentNetwork.DAL.SeatService.seat @return) {
-            this.@return = @return;
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool seatIdSpecified {
+            get {
+                return this.seatIdFieldSpecified;
+            }
+            set {
+                this.seatIdFieldSpecified = value;
+                this.RaisePropertyChanged("seatIdSpecified");
+            }
         }
     }
     
@@ -555,17 +519,17 @@ namespace EntertainmentNetwork.DAL.SeatService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findSeatById", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class findSeatByIdRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addSeat", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addSeatRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public decimal arg0;
+        public EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0;
         
-        public findSeatByIdRequest() {
+        public addSeatRequest1() {
         }
         
-        public findSeatByIdRequest(decimal arg0) {
+        public addSeatRequest1(EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0) {
             this.arg0 = arg0;
         }
     }
@@ -573,18 +537,10 @@ namespace EntertainmentNetwork.DAL.SeatService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findSeatByIdResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class findSeatByIdResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="addSeatResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class addSeatResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.SeatService.seat @return;
-        
-        public findSeatByIdResponse() {
-        }
-        
-        public findSeatByIdResponse(EntertainmentNetwork.DAL.SeatService.seat @return) {
-            this.@return = @return;
+        public addSeatResponse() {
         }
     }
     
@@ -647,17 +603,17 @@ namespace EntertainmentNetwork.DAL.SeatService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addSeat", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addSeatRequest1 {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSeat", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class mergeSeatRequest1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0;
+        public EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0;
         
-        public addSeatRequest1() {
+        public mergeSeatRequest1() {
         }
         
-        public addSeatRequest1(EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0) {
+        public mergeSeatRequest1(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0) {
             this.arg0 = arg0;
         }
     }
@@ -665,10 +621,54 @@ namespace EntertainmentNetwork.DAL.SeatService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="addSeatResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
-    public partial class addSeatResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="mergeSeatResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class mergeSeatResponse {
         
-        public addSeatResponse() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.SeatService.seat @return;
+        
+        public mergeSeatResponse() {
+        }
+        
+        public mergeSeatResponse(EntertainmentNetwork.DAL.SeatService.seat @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findSeatById", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class findSeatByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public decimal arg0;
+        
+        public findSeatByIdRequest() {
+        }
+        
+        public findSeatByIdRequest(decimal arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findSeatByIdResponse", WrapperNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", IsWrapped=true)]
+    public partial class findSeatByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public EntertainmentNetwork.DAL.SeatService.seat @return;
+        
+        public findSeatByIdResponse() {
+        }
+        
+        public findSeatByIdResponse(EntertainmentNetwork.DAL.SeatService.seat @return) {
+            this.@return = @return;
         }
     }
     
@@ -700,29 +700,6 @@ namespace EntertainmentNetwork.DAL.SeatService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.SeatService.mergeSeatResponse EntertainmentNetwork.DAL.SeatService.ISeatService.mergeSeat(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request) {
-            return base.Channel.mergeSeat(request);
-        }
-        
-        public EntertainmentNetwork.DAL.SeatService.seat mergeSeat(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0) {
-            EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1();
-            inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.SeatService.mergeSeatResponse retVal = ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).mergeSeat(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.mergeSeatResponse> EntertainmentNetwork.DAL.SeatService.ISeatService.mergeSeatAsync(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request) {
-            return base.Channel.mergeSeatAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.mergeSeatResponse> mergeSeatAsync(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0) {
-            EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1();
-            inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).mergeSeatAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         EntertainmentNetwork.DAL.SeatService.getSeatsResponse EntertainmentNetwork.DAL.SeatService.ISeatService.getSeats(EntertainmentNetwork.DAL.SeatService.getSeatsRequest request) {
             return base.Channel.getSeats(request);
         }
@@ -744,26 +721,25 @@ namespace EntertainmentNetwork.DAL.SeatService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse EntertainmentNetwork.DAL.SeatService.ISeatService.findSeatById(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request) {
-            return base.Channel.findSeatById(request);
+        EntertainmentNetwork.DAL.SeatService.addSeatResponse EntertainmentNetwork.DAL.SeatService.ISeatService.addSeat(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request) {
+            return base.Channel.addSeat(request);
         }
         
-        public EntertainmentNetwork.DAL.SeatService.seat findSeatById(decimal arg0) {
-            EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest inValue = new EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest();
+        public void addSeat(EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0) {
+            EntertainmentNetwork.DAL.SeatService.addSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.addSeatRequest1();
             inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse retVal = ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).findSeatById(inValue);
-            return retVal.@return;
+            EntertainmentNetwork.DAL.SeatService.addSeatResponse retVal = ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).addSeat(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse> EntertainmentNetwork.DAL.SeatService.ISeatService.findSeatByIdAsync(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request) {
-            return base.Channel.findSeatByIdAsync(request);
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.addSeatResponse> EntertainmentNetwork.DAL.SeatService.ISeatService.addSeatAsync(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request) {
+            return base.Channel.addSeatAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse> findSeatByIdAsync(decimal arg0) {
-            EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest inValue = new EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest();
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.addSeatResponse> addSeatAsync(EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0) {
+            EntertainmentNetwork.DAL.SeatService.addSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.addSeatRequest1();
             inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).findSeatByIdAsync(inValue);
+            return ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).addSeatAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -811,25 +787,49 @@ namespace EntertainmentNetwork.DAL.SeatService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EntertainmentNetwork.DAL.SeatService.addSeatResponse EntertainmentNetwork.DAL.SeatService.ISeatService.addSeat(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request) {
-            return base.Channel.addSeat(request);
+        EntertainmentNetwork.DAL.SeatService.mergeSeatResponse EntertainmentNetwork.DAL.SeatService.ISeatService.mergeSeat(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request) {
+            return base.Channel.mergeSeat(request);
         }
         
-        public void addSeat(EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0) {
-            EntertainmentNetwork.DAL.SeatService.addSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.addSeatRequest1();
+        public EntertainmentNetwork.DAL.SeatService.seat mergeSeat(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0) {
+            EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1();
             inValue.arg0 = arg0;
-            EntertainmentNetwork.DAL.SeatService.addSeatResponse retVal = ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).addSeat(inValue);
+            EntertainmentNetwork.DAL.SeatService.mergeSeatResponse retVal = ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).mergeSeat(inValue);
+            return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.addSeatResponse> EntertainmentNetwork.DAL.SeatService.ISeatService.addSeatAsync(EntertainmentNetwork.DAL.SeatService.addSeatRequest1 request) {
-            return base.Channel.addSeatAsync(request);
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.mergeSeatResponse> EntertainmentNetwork.DAL.SeatService.ISeatService.mergeSeatAsync(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 request) {
+            return base.Channel.mergeSeatAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.addSeatResponse> addSeatAsync(EntertainmentNetwork.DAL.SeatService.addSeatRequest arg0) {
-            EntertainmentNetwork.DAL.SeatService.addSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.addSeatRequest1();
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.mergeSeatResponse> mergeSeatAsync(EntertainmentNetwork.DAL.SeatService.mergeSeatRequest arg0) {
+            EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1 inValue = new EntertainmentNetwork.DAL.SeatService.mergeSeatRequest1();
             inValue.arg0 = arg0;
-            return ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).addSeatAsync(inValue);
+            return ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).mergeSeatAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse EntertainmentNetwork.DAL.SeatService.ISeatService.findSeatById(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request) {
+            return base.Channel.findSeatById(request);
+        }
+        
+        public EntertainmentNetwork.DAL.SeatService.seat findSeatById(decimal arg0) {
+            EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest inValue = new EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest();
+            inValue.arg0 = arg0;
+            EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse retVal = ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).findSeatById(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse> EntertainmentNetwork.DAL.SeatService.ISeatService.findSeatByIdAsync(EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest request) {
+            return base.Channel.findSeatByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<EntertainmentNetwork.DAL.SeatService.findSeatByIdResponse> findSeatByIdAsync(decimal arg0) {
+            EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest inValue = new EntertainmentNetwork.DAL.SeatService.findSeatByIdRequest();
+            inValue.arg0 = arg0;
+            return ((EntertainmentNetwork.DAL.SeatService.ISeatService)(this)).findSeatByIdAsync(inValue);
         }
     }
 }

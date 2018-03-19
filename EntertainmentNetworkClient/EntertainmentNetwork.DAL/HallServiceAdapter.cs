@@ -10,13 +10,11 @@ namespace EntertainmentNetwork.DAL
 {
     public class HallServiceAdapter : Interfaces.IHallService
     {
-        private readonly HallServiceClient hallService = new HallServiceClient();
-
         #region IHallService
 
         public async Task AddHall(IHall hall)
         {
-            await hallService.addHallAsync(new addHallRequest
+            await this.hallService.addHallAsync(new addHallRequest
             {
                 halName = hall.HalName,
                 halSitscount = hall.HalSitscount,
@@ -65,5 +63,7 @@ namespace EntertainmentNetwork.DAL
         {
             return new Hall(hall.halId, hall.halName, hall.halSitscount, hall.cinemaId);
         }
+
+        private readonly HallServiceClient hallService = new HallServiceClient();
     }
 }

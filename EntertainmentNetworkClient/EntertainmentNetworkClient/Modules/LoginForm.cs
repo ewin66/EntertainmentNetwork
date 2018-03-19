@@ -8,12 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using EntertainmentNetwork.BL.ViewModels;
 
 namespace EntertainmentNetworkClient.Modules
 {
     public partial class LoginForm : BaseModule
     {
-        public LoginForm()
+        public LoginForm(IViewsManager viewsManager)
         {
             InitializeComponent();
         }

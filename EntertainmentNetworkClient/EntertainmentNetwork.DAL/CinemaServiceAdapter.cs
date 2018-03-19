@@ -10,8 +10,6 @@ namespace EntertainmentNetwork.DAL
 {
     public class CinemaServiceAdapter : Interfaces.ICinemaService
     {
-        private readonly CinemaServiceClient cinemaService = new CinemaServiceClient();
-
         #region ICinemaService
 
         public async Task AddCinema(ICinema cinema)
@@ -71,5 +69,7 @@ namespace EntertainmentNetwork.DAL
         {
             return new Cinema(city.cinId, city.cityId, city.cinName, city.cinAddress, city.cinIcon);
         }
+
+        private readonly CinemaServiceClient cinemaService = new CinemaServiceClient();
     }
 }

@@ -58,7 +58,7 @@ namespace EntertainmentNetwork.BL.ViewModels
 
         public async Task LoadData(Func<IFloor, bool> filter)
         {
-            this.floorsViewCollection.ListChanged -= CitiesViewCollection_ListChanged;      
+            this.floorsViewCollection.ListChanged -= HallsViewCollection_ListChanged;      
             this.floorsViewCollection.Clear();
             var task = await this.floorService.GetFloors();
 
@@ -68,7 +68,7 @@ namespace EntertainmentNetwork.BL.ViewModels
             }
 
             this.IsDataLoaded = true;
-            this.floorsViewCollection.ListChanged += CitiesViewCollection_ListChanged;
+            this.floorsViewCollection.ListChanged += HallsViewCollection_ListChanged;
         }
 
         public async Task Remove()
@@ -82,7 +82,7 @@ namespace EntertainmentNetwork.BL.ViewModels
             return this.Models.FirstOrDefault(x => x.FloorId == floorId);
         }
 
-        private void CitiesViewCollection_ListChanged(object sender, ListChangedEventArgs e)
+        private void HallsViewCollection_ListChanged(object sender, ListChangedEventArgs e)
         {
             var changedList = sender as BindingList<IFloor>;
             if (changedList != null && e.ListChangedType != ListChangedType.ItemDeleted)

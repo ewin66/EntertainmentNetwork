@@ -38,7 +38,10 @@
             this.docSeats = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.LoginFlyout = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
             this.docLoginPage = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
-            this.flyout1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
+            this.flyoutSeats = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout(this.components);
+            this.seatPopupDocument = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.baseModuleDocument = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.viewsManagerDocument = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hubGroup)).BeginInit();
@@ -48,7 +51,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.docSeats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginFlyout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docLoginPage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flyout1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutSeats)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seatPopupDocument)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseModuleDocument)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewsManagerDocument)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManager1
@@ -63,14 +69,17 @@
             this.windowsUIView1.BackgroundImageLayoutMode = DevExpress.Utils.Drawing.ImageLayoutMode.BottomLeft;
             this.windowsUIView1.ContentContainers.AddRange(new DevExpress.XtraBars.Docking2010.Views.WindowsUI.IContentContainer[] {
             this.hubGroup,
-            this.flyout1,
-            this.LoginFlyout});
+            this.LoginFlyout,
+            this.flyoutSeats});
             this.windowsUIView1.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
             this.docCities,
             this.docLoginPage,
             this.docCinemas,
             this.docHallsFloors,
-            this.docSeats});
+            this.docSeats,
+            this.baseModuleDocument,
+            this.seatPopupDocument,
+            this.viewsManagerDocument});
             this.windowsUIView1.UseSplashScreen = DevExpress.Utils.DefaultBoolean.False;
             // 
             // hubGroup
@@ -125,9 +134,29 @@
             this.docLoginPage.ControlName = "LoginForm";
             this.docLoginPage.ControlTypeName = "EntertainmentNetworkClient.Modules.LoginForm";
             // 
-            // flyout1
+            // flyoutSeats
             // 
-            this.flyout1.Name = "flyout1";
+            this.flyoutSeats.Document = this.seatPopupDocument;
+            this.flyoutSeats.FlyoutButtons = System.Windows.Forms.MessageBoxButtons.OKCancel;
+            this.flyoutSeats.Name = "flyoutSeats";
+            // 
+            // seatPopupDocument
+            // 
+            this.seatPopupDocument.Caption = "SeatPopup";
+            this.seatPopupDocument.ControlName = "SeatPopup";
+            this.seatPopupDocument.ControlTypeName = "EntertainmentNetworkClient.Modules.SeatPopup";
+            // 
+            // baseModuleDocument
+            // 
+            this.baseModuleDocument.Caption = "BaseModule";
+            this.baseModuleDocument.ControlName = "BaseModule";
+            this.baseModuleDocument.ControlTypeName = "EntertainmentNetworkClient.Modules.BaseModule";
+            // 
+            // viewsManagerDocument
+            // 
+            this.viewsManagerDocument.Caption = "ViewsManager";
+            this.viewsManagerDocument.ControlName = "ViewsManager";
+            this.viewsManagerDocument.ControlTypeName = "EntertainmentNetworkClient.Modules.ViewsManager";
             // 
             // EntertainmentNetworkMainForm
             // 
@@ -145,7 +174,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.docSeats)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoginFlyout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docLoginPage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flyout1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flyoutSeats)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seatPopupDocument)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseModuleDocument)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewsManagerDocument)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -157,11 +189,14 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docCities;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.TabbedGroup hubGroup;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout LoginFlyout;
-        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout flyout1;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docLoginPage;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docCinemas;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docHallsFloors;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docSeats;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Flyout flyoutSeats;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document seatPopupDocument;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document baseModuleDocument;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document viewsManagerDocument;
 
 
 

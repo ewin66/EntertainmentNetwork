@@ -75,15 +75,6 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public List<IHall> Halls
-        {
-            get { return this.halls; }
-            set
-            {
-                this.SetPropertyValue(out this.halls, this.halls, value);
-            }
-        }
-
         public void Update(ICinema cinema)
         {
             this.CinId = cinema.CinId;
@@ -108,7 +99,6 @@ namespace EntertainmentNetwork.DAL.Models
         private string cinName;
         private byte[] cinIcon;
         private string cinAddress;
-        private List<IHall> halls;
         private decimal cityId;
 
     }

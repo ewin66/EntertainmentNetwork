@@ -43,12 +43,16 @@
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
@@ -63,6 +67,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntertainmentNetworkMainForm.cs">
@@ -82,6 +87,12 @@
     </Compile>
     <Compile Include="Modules\Cinemas.Designer.cs">
       <DependentUpon>Cinemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SeatPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\SeatPopup.Designer.cs">
+      <DependentUpon>SeatPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\IViewsManager.cs" />
     <Compile Include="Modules\ViewsManager.cs">
@@ -125,6 +136,9 @@
     <EmbeddedResource Include="Modules\Cinemas.resx">
       <DependentUpon>Cinemas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SeatPopup.resx">
+      <DependentUpon>SeatPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Seats.resx">
       <DependentUpon>Seats.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +167,8 @@
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CityViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.FloorsViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.HallsViewModel.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.SeatsViewModel.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Floor.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
