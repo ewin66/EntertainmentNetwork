@@ -42,6 +42,7 @@
             this.seatPopupDocument = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.baseModuleDocument = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             this.viewsManagerDocument = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
+            this.docShows = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.windowsUIView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hubGroup)).BeginInit();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.seatPopupDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseModuleDocument)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewsManagerDocument)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docShows)).BeginInit();
             this.SuspendLayout();
             // 
             // documentManager1
@@ -79,7 +81,8 @@
             this.docSeats,
             this.baseModuleDocument,
             this.seatPopupDocument,
-            this.viewsManagerDocument});
+            this.viewsManagerDocument,
+            this.docShows});
             this.windowsUIView1.UseSplashScreen = DevExpress.Utils.DefaultBoolean.False;
             // 
             // hubGroup
@@ -88,7 +91,8 @@
             this.docCities,
             this.docCinemas,
             this.docHallsFloors,
-            this.docSeats});
+            this.docSeats,
+            this.docShows});
             this.hubGroup.Name = "hubGroup";
             this.hubGroup.Parent = this.LoginFlyout;
             this.hubGroup.Properties.AllowHtmlDrawHeaders = DevExpress.Utils.DefaultBoolean.True;
@@ -158,6 +162,12 @@
             this.viewsManagerDocument.ControlName = "ViewsManager";
             this.viewsManagerDocument.ControlTypeName = "EntertainmentNetworkClient.Modules.ViewsManager";
             // 
+            // docShows
+            // 
+            this.docShows.Caption = "Shows";
+            this.docShows.ControlName = "Shows";
+            this.docShows.ControlTypeName = "EntertainmentNetworkClient.Modules.Shows";
+            // 
             // EntertainmentNetworkMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +188,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.seatPopupDocument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseModuleDocument)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewsManagerDocument)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docShows)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,6 +208,7 @@
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document seatPopupDocument;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document baseModuleDocument;
         private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document viewsManagerDocument;
+        private DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document docShows;
 
 
 

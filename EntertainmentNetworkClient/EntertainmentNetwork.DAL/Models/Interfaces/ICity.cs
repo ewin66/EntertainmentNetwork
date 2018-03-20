@@ -8,8 +8,10 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         [ReadOnly(true)]
         decimal CitId { get; set; }
         [Required(AllowEmptyStrings = false)]
+        [StringLength(100, ErrorMessage = "The value cannot exceed 100 characters.")]
         string CitName { get; set; }
         [Required(AllowEmptyStrings = false)]
+        [StringLength(100, ErrorMessage = "The value cannot exceed 100 characters.")]
         string CitCountry { get; set; }
     }
 }

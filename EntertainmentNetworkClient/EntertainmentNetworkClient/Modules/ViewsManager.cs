@@ -29,6 +29,7 @@ namespace EntertainmentNetworkClient.Modules
             this.HallsView = new Lazy<IViewModel<IHall>>(() => new HallsViewModel(ServiceManager.HallService.Value));
             this.FloorsView = new Lazy<IViewModel<IFloor>>(() => new FloorsViewModel(ServiceManager.FloorService.Value));
             this.SeatsView = new Lazy<ISeatViewModel>(() => new SeatsViewModel(ServiceManager.SeatService.Value));
+            this.ShowsView = new Lazy<IViewModel<IShow>>(() => new BaseViewModel<IBaseService<IShow>, IShow>(ServiceManager.ShowService.Value));
         }
 
         public DocumentManager MainDocumentManager { get; private set; }
@@ -37,6 +38,7 @@ namespace EntertainmentNetworkClient.Modules
         public Lazy<IViewModel<IHall>> HallsView { get; private set; }
         public Lazy<IViewModel<IFloor>> FloorsView { get; private set; }
         public Lazy<ISeatViewModel> SeatsView { get; private set; }
+        public Lazy<IViewModel<IShow>> ShowsView { get; private set; }
 
         public BindingSource CitiesBindingSource 
         {
@@ -128,6 +130,25 @@ namespace EntertainmentNetworkClient.Modules
             }
         }
 
+        public BindingSource ShowsBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.showsBindingSource, this.ShowViewBindingSource, Resources.ModelsDataMember);
+                return this.showsBindingSource;
+            }
+        }
+
+        public BindingSource ShowViewBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.showViewBindingSource, this.ShowsView.Value, String.Empty);
+                return this.showViewBindingSource;
+            }
+        }
+
+
         public void CitiesBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             var bindingSource = sender as BindingSource;
@@ -164,6 +185,15 @@ namespace EntertainmentNetworkClient.Modules
             }
         }
 
+        private void ShowsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var bindingSource = sender as BindingSource;
+            if (bindingSource != null)
+            {
+                this.ShowsView.Value.Selected = bindingSource.Current as IShow;
+            }
+        }
+
         private void CitiesBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             e.NewObject = new City();
@@ -182,6 +212,11 @@ namespace EntertainmentNetworkClient.Modules
         private void FloorsBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             e.NewObject = new Floor();
+        }
+
+        private void ShowsBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            e.NewObject = new Show();
         }
 
         /// <summary>

@@ -96,10 +96,11 @@
 --------------------------------------------------------
 --  DDL for Table SHOW
 -------------------------------------------------------- 
-  CREATE TABLE "PBAB"."SHOW" 
+CREATE TABLE "PBAB"."SHOW" 
    (	"SHW_ID" NUMBER NOT NULL,
 	"SHW_NAME" VARCHAR2(100 BYTE) NOT NULL, 
 	"SHW_DESCR" VARCHAR2(255 BYTE),
+  "SHW_PERFORMER" VARCHAR2(100 BYTE),
   "SHW_ICON" BLOB,
 	CONSTRAINT "SHOW_PK" PRIMARY KEY ("SHW_ID")
    ) SEGMENT CREATION DEFERRED 

@@ -49,12 +49,15 @@
     <Compile Include="BaseNotifyPropertyChanged.cs" />
     <Compile Include="CinemaServiceAdapter.cs" />
     <Compile Include="CityServiceAdapter.cs" />
+    <Compile Include="Models\Show.cs" />
+    <Compile Include="ShowServiceAdapter.cs" />
     <Compile Include="FloorServiceAdapter.cs" />
     <Compile Include="HallServiceAdapter.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Cinema.cs" />
     <Compile Include="Models\Floor.cs" />
+    <Compile Include="Models\Interfaces\IShow.cs" />
     <Compile Include="Models\Interfaces\IBaseService.cs" />
     <Compile Include="Models\Interfaces\IFloor.cs" />
     <Compile Include="Models\Interfaces\IFloorService.cs" />
@@ -92,6 +95,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\SeatService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ShowService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -233,6 +241,29 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SeatService\SitsWebService.wsdl" />
+    <None Include="Service References\ShowService\EntertainmentNetwork.DAL.ShowService.addShowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ShowService\EntertainmentNetwork.DAL.ShowService.findShowByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ShowService\EntertainmentNetwork.DAL.ShowService.getShowsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ShowService\EntertainmentNetwork.DAL.ShowService.mergeShowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ShowService\EntertainmentNetwork.DAL.ShowService.removeShowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ShowService\EntertainmentNetwork.DAL.ShowService.show.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ShowService\ShowService.wsdl" />
+    <None Include="Service References\ShowService\ShowService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ShowService\ShowWebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CinemaService\" />
@@ -240,6 +271,7 @@
     <WCFMetadataStorage Include="Service References\FloorService\" />
     <WCFMetadataStorage Include="Service References\HallService\" />
     <WCFMetadataStorage Include="Service References\SeatService\" />
+    <WCFMetadataStorage Include="Service References\ShowService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CinemaService\configuration91.svcinfo" />
@@ -297,6 +329,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\FloorService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ShowService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ShowService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ShowService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

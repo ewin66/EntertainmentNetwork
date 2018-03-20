@@ -34,13 +34,6 @@ import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModel;
 @Table(name = "SHOW", schema = "PBAB")
 public class Show extends BaseModel implements java.io.Serializable 
 {
-	private BigDecimal shwId;
-	private String shwName;
-	private String shwDescr;
-	private byte[] shwIcon;
-	@XmlTransient
-	private Set<Scheduler> schedulers = new HashSet<Scheduler>(0);
-
 	public Show()
 	{
 	}
@@ -95,6 +88,17 @@ public class Show extends BaseModel implements java.io.Serializable
 	{
 		this.shwDescr = shwDescr;
 	}
+	
+	@Column(name = "SHW_PERFORMER")
+	public String getShwPerformer() 
+	{
+		return this.shwPerformer;
+	}
+
+	public void setShwPerformer(String shwPerformer) 
+	{
+		this.shwPerformer = shwPerformer;
+	}
 
 	@Column(name = "SHW_ICON")
 	public byte[] getShwIcon()
@@ -123,4 +127,12 @@ public class Show extends BaseModel implements java.io.Serializable
 	{
 		return "Show [showId=" + this.getShwId() + "]";
 	}
+	
+	private BigDecimal shwId;
+	private String shwName;
+	private String shwPerformer;
+	private String shwDescr;
+	private byte[] shwIcon;
+	@XmlTransient
+	private Set<Scheduler> schedulers = new HashSet<Scheduler>(0);
 }

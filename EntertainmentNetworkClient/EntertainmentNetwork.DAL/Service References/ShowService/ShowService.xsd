@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addShow" type="tns:addShow" />
+  <xs:element name="addShowResponse" type="tns:addShowResponse" />
+  <xs:element name="findShowById" type="tns:findShowById" />
+  <xs:element name="findShowByIdResponse" type="tns:findShowByIdResponse" />
+  <xs:element name="getShows" type="tns:getShows" />
+  <xs:element name="getShowsResponse" type="tns:getShowsResponse" />
+  <xs:element name="mergeShow" type="tns:mergeShow" />
+  <xs:element name="mergeShowResponse" type="tns:mergeShowResponse" />
+  <xs:element name="removeShow" type="tns:removeShow" />
+  <xs:element name="removeShowResponse" type="tns:removeShowResponse" />
+  <xs:complexType name="getShows">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getShowsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:show" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="show">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shwId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="shwName" type="xs:string" />
+          <xs:element minOccurs="0" name="shwPerformer" type="xs:string" />
+          <xs:element minOccurs="0" name="shwDescr" type="xs:string" />
+          <xs:element minOccurs="0" name="shwIcon" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addShow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addShowRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addShowRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shwDescr" type="xs:string" />
+          <xs:element minOccurs="0" name="shwIcon" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="shwName" type="xs:string" />
+          <xs:element minOccurs="0" name="shwPerformer" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addShowResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="findShowById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findShowByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:show" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeShow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeShowResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeShow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:mergeShowRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeShowRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:addShowRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shwId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="mergeShowResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:show" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

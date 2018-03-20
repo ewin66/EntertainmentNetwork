@@ -23,7 +23,17 @@ public class AddShowRequest extends BaseDto
 	{
 		this.shwDescr = shwDescr;
 	}
+	
+	public String getShwPerformer() 
+	{
+		return this.shwPerformer;
+	}
 
+	public void setShwPerformer(String shwPerformer) 
+	{
+		this.shwPerformer = shwPerformer;
+	}
+	
 	public byte[] getShwIcon()
 	{
 		return this.shwIcon;
@@ -36,5 +46,6 @@ public class AddShowRequest extends BaseDto
 	
 	private String shwName;
 	private String shwDescr;
+	private String shwPerformer;
 	private byte[] shwIcon;
 }

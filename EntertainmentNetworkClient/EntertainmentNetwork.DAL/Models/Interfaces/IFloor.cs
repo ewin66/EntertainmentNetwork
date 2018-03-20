@@ -13,6 +13,7 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         [ReadOnly(true)]
         decimal FloorId { get; set; }
         decimal HallId { get; set; }
+        [StringLength(100, ErrorMessage = "The value cannot exceed 100 characters.")]
         string FloorName { get; set; }
     }
 }

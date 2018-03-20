@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://127.0.0.1:9998/ShowService?xsd=1" namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" />
+    </xsd:schema>
+  </types>
+  <message name="addShow">
+    <part name="parameters" element="tns:addShow" />
+  </message>
+  <message name="addShowResponse">
+    <part name="parameters" element="tns:addShowResponse" />
+  </message>
+  <message name="findShowById">
+    <part name="parameters" element="tns:findShowById" />
+  </message>
+  <message name="findShowByIdResponse">
+    <part name="parameters" element="tns:findShowByIdResponse" />
+  </message>
+  <message name="mergeShow">
+    <part name="parameters" element="tns:mergeShow" />
+  </message>
+  <message name="mergeShowResponse">
+    <part name="parameters" element="tns:mergeShowResponse" />
+  </message>
+  <message name="removeShow">
+    <part name="parameters" element="tns:removeShow" />
+  </message>
+  <message name="removeShowResponse">
+    <part name="parameters" element="tns:removeShowResponse" />
+  </message>
+  <message name="getShows">
+    <part name="parameters" element="tns:getShows" />
+  </message>
+  <message name="getShowsResponse">
+    <part name="parameters" element="tns:getShowsResponse" />
+  </message>
+  <portType name="IShowService">
+    <operation name="addShow">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/addShowRequest" message="tns:addShow" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/addShowResponse" message="tns:addShowResponse" />
+    </operation>
+    <operation name="findShowById">
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/findShowByIdRequest" message="tns:findShowById" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/findShowByIdResponse" message="tns:findShowByIdResponse" />
+    </operation>
+    <operation name="mergeShow">
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/mergeShowRequest" message="tns:mergeShow" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/mergeShowResponse" message="tns:mergeShowResponse" />
+    </operation>
+    <operation name="removeShow">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/removeShowRequest" message="tns:removeShow" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/removeShowResponse" message="tns:removeShowResponse" />
+    </operation>
+    <operation name="getShows">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/getShowsRequest" message="tns:getShows" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/IShowService/getShowsResponse" message="tns:getShowsResponse" />
+    </operation>
+  </portType>
+</definitions>

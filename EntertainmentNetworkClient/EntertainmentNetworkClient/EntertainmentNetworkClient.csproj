@@ -88,6 +88,12 @@
     <Compile Include="Modules\Cinemas.Designer.cs">
       <DependentUpon>Cinemas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Shows.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Shows.Designer.cs">
+      <DependentUpon>Shows.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modules\SeatPopup.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <EmbeddedResource Include="Modules\Cinemas.resx">
       <DependentUpon>Cinemas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Shows.resx">
+      <DependentUpon>Shows.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\SeatPopup.resx">
       <DependentUpon>SeatPopup.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +178,7 @@
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.HallsViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.SeatsViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Floor.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Interfaces.IShow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

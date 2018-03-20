@@ -39,6 +39,8 @@
             this.floorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.seatViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.seatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.showViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.showsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.citiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.citiesViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaViewBindingSource)).BeginInit();
@@ -49,6 +51,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.floorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // citiesBindingSource
@@ -79,6 +83,12 @@
             // 
             this.seatsBindingSource.AllowNew = true;
             // 
+            // showsBindingSource
+            // 
+            this.showsBindingSource.AllowNew = true;
+            this.showsBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.ShowsBindingSource_AddingNew);
+            this.showsBindingSource.CurrentChanged += new System.EventHandler(this.ShowsBindingSource_CurrentChanged);
+            // 
             // ViewsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +105,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.floorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,6 +123,8 @@
         private System.Windows.Forms.BindingSource floorsBindingSource;
         private System.Windows.Forms.BindingSource seatViewBindingSource;
         private System.Windows.Forms.BindingSource seatsBindingSource;
+        private System.Windows.Forms.BindingSource showViewBindingSource;
+        private System.Windows.Forms.BindingSource showsBindingSource;
 
     }
 }
