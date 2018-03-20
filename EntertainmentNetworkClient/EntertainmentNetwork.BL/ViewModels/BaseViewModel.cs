@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using EntertainmentNetwork.BL.Commands;
 using EntertainmentNetwork.BL.Interfaces;
 using EntertainmentNetwork.DAL;
 using EntertainmentNetwork.DAL.Models.Interfaces;
+using EntertainmentNetwork.DAL.Logging;
 
 namespace EntertainmentNetwork.BL.ViewModels
 {
@@ -38,7 +40,7 @@ namespace EntertainmentNetwork.BL.ViewModels
         {
             foreach (var item in this.Models.Where(x => x.IsNew || x.IsChanged))
             {
-                var mergedModel = await this.DataService.Merge(item);
+                var mergedModel = await Logger.ExecuteAndLog<Task<M>>(() => this.DataService.Merge(item));
                 item.Update(mergedModel);
             }
         }
@@ -47,7 +49,7 @@ namespace EntertainmentNetwork.BL.ViewModels
         {
             this.Models.ListChanged -= ViewCollection_ListChanged;      
             this.Models.Clear();
-            var task = await this.DataService.GetAll();
+            var task = await Logger.ExecuteAndLog<Task<List<M>>>(() => this.DataService.GetAll());            
             
             foreach (M item in task.Where(filter))
             {
@@ -60,7 +62,7 @@ namespace EntertainmentNetwork.BL.ViewModels
 
         public virtual async Task Remove()
         {
-            await this.DataService.Remove(this.Selected.Id);
+            await Logger.ExecuteAndLog<Task>(() => this.DataService.Remove(this.Selected.Id));
             this.Models.Remove(this.Selected);
         }
 

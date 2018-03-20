@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -48,6 +51,7 @@
     <Compile Include="CityServiceAdapter.cs" />
     <Compile Include="FloorServiceAdapter.cs" />
     <Compile Include="HallServiceAdapter.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Cinema.cs" />
     <Compile Include="Models\Floor.cs" />
@@ -99,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Service References\CinemaService\CinemaService.wsdl" />
     <None Include="Service References\CinemaService\CinemaService.xsd">
       <SubType>Designer</SubType>
