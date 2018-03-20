@@ -43,17 +43,9 @@ namespace EntertainmentNetwork.BL.ViewModels
 
         public override async Task LoadData(Func<ISeat, bool> filter)
         {
-            this.Models.ListChanged -= ViewCollection_ListChanged;      
-            this.Models.Clear();
             this.SeatsMap.Clear();
             this.SeatsMap.Columns.Clear();
-
-            var task = await this.DataService.GetAll();
-
-            foreach (ISeat item in task.Where(filter))
-            {
-                this.Models.Add(item);
-            }
+            await base.LoadData(filter);         
 
             for (int i = 0; i < this.Models.GroupBy(x => x.SeatColumn).Count(); i++)
 			{
@@ -69,10 +61,7 @@ namespace EntertainmentNetwork.BL.ViewModels
             if (this.SeatsMapGenerated != null)
             {
                 this.SeatsMapGenerated(this, new EventArgs());
-            }
-     
-            this.IsDataLoaded = true;
-            this.Models.ListChanged += ViewCollection_ListChanged;
+            }    
         }
     }
 }
