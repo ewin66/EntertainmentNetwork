@@ -14,7 +14,5 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         decimal FloorId { get; set; }
         decimal HallId { get; set; }
         string FloorName { get; set; }
-
-        void Update(IFloor floor);
     }
 }

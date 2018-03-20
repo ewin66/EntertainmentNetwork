@@ -16,7 +16,7 @@ namespace EntertainmentNetwork.DAL.Models
 
         public Cinema(decimal cinId, decimal cityId, string cinName, string cinAddress, byte[] cinIcon)
         {
-            this.CinId = cinId;
+            this.Id = cinId;
             this.CityId = cityId;
             this.CinName = cinName;
             this.CinAddress = cinAddress;
@@ -27,15 +27,27 @@ namespace EntertainmentNetwork.DAL.Models
 
         public bool IsNew
         {
-            get { return this.CinId == 0; }
+            get { return this.Id == 0; }
         }
 
-        public decimal CinId
+        public decimal Id
         {
             get { return this.cinId; }
             set
             {
                 this.SetPropertyValue(out this.cinId, this.cinId, value);
+            }
+        }
+
+        public decimal CinId
+        {
+            get
+            {
+                return this.Id;
+            }
+            set
+            {
+                this.Id = value;
             }
         }
 
@@ -75,9 +87,10 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public void Update(ICinema cinema)
+        public void Update(IBaseModel model)
         {
-            this.CinId = cinema.CinId;
+            ICinema cinema = (ICinema)model;
+            this.Id = cinema.Id;
             this.CityId = cinema.CityId;
             this.CinName = cinema.CinName;
             this.CinAddress = cinema.CinAddress;
@@ -87,12 +100,12 @@ namespace EntertainmentNetwork.DAL.Models
         public override bool Equals(object city)
         {
             ICinema cinemaToCompare = city as ICinema;
-            return cinemaToCompare != null && this.CinId.Equals(cinemaToCompare.CinId);
+            return cinemaToCompare != null && this.Id.Equals(cinemaToCompare.Id);
         }
 
         public override int GetHashCode()
         {
-            return this.CinId.GetHashCode();
+            return this.Id.GetHashCode();
         }
 
         private decimal cinId;
@@ -100,6 +113,5 @@ namespace EntertainmentNetwork.DAL.Models
         private byte[] cinIcon;
         private string cinAddress;
         private decimal cityId;
-
     }
 }

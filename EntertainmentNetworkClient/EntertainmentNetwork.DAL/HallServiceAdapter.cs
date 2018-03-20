@@ -12,7 +12,7 @@ namespace EntertainmentNetwork.DAL
     {
         #region IHallService
 
-        public async Task AddHall(IHall hall)
+        public async Task Add(IHall hall)
         {
             await this.hallService.addHallAsync(new addHallRequest
             {
@@ -24,23 +24,23 @@ namespace EntertainmentNetwork.DAL
             });
         }
 
-        public async Task<IHall> FindHallById(decimal id)
+        public async Task<IHall> FindById(decimal id)
         {
             var result = await this.hallService.findHallByIdAsync(id);
             return this.ToHall(result.@return);
         }
 
-        public async Task<List<IHall>> GetHalls()
+        public async Task<List<IHall>> GetAll()
         {
             var result = await this.hallService.getHallsAsync();
             return result.@return.Select(x => this.ToHall(x)).ToList();
         }
 
-        public async Task<IHall> MergeHall(IHall hall)
+        public async Task<IHall> Merge(IHall hall)
         {
             var result = await this.hallService.mergeHallAsync(new mergeHallRequest
             {
-                halId = hall.HalId,
+                halId = hall.Id,
                 halIdSpecified = true,
                 halName = hall.HalName,
                 halSitscount = hall.HalSitscount,
@@ -52,7 +52,7 @@ namespace EntertainmentNetwork.DAL
             return this.ToHall(result.@return);
         }
 
-        public async Task RemoveHall(decimal id)
+        public async Task Remove(decimal id)
         {
             await this.hallService.removeHallAsync(id);
         }

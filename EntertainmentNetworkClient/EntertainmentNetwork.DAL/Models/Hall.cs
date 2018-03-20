@@ -10,7 +10,7 @@ namespace EntertainmentNetwork.DAL.Models
 
         public Hall(decimal halId, string halName, decimal halSitscount, decimal cinemaId)
         {
-            this.HalId = halId;
+            this.Id = halId;
             this.HalName = halName;
             this.HalSitscount = halSitscount;
             this.CinemaId = cinemaId;
@@ -20,18 +20,30 @@ namespace EntertainmentNetwork.DAL.Models
         {
             get
             {
-                return this.HalId == 0;
+                return this.Id == 0;
             }
         }
 
         public bool IsChanged { get; set; }
 
-        public decimal HalId
+        public decimal Id
         {
             get { return this.halId; }
             set
             {
                 this.SetPropertyValue(out this.halId, this.halId, value);
+            }
+        }
+
+        public decimal HalId
+        {
+            get
+            {
+                return this.Id;
+            }
+            set
+            {
+                this.Id = value;
             }
         }
 
@@ -62,9 +74,10 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public void Update(IHall hall)
+        public void Update(IBaseModel model)
         {
-            this.HalId = hall.HalId;
+            IHall hall = (IHall)model;
+            this.Id = hall.Id;
             this.HalName = hall.HalName;
             this.HalSitscount = hall.HalSitscount;
             this.CinemaId = hall.CinemaId;
@@ -73,12 +86,12 @@ namespace EntertainmentNetwork.DAL.Models
         public override bool Equals(object hall)
         {
             IHall hallToCompare = hall as IHall;
-            return hallToCompare != null && this.HalId.Equals(hallToCompare.HalId);
+            return hallToCompare != null && this.Id.Equals(hallToCompare.Id);
         }
 
         public override int GetHashCode()
         {
-            return this.HalId.GetHashCode();
+            return this.Id.GetHashCode();
         }
 
         private decimal cinemaId;

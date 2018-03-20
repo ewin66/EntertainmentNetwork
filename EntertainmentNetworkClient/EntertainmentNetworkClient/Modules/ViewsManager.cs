@@ -8,13 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraBars.Docking2010;
 using EntertainmentNetwork.DAL.Models;
 using EntertainmentNetwork.BL.Interfaces;
 using EntertainmentNetwork.BL.ViewModels;
 using EntertainmentNetwork.DAL;
 using EntertainmentNetwork.DAL.Models.Interfaces;
 using EntertainmentNetworkClient.Properties;
-using DevExpress.XtraBars.Docking2010;
 
 namespace EntertainmentNetworkClient.Modules
 {

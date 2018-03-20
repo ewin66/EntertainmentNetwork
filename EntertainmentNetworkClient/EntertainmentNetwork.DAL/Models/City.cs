@@ -1,4 +1,5 @@
-﻿using EntertainmentNetwork.DAL.Models.Interfaces;
+﻿using System;
+using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.DAL.Models
 {
@@ -8,7 +9,7 @@ namespace EntertainmentNetwork.DAL.Models
 
         public City(decimal citId, string citName, string citCountry)
         {
-            this.CitId = citId;
+            this.Id = citId;
             this.CitName = citName;
             this.CitCountry = citCountry;
         }
@@ -17,18 +18,30 @@ namespace EntertainmentNetwork.DAL.Models
         {
             get
             {
-                return this.CitId == 0;
+                return this.Id == 0;
             }
         }
 
         public bool IsChanged { get; set; }
 
-        public decimal CitId
+        public decimal Id
         {
             get { return this.citId; }
             set
             {
                 this.SetPropertyValue(out this.citId, this.citId, value);
+            }
+        }
+
+        public decimal CitId
+        {
+            get
+            {
+                return this.Id;
+            }
+            set
+            {
+                this.Id = value;
             }
         }
 
@@ -50,9 +63,10 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public void Update(ICity city)
+        public void Update(IBaseModel model)
         {
-            this.CitId = city.CitId;
+            ICity city = (ICity)model;
+            this.Id = city.Id;
             this.CitName = city.CitName;
             this.CitCountry = city.CitCountry;
         }
@@ -60,12 +74,12 @@ namespace EntertainmentNetwork.DAL.Models
         public override bool Equals(object city)
         {
             ICity cityToCompare = city as ICity;
-            return cityToCompare != null && this.CitId.Equals(cityToCompare.CitId);
+            return cityToCompare != null && this.Id.Equals(cityToCompare.Id);
         }
 
         public override int GetHashCode()
         {
-            return this.CitId.GetHashCode();
+            return this.Id.GetHashCode();
         }
 
         private decimal citId;

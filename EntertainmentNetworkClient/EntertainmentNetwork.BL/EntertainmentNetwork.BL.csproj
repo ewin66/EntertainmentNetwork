@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CitiesViewModel.cs" />
     <Compile Include="ViewModels\CinemasViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\SeatsViewModel.cs" />
     <Compile Include="ViewModels\FloorsViewModel.cs" />
     <Compile Include="ViewModels\HallsViewModel.cs" />

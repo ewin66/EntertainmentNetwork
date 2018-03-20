@@ -11,77 +11,25 @@ using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.BL.ViewModels
 {
-    public class SeatsViewModel : BaseNotifyPropertyChanged, ISeatViewModel
+    public class SeatsViewModel : BaseViewModel<ISeatService, ISeat>, ISeatViewModel
     {
         public event EventHandler SeatsMapGenerated;
 
-        public SeatsViewModel(ISeatService dataService)
+        public SeatsViewModel(ISeatService dataService) : base(dataService)
         {
-            this.seatService = dataService;
-            this.seatsViewCollection = new BindingList<ISeat>();
-            this.seatsMap = new DataTable();
-            this.addUpdateCommand = new AddUpdateCommand<ISeat>(this);
-            this.removeCommand = new RemoveCommand<ISeat>(this);
-            this.generateCommand = new GenerateCommand(this);
+            this.SeatsMap = new DataTable();
+            this.GenerateCommand = new GenerateCommand(this);
         }
 
-        public BindingList<ISeat> Models 
-        { 
-            get 
-            {
-                return this.seatsViewCollection; 
-            } 
-        }
+        public DataTable SeatsMap { get; private set; }
 
-        public DataTable SeatsMap
-        {
-            get
-            {
-                return this.seatsMap;
-            }
-        }
-
-        public bool IsDataLoaded { get; private set; }
-        public ISeat Selected { get; set; }
-
-        public ICommand AddUpdateCommand
-        {
-            get
-            {
-                return this.addUpdateCommand;
-            }
-        }
-
-        public ICommand GenerateCommand
-        {
-            get
-            {
-                return this.generateCommand;
-            }
-        }
-
-        public ICommand RemoveCommand
-        {
-            get
-            {
-                return this.removeCommand;
-            }
-        }
-
-        public async Task AddUpdate()
-        {
-            foreach (var item in this.Models.Where(x => x.IsNew || x.IsChanged))
-            {
-                var seat = await this.seatService.MergeSeat(item);
-                item.Update(seat);
-            }
-        }
+        public ICommand GenerateCommand {get; private set;}
 
         public async Task Generate(object parameter)
         {
             foreach (var item in this.Models)
             {
-                await this.seatService.RemoveSeatAsync(item.SeatId);
+                await this.DataService.Remove(item.Id);
             }
 
             this.Models.Clear();
@@ -89,18 +37,18 @@ namespace EntertainmentNetwork.BL.ViewModels
             Tuple<decimal, int, int> args = parameter as Tuple<decimal, int, int>;
             if (args != null)
 	        {
-                await this.seatService.GenerateSeats(args.Item1, args.Item2, args.Item3);
+                await this.DataService.GenerateSeats(args.Item1, args.Item2, args.Item3);
 	        }
         }
 
-        public async Task LoadData(Func<ISeat, bool> filter)
+        public override async Task LoadData(Func<ISeat, bool> filter)
         {
-            this.Models.ListChanged -= SeatsViewCollection_ListChanged;      
+            this.Models.ListChanged -= ViewCollection_ListChanged;      
             this.Models.Clear();
             this.SeatsMap.Clear();
             this.SeatsMap.Columns.Clear();
 
-            var task = await this.seatService.GetSeats();
+            var task = await this.DataService.GetAll();
 
             foreach (ISeat item in task.Where(filter))
             {
@@ -124,35 +72,7 @@ namespace EntertainmentNetwork.BL.ViewModels
             }
      
             this.IsDataLoaded = true;
-            this.Models.ListChanged += SeatsViewCollection_ListChanged;
+            this.Models.ListChanged += ViewCollection_ListChanged;
         }
-
-        public async Task Remove()
-        {
-            await this.seatService.RemoveSeatAsync(this.Selected.SeatId);
-            this.Models.Remove(this.Selected);
-        }
-
-        private ISeat GetSeat(decimal seatId)
-        {
-            return this.Models.FirstOrDefault(x => x.SeatId == seatId);
-        }
-
-        private void SeatsViewCollection_ListChanged(object sender, ListChangedEventArgs e)
-        {
-            var changedList = sender as BindingList<ISeat>;
-            if (changedList != null && e.ListChangedType != ListChangedType.ItemDeleted && e.NewIndex > -1)
-            {
-                changedList[e.NewIndex].IsChanged = true;
-            } 
-        }
-
-        private readonly ICommand addUpdateCommand;
-        private readonly ICommand removeCommand;
-        private readonly ICommand generateCommand;
-        private BindingList<ISeat> seatsViewCollection;
-        private DataTable seatsMap;
-        private ISeatService seatService;
-        public const string SELECTED_SEAT_PROPERRTY_NAME = "SelectedSeat";
     }
 }

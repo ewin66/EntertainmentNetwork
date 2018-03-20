@@ -10,7 +10,7 @@ namespace EntertainmentNetwork.DAL.Models
 
         public Seat(decimal seatId, int seatColumn, int seatNum, int seatRow, int seatType, decimal floorId, bool isActive)
         {
-            this.SeatId = seatId;
+            this.Id = seatId;
             this.SeatColumn = seatColumn;
             this.SeatNum = seatNum;
             this.SeatRow = seatRow;
@@ -23,7 +23,7 @@ namespace EntertainmentNetwork.DAL.Models
 
         public bool IsNew
         {
-            get { return this.SeatId == 0; }
+            get { return this.Id == 0; }
         }
 
         public bool IsActive
@@ -35,12 +35,24 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public decimal SeatId
+        public decimal Id
         {
             get { return this.seatId; }
             set
             {
                 this.SetPropertyValue(out this.seatId, this.seatId, value);
+            }
+        }
+
+        public decimal SeatId
+        {
+            get
+            {
+                return this.Id;
+            }
+            set
+            {
+                this.Id = value;
             }
         }
 
@@ -89,9 +101,10 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public void Update(ISeat seat)
+        public void Update(IBaseModel model)
         {
-            this.SeatId = seat.SeatId;
+            ISeat seat = (ISeat)model;
+            this.Id = seat.Id;
             this.SeatColumn = seat.SeatColumn;
             this.SeatNum = seat.SeatNum;
             this.SeatRow = seat.SeatRow;
@@ -103,12 +116,12 @@ namespace EntertainmentNetwork.DAL.Models
         public override bool Equals(object seat)
         {
             ISeat seatToCompare = seat as ISeat;
-            return seatToCompare != null && this.SeatId.Equals(seatToCompare.SeatId);
+            return seatToCompare != null && this.Id.Equals(seatToCompare.Id);
         }
 
         public override int GetHashCode()
         {
-            return this.SeatId.GetHashCode();
+            return this.Id.GetHashCode();
         }
 
         private decimal seatId;

@@ -40,12 +40,10 @@
             this.layoutControlItemFloors = new DevExpress.XtraLayout.LayoutControlItem();
             this.lookUpEditFloors = new DevExpress.XtraEditors.LookUpEdit();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.textEditDefPrice = new DevExpress.XtraEditors.TextEdit();
             this.spinEditColumns = new DevExpress.XtraEditors.SpinEdit();
             this.spinEditRows = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlItemRows = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemColumns = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemDefPrice = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemgridSeats)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridSeats)).BeginInit();
@@ -56,12 +54,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditFloors.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditDefPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditColumns.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditRows.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemColumns)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDefPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // windowsUIButtonPanelMain
@@ -122,8 +118,7 @@
             this.layoutControlItemgridSeats,
             this.layoutControlItemFloors,
             this.layoutControlItemRows,
-            this.layoutControlItemColumns,
-            this.layoutControlItemDefPrice});
+            this.layoutControlItemColumns});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(800, 510);
@@ -222,7 +217,6 @@
             // dataLayoutControl1
             // 
             this.dataLayoutControl1.AllowCustomization = false;
-            this.dataLayoutControl1.Controls.Add(this.textEditDefPrice);
             this.dataLayoutControl1.Controls.Add(this.spinEditColumns);
             this.dataLayoutControl1.Controls.Add(this.spinEditRows);
             this.dataLayoutControl1.Controls.Add(this.gridSeats);
@@ -235,24 +229,6 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(800, 510);
             this.dataLayoutControl1.TabIndex = 0;
             // 
-            // textEditDefPrice
-            // 
-            this.textEditDefPrice.Location = new System.Drawing.Point(693, 11);
-            this.textEditDefPrice.Name = "textEditDefPrice";
-            this.textEditDefPrice.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
-            this.textEditDefPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEditDefPrice.Properties.Appearance.Options.UseFont = true;
-            this.textEditDefPrice.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEditDefPrice.Properties.Mask.BeepOnError = true;
-            this.textEditDefPrice.Properties.Mask.EditMask = "c";
-            this.textEditDefPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.textEditDefPrice.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.textEditDefPrice.Properties.MaxLength = 6;
-            this.textEditDefPrice.Properties.NullText = "0";
-            this.textEditDefPrice.Size = new System.Drawing.Size(96, 22);
-            this.textEditDefPrice.StyleController = this.dataLayoutControl1;
-            this.textEditDefPrice.TabIndex = 4;
-            // 
             // spinEditColumns
             // 
             this.spinEditColumns.EditValue = new decimal(new int[] {
@@ -260,7 +236,7 @@
             0,
             0,
             0});
-            this.spinEditColumns.Location = new System.Drawing.Point(457, 11);
+            this.spinEditColumns.Location = new System.Drawing.Point(576, 11);
             this.spinEditColumns.Name = "spinEditColumns";
             this.spinEditColumns.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.spinEditColumns.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -282,7 +258,7 @@
             0});
             this.spinEditColumns.Properties.NullText = "0";
             this.spinEditColumns.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
-            this.spinEditColumns.Size = new System.Drawing.Size(107, 22);
+            this.spinEditColumns.Size = new System.Drawing.Size(213, 22);
             this.spinEditColumns.StyleController = this.dataLayoutControl1;
             this.spinEditColumns.TabIndex = 3;
             // 
@@ -314,7 +290,7 @@
             0,
             0});
             this.spinEditRows.Properties.NullText = "0";
-            this.spinEditRows.Size = new System.Drawing.Size(75, 22);
+            this.spinEditRows.Size = new System.Drawing.Size(194, 22);
             this.spinEditRows.StyleController = this.dataLayoutControl1;
             this.spinEditRows.TabIndex = 2;
             // 
@@ -328,7 +304,7 @@
             this.layoutControlItemRows.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItemRows.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItemRows.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutControlItemRows.Size = new System.Drawing.Size(115, 28);
+            this.layoutControlItemRows.Size = new System.Drawing.Size(234, 28);
             this.layoutControlItemRows.Text = "Rows:";
             this.layoutControlItemRows.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemRows.TextSize = new System.Drawing.Size(33, 14);
@@ -339,28 +315,14 @@
             this.layoutControlItemColumns.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItemColumns.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItemColumns.Control = this.spinEditColumns;
-            this.layoutControlItemColumns.Location = new System.Drawing.Point(337, 0);
+            this.layoutControlItemColumns.Location = new System.Drawing.Point(456, 0);
             this.layoutControlItemColumns.Name = "layoutControlItemColumns";
             this.layoutControlItemColumns.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutControlItemColumns.Size = new System.Drawing.Size(218, 28);
+            this.layoutControlItemColumns.Size = new System.Drawing.Size(324, 28);
             this.layoutControlItemColumns.Text = "Max seats per row:";
             this.layoutControlItemColumns.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemColumns.TextSize = new System.Drawing.Size(104, 14);
             this.layoutControlItemColumns.TextToControlDistance = 5;
-            // 
-            // layoutControlItemDefPrice
-            // 
-            this.layoutControlItemDefPrice.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItemDefPrice.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItemDefPrice.Control = this.textEditDefPrice;
-            this.layoutControlItemDefPrice.Location = new System.Drawing.Point(555, 0);
-            this.layoutControlItemDefPrice.Name = "layoutControlItemDefPrice";
-            this.layoutControlItemDefPrice.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutControlItemDefPrice.Size = new System.Drawing.Size(225, 28);
-            this.layoutControlItemDefPrice.Text = "Default price per seat:";
-            this.layoutControlItemDefPrice.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemDefPrice.TextSize = new System.Drawing.Size(122, 14);
-            this.layoutControlItemDefPrice.TextToControlDistance = 5;
             // 
             // Seats
             // 
@@ -384,12 +346,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditFloors.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEditDefPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditColumns.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditRows.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemColumns)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDefPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,8 +370,6 @@
         private DevExpress.XtraEditors.SpinEdit spinEditRows;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemRows;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemColumns;
-        private DevExpress.XtraEditors.TextEdit textEditDefPrice;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemDefPrice;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemFloors;
     }
 }

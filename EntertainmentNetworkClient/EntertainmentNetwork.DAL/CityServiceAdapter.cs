@@ -12,7 +12,7 @@ namespace EntertainmentNetwork.DAL
     {
         #region ICityService
 
-        public async Task AddCity(Interfaces.ICity city)
+        public async Task Add(Interfaces.ICity city)
         {
             await this.cityService.addCityAsync(new addCityRequest
             {
@@ -21,16 +21,16 @@ namespace EntertainmentNetwork.DAL
             });
         }
 
-        public async Task RemoveCity(decimal id)
+        public async Task Remove(decimal id)
         {
             await this.cityService.removeCityAsync(id);
         }
 
-        public async Task<ICity> MergeCity(Interfaces.ICity city)
+        public async Task<ICity> Merge(Interfaces.ICity city)
         {
             var result = await this.cityService.mergeCityAsync(new mergeCityRequest 
             {
-                citId = city.CitId,
+                citId = city.Id,
                 citCountry = city.CitCountry,
                 citName = city.CitName,
                 citIdSpecified = true
@@ -39,7 +39,7 @@ namespace EntertainmentNetwork.DAL
             return this.ToCity(result.@return);
         }
 
-        public async Task<ICity> FindCityById(decimal id)
+        public async Task<ICity> FindById(decimal id)
         {
             var result = await this.cityService.findCityByIdAsync(id);
             return this.ToCity(result.@return);
@@ -51,7 +51,7 @@ namespace EntertainmentNetwork.DAL
             return result.@return.Select(x => this.ToCity(x)).ToList();
         }
 
-        public async Task<List<ICity>> GetCities()
+        public async Task<List<ICity>> GetAll()
         {
             var result = await this.cityService.getCitiesAsync();
             return result.@return.Select(x => this.ToCity(x)).ToList();

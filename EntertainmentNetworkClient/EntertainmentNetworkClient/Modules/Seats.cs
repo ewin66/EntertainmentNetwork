@@ -143,7 +143,7 @@ namespace EntertainmentNetworkClient.Modules
 
         private bool FilterSeats(ISeat seat)
         {
-            return this.floorsView.Selected != null && seat.FloorId == this.floorsView.Selected.FloorId;
+            return this.floorsView.Selected != null && seat.FloorId == this.floorsView.Selected.Id;
         }
 
         private void FloorsBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -169,7 +169,7 @@ namespace EntertainmentNetworkClient.Modules
                 if (button.Caption == Resources.ButtonGenerate)
                 {
                     this.seatsView.GenerateCommand.Execute(
-                        Tuple.Create(this.floorsView.Selected.FloorId, Convert.ToInt32(this.spinEditRows.EditValue), Convert.ToInt32(this.spinEditColumns.EditValue)));
+                        Tuple.Create(this.floorsView.Selected.Id, Convert.ToInt32(this.spinEditRows.EditValue), Convert.ToInt32(this.spinEditColumns.EditValue)));
                 }
                 else if (button.Caption == Resources.ButtonSave)
                 {

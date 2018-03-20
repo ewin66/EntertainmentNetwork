@@ -23,7 +23,5 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         decimal FloorId { get; set; }
         [Range(0, 10)]
         bool IsActive { get; set; }
-
-        void Update(ISeat seat);
     }
 }

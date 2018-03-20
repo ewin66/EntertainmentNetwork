@@ -51,6 +51,7 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Cinema.cs" />
     <Compile Include="Models\Floor.cs" />
+    <Compile Include="Models\Interfaces\IBaseService.cs" />
     <Compile Include="Models\Interfaces\IFloor.cs" />
     <Compile Include="Models\Interfaces\IFloorService.cs" />
     <Compile Include="Models\Seat.cs" />

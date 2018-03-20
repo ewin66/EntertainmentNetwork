@@ -6,16 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntertainmentNetwork.DAL.Models.Interfaces
 {
-    public interface IFloorService
+    public interface IFloorService : IBaseService<IFloor>
     {
-        Task AddFloor(IFloor seat);
-
-        Task<IFloor> FindFloorById(decimal id);
-
-        Task<List<IFloor>> GetFloors();
-
-        Task<IFloor> MergeFloor(IFloor floor);
-
-        Task RemoveFloor(decimal id);
     }
 }

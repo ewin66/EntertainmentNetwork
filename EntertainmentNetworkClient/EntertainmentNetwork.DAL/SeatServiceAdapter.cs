@@ -13,7 +13,7 @@ namespace EntertainmentNetwork.DAL
     {
         #region ISeatService
 
-        public async Task AddSeat(Interfaces.ISeat seat)
+        public async Task Add(Interfaces.ISeat seat)
         {
            await this.seatService.addSeatAsync(new addSeatRequest
             {
@@ -27,7 +27,7 @@ namespace EntertainmentNetwork.DAL
             });
         }
 
-        public async Task<Interfaces.ISeat> FindSeatById(decimal id)
+        public async Task<Interfaces.ISeat> FindById(decimal id)
         {
             var result = await this.seatService.findSeatByIdAsync(id);
             return this.ToSeat(result.@return);
@@ -44,18 +44,18 @@ namespace EntertainmentNetwork.DAL
             });
         }
 
-        public async Task<List<Interfaces.ISeat>> GetSeats()
+        public async Task<List<Interfaces.ISeat>> GetAll()
         {
             var result = await this.seatService.getSeatsAsync();
             var seats = result.@return;
             return seats == null ? new List<Interfaces.ISeat>() : seats.Select(x => this.ToSeat(x)).ToList();
         }
 
-        public async Task<Interfaces.ISeat> MergeSeat(Interfaces.ISeat seat)
+        public async Task<Interfaces.ISeat> Merge(Interfaces.ISeat seat)
         {
             var result = await this.seatService.mergeSeatAsync(new mergeSeatRequest
             {
-                seatId = seat.SeatId,
+                seatId = seat.Id,
                 seatIdSpecified = true,
                 flrId = seat.FloorId,
                 flrIdSpecified = true,
@@ -69,14 +69,9 @@ namespace EntertainmentNetwork.DAL
             return this.ToSeat(result.@return);        
         }
 
-        public async Task RemoveSeatAsync(decimal id)
+        public async Task Remove(decimal id)
         {
             await this.seatService.removeSeatAsync(id);
-        }
-
-        public void RemoveSeat(decimal id)
-        {
-            this.seatService.removeSeat(id);
         }
 
         #endregion

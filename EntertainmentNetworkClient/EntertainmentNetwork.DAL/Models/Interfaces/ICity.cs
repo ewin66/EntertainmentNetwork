@@ -11,7 +11,5 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         string CitName { get; set; }
         [Required(AllowEmptyStrings = false)]
         string CitCountry { get; set; }
-
-        void Update(ICity city);
     }
 }

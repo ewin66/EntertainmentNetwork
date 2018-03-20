@@ -21,7 +21,7 @@ namespace EntertainmentNetwork.BL.Commands
 
         private void vm_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (string.Compare(e.PropertyName, CitiesViewModel.SELECTED_CITY_PROPERRTY_NAME) == ARE_EQUAL)
+            if (string.Compare(e.PropertyName, selectedPropertyName) == ARE_EQUAL)
             {
                 this.CanExecuteChanged(this, new EventArgs());
             }
@@ -39,6 +39,7 @@ namespace EntertainmentNetwork.BL.Commands
             vm.AddUpdate();
         }
 
+        public const string selectedPropertyName = "Selected";
         private const int ARE_EQUAL = 0;
         private const int NONE_SELECTED = -1;
         private IViewModel<T> vm;

@@ -10,100 +10,10 @@ using EntertainmentNetwork.DAL.Models.Interfaces;
 
 namespace EntertainmentNetwork.BL.ViewModels
 {
-    public class CinemasViewModel : BaseNotifyPropertyChanged, IViewModel<ICinema>
+    public class CinemasViewModel : BaseViewModel<ICinemaService, ICinema>
     {
-        public CinemasViewModel(ICinemaService dataService)
+        public CinemasViewModel(ICinemaService dataService) : base(dataService)
         {
-            this.cinemaService = dataService;
-            this.cinemasViewCollection = new BindingList<ICinema>();
-            this.addUpdateCommand = new AddUpdateCommand<ICinema>(this);
-            this.removeCommand = new RemoveCommand<ICinema>(this);
         }
-
-        public BindingList<ICinema> Models 
-        { 
-            get 
-            {
-                return this.cinemasViewCollection; 
-            } 
-        }
-
-        public bool IsDataLoaded { get; private set; }
-        public ICinema Selected { get; set; }
-
-        public ICommand AddUpdateCommand
-        {
-            get
-            {
-                return this.addUpdateCommand;
-            }
-        }
-
-        public ICommand RemoveCommand
-        {
-            get
-            {
-                return this.removeCommand;
-            }
-        }
-
-        public async Task AddUpdate()
-        {
-            foreach (var item in this.Models.Where(x => x.IsNew))
-            {
-                await this.cinemaService.AddCinema(item);
-                var task = await this.cinemaService.FindCinemaByName(item.CinName);
-                var added = task.FirstOrDefault(x => x.CityId == item.CityId);
-                item.Update(added);
-            }
-
-            foreach (var item in this.Models.Where(x => x.IsChanged && !x.IsNew))
-            {
-                this.GetCinema(item.CinId).Update(item);
-                await this.cinemaService.MergeCinema(item);
-            }
-        }
-
-        public async Task LoadData(Func<ICinema, bool> filter)
-        {
-            this.cinemasViewCollection.ListChanged -= CinemasViewCollection_ListChanged;      
-            this.cinemasViewCollection.Clear();
-            var result = await this.cinemaService.GetCinemas();
-            var cinemas = result.Where(filter);
-
-            foreach (ICinema item in cinemas)
-            {
-                this.cinemasViewCollection.Add(item);
-            }
-
-            this.IsDataLoaded = true;
-            this.cinemasViewCollection.ListChanged += CinemasViewCollection_ListChanged;
-        }
-
-        public async Task Remove()
-        {
-            await this.cinemaService.RemoveCinema(this.Selected.CinId);
-            this.Models.Remove(this.Selected);
-        }
-
-        private ICinema GetCinema(decimal cinemaId)
-        {
-            return this.Models.FirstOrDefault(x => x.CinId == cinemaId);
-        }
-
-        private void CinemasViewCollection_ListChanged(object sender, ListChangedEventArgs e)
-        {
-            var changedList = sender as BindingList<ICinema>;
-            if (changedList != null && e.ListChangedType != ListChangedType.ItemDeleted)
-            {
-                changedList[e.NewIndex].IsChanged = true;
-            } 
-        }
-
-        private readonly ICommand addUpdateCommand;
-        private readonly ICommand removeCommand;
-        private BindingList<ICinema> cinemasViewCollection;
-        private ICinemaService cinemaService;
-        public const string SELECTED_CINEMA_PROPERRTY_NAME = "Selected";
     }
 }

@@ -35,7 +35,7 @@ namespace EntertainmentNetworkClient.Modules
 
         private bool FilterCinemas(ICinema cinema)
         {
-            return this.citiesView.Selected != null && cinema.CityId == this.citiesView.Selected.CitId;
+            return this.citiesView.Selected != null && cinema.CityId == this.citiesView.Selected.Id;
         }
 
         private void CitiesBindingSource_CurrentChanged(object sender, EventArgs e)

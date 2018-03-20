@@ -12,7 +12,7 @@ namespace EntertainmentNetwork.DAL
     {
         #region ICinemaService
 
-        public async Task AddCinema(ICinema cinema)
+        public async Task Add(ICinema cinema)
         {
             await cinemaService.addCinemaAsync(new addCinemaRequest
             {
@@ -24,7 +24,7 @@ namespace EntertainmentNetwork.DAL
             });
         }
 
-        public async Task<ICinema> FindCinemaById(decimal id)
+        public async Task<ICinema> FindById(decimal id)
         {
             var result = await this.cinemaService.findCinemaByIdAsync(id);
             return this.ToCinema(result.@return);
@@ -36,18 +36,18 @@ namespace EntertainmentNetwork.DAL
             return result.@return.Select(x => this.ToCinema(x)).ToList();
         }
 
-        public async Task<List<ICinema>> GetCinemas()
+        public async Task<List<ICinema>> GetAll()
         {
             var result = await this.cinemaService.getCinemasAsync();
             return result.@return.Select(x => this.ToCinema(x)).ToList();
         }
 
-        public async Task<ICinema> MergeCinema(ICinema cinema)
+        public async Task<ICinema> Merge(ICinema cinema)
         {
             var result = await this.cinemaService.mergeCinemaAsync(new mergeCinemaRequest
             {
                 citId = cinema.CityId,
-                cinId = cinema.CinId,
+                cinId = cinema.Id,
                 cinName = cinema.CinName,
                 cinAddress = cinema.CinAddress,
                 cinIcon = cinema.CinIcon,
@@ -58,7 +58,7 @@ namespace EntertainmentNetwork.DAL
             return this.ToCinema(result.@return);
         }
 
-        public async Task RemoveCinema(decimal id)
+        public async Task Remove(decimal id)
         {
             await this.cinemaService.removeCinemaAsync(id);
         }

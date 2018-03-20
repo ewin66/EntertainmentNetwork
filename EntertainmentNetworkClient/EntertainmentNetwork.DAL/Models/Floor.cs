@@ -10,7 +10,7 @@ namespace EntertainmentNetwork.DAL.Models
 
         public Floor(decimal floorId, string floorName, decimal hallId)
         {
-            this.FloorId = floorId;
+            this.Id = floorId;
             this.FloorName = floorName;
             this.HallId = hallId;
         }
@@ -19,18 +19,30 @@ namespace EntertainmentNetwork.DAL.Models
         {
             get
             {
-                return this.FloorId == 0;
+                return this.Id == 0;
             }
         }
 
         public bool IsChanged { get; set; }
 
-        public decimal FloorId
+        public decimal Id
         {
             get { return this.floorId; }
             set
             {
                 this.SetPropertyValue(out this.floorId, this.floorId, value);
+            }
+        }
+
+        public decimal FloorId
+        {
+            get
+            {
+                return this.Id;
+            }
+            set
+            {
+                this.Id = value;
             }
         }
 
@@ -52,9 +64,10 @@ namespace EntertainmentNetwork.DAL.Models
             }
         }
 
-        public void Update(IFloor floor)
+        public void Update(IBaseModel model)
         {
-            this.FloorId = floor.FloorId;
+            IFloor floor = (IFloor)model;
+            this.Id = floor.Id;
             this.FloorName = floor.FloorName;
             this.HallId = floor.HallId;
         }
@@ -62,12 +75,12 @@ namespace EntertainmentNetwork.DAL.Models
         public override bool Equals(object floor)
         {
             IFloor floorToCompare = floor as IFloor;
-            return floorToCompare != null && this.FloorId.Equals(floorToCompare.FloorId);
+            return floorToCompare != null && this.Id.Equals(floorToCompare.Id);
         }
 
         public override int GetHashCode()
         {
-            return this.FloorId.GetHashCode();
+            return this.Id.GetHashCode();
         }
 
         private decimal floorId;

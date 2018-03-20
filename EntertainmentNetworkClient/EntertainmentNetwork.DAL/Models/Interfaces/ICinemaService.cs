@@ -6,18 +6,8 @@ using System.Threading.Tasks;
 
 namespace EntertainmentNetwork.DAL.Models.Interfaces
 {
-    public interface ICinemaService
+    public interface ICinemaService : IBaseService<ICinema>
     {
-        Task AddCinema(ICinema cinema);
-
-        Task<ICinema> FindCinemaById(decimal id);
-
         Task<List<ICinema>> FindCinemaByName(string name);
-
-        Task<List<ICinema>> GetCinemas();
-
-        Task<ICinema> MergeCinema(ICinema cinema);
-
-        Task RemoveCinema(decimal id);
     }
 }

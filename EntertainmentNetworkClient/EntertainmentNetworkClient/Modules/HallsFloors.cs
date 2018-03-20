@@ -53,12 +53,12 @@ namespace EntertainmentNetworkClient.Modules
 
         private bool FilterHalls(IHall hall)
         {
-            return this.cinemasView.Selected != null && hall.CinemaId == this.cinemasView.Selected.CinId;
+            return this.cinemasView.Selected != null && hall.CinemaId == this.cinemasView.Selected.Id;
         }
 
         private bool FilterFloors(IFloor floor)
         {
-            return this.hallsView.Selected != null && floor.HallId == this.hallsView.Selected.HalId;
+            return this.hallsView.Selected != null && floor.HallId == this.hallsView.Selected.Id;
         }
 
         private void CinemasBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace EntertainmentNetworkClient.Modules
             var view = sender as ColumnView;
             if (view != null)
             {
-                view.SetRowCellValue(e.RowHandle, this.colHallId, this.hallsView.Selected.HalId);
+                view.SetRowCellValue(e.RowHandle, this.colHallId, this.hallsView.Selected.Id);
             }
         }
 

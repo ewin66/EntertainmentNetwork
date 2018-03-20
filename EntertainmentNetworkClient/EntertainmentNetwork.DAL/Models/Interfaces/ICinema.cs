@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace EntertainmentNetwork.DAL.Models.Interfaces
@@ -14,7 +13,5 @@ namespace EntertainmentNetwork.DAL.Models.Interfaces
         string CinAddress { get; set; }
         byte[] CinIcon { get; set; }
         decimal CityId { get; set; }
-
-        void Update(ICinema city);
     }
 }

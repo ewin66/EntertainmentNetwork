@@ -12,7 +12,7 @@ namespace EntertainmentNetwork.DAL
     {
         #region IFloorService
 
-        public async Task AddFloor(IFloor floor)
+        public async Task Add(IFloor floor)
         {
             await this.floorService.addFloorAsync(new addFloorRequest
             {
@@ -22,23 +22,23 @@ namespace EntertainmentNetwork.DAL
             });
         }
 
-        public async Task<IFloor> FindFloorById(decimal id)
+        public async Task<IFloor> FindById(decimal id)
         {
             var result = await this.floorService.findFloorByIdAsync(id);
             return this.ToFloor(result.@return);
         }
 
-        public async Task<List<IFloor>> GetFloors()
+        public async Task<List<IFloor>> GetAll()
         {
             var result = await this.floorService.getFloorsAsync();
             return result.@return.Select(x => this.ToFloor(x)).ToList();
         }
 
-        public async Task<IFloor> MergeFloor(IFloor floor)
+        public async Task<IFloor> Merge(IFloor floor)
         {
             var result = await this.floorService.mergeFloorAsync(new mergeFloorRequest
             {
-                flrId = floor.FloorId,
+                flrId = floor.Id,
                 flrIdSpecified = true,
                 flrName = floor.FloorName,
                 halId = floor.HallId,
@@ -48,7 +48,7 @@ namespace EntertainmentNetwork.DAL
             return this.ToFloor(result.@return);
         }
 
-        public async Task RemoveFloor(decimal id)
+        public async Task Remove(decimal id)
         {
             await this.floorService.removeFloorAsync(id);
         }
