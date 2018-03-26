@@ -36,7 +36,7 @@ namespace EntertainmentNetwork.BL.Commands
 
         public void Execute(object parameter)
         {
-            vm.Remove();
+            vm.Remove(parameter);
         }
 
         public const string selectedPropertyName = "Selected";

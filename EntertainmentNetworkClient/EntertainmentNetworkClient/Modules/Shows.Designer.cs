@@ -35,6 +35,7 @@
             this.colShwId = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.colShwName = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.colShwDesc = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.repositoryItemMemoEditShowDescr = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.colShwPerformer = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.colShwIcon = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.repositoryItemCinemaIcon = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -43,24 +44,25 @@
             this.labelControl = new DevExpress.XtraEditors.LabelControl();
             this.windowsUIButtonPanelMain = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
-            this.layoutViewField_colShwId = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colShwDesc = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colShwPerformer = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colShwIcon = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.layoutViewField_colShwName = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colShwId = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colShwPerformer = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colShwDesc = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewField_colShwIcon = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridShows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewShows)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEditShowDescr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCinemaIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwDesc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwPerformer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwPerformer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwDesc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // dataLayoutControl1
@@ -85,7 +87,8 @@
             this.gridShows.MainView = this.layoutViewShows;
             this.gridShows.Name = "gridShows";
             this.gridShows.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCinemaIcon});
+            this.repositoryItemCinemaIcon,
+            this.repositoryItemMemoEditShowDescr});
             this.gridShows.Size = new System.Drawing.Size(776, 486);
             this.gridShows.TabIndex = 6;
             this.gridShows.UseEmbeddedNavigator = true;
@@ -99,7 +102,7 @@
             this.layoutViewShows.Appearance.FieldValue.Font = new System.Drawing.Font("Tahoma", 11.25F);
             this.layoutViewShows.Appearance.FieldValue.Options.UseFont = true;
             this.layoutViewShows.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.layoutViewShows.CardMinSize = new System.Drawing.Size(534, 465);
+            this.layoutViewShows.CardMinSize = new System.Drawing.Size(559, 461);
             this.layoutViewShows.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
             this.colShwId,
             this.colShwName,
@@ -134,9 +137,15 @@
             // 
             // colShwDesc
             // 
+            this.colShwDesc.ColumnEdit = this.repositoryItemMemoEditShowDescr;
             this.colShwDesc.FieldName = "ShwDesc";
             this.colShwDesc.LayoutViewField = this.layoutViewField_colShwDesc;
             this.colShwDesc.Name = "colShwDesc";
+            // 
+            // repositoryItemMemoEditShowDescr
+            // 
+            this.repositoryItemMemoEditShowDescr.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.repositoryItemMemoEditShowDescr.Name = "repositoryItemMemoEditShowDescr";
             // 
             // colShwPerformer
             // 
@@ -233,66 +242,68 @@
             this.layoutViewCard1.CustomizationFormText = "TemplateCard";
             this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_colShwName,
             this.layoutViewField_colShwId,
-            this.layoutViewField_colShwDesc,
             this.layoutViewField_colShwPerformer,
-            this.layoutViewField_colShwIcon,
-            this.layoutViewField_colShwName});
+            this.layoutViewField_colShwDesc,
+            this.layoutViewField_colShwIcon});
             this.layoutViewCard1.Name = "layoutViewCard1";
             this.layoutViewCard1.OptionsItemText.TextToControlDistance = 0;
             this.layoutViewCard1.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
             this.layoutViewCard1.Text = "TemplateCard";
             // 
+            // layoutViewField_colShwName
+            // 
+            this.layoutViewField_colShwName.EditorPreferredWidth = 410;
+            this.layoutViewField_colShwName.Location = new System.Drawing.Point(131, 0);
+            this.layoutViewField_colShwName.Name = "layoutViewField_colShwName";
+            this.layoutViewField_colShwName.Size = new System.Drawing.Size(422, 45);
+            this.layoutViewField_colShwName.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colShwName.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colShwName.TextSize = new System.Drawing.Size(75, 13);
+            // 
             // layoutViewField_colShwId
             // 
-            this.layoutViewField_colShwId.EditorPreferredWidth = 105;
+            this.layoutViewField_colShwId.EditorPreferredWidth = 119;
             this.layoutViewField_colShwId.Location = new System.Drawing.Point(0, 0);
             this.layoutViewField_colShwId.Name = "layoutViewField_colShwId";
-            this.layoutViewField_colShwId.Size = new System.Drawing.Size(117, 45);
+            this.layoutViewField_colShwId.Size = new System.Drawing.Size(131, 45);
             this.layoutViewField_colShwId.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
             this.layoutViewField_colShwId.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutViewField_colShwId.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // layoutViewField_colShwDesc
-            // 
-            this.layoutViewField_colShwDesc.EditorPreferredWidth = 516;
-            this.layoutViewField_colShwDesc.Location = new System.Drawing.Point(0, 45);
-            this.layoutViewField_colShwDesc.Name = "layoutViewField_colShwDesc";
-            this.layoutViewField_colShwDesc.Size = new System.Drawing.Size(528, 45);
-            this.layoutViewField_colShwDesc.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutViewField_colShwDesc.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutViewField_colShwDesc.TextSize = new System.Drawing.Size(75, 13);
-            // 
             // layoutViewField_colShwPerformer
             // 
-            this.layoutViewField_colShwPerformer.EditorPreferredWidth = 516;
-            this.layoutViewField_colShwPerformer.Location = new System.Drawing.Point(0, 90);
+            this.layoutViewField_colShwPerformer.EditorPreferredWidth = 541;
+            this.layoutViewField_colShwPerformer.Location = new System.Drawing.Point(0, 45);
             this.layoutViewField_colShwPerformer.Name = "layoutViewField_colShwPerformer";
-            this.layoutViewField_colShwPerformer.Size = new System.Drawing.Size(528, 45);
+            this.layoutViewField_colShwPerformer.Size = new System.Drawing.Size(553, 45);
             this.layoutViewField_colShwPerformer.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
             this.layoutViewField_colShwPerformer.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutViewField_colShwPerformer.TextSize = new System.Drawing.Size(75, 13);
             // 
+            // layoutViewField_colShwDesc
+            // 
+            this.layoutViewField_colShwDesc.EditorPreferredWidth = 541;
+            this.layoutViewField_colShwDesc.Location = new System.Drawing.Point(0, 90);
+            this.layoutViewField_colShwDesc.Name = "layoutViewField_colShwDesc";
+            this.layoutViewField_colShwDesc.Size = new System.Drawing.Size(553, 302);
+            this.layoutViewField_colShwDesc.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
+            this.layoutViewField_colShwDesc.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutViewField_colShwDesc.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutViewField_colShwDesc.TextSize = new System.Drawing.Size(75, 13);
+            this.layoutViewField_colShwDesc.TextToControlDistance = 5;
+            // 
             // layoutViewField_colShwIcon
             // 
-            this.layoutViewField_colShwIcon.EditorPreferredWidth = 516;
-            this.layoutViewField_colShwIcon.Location = new System.Drawing.Point(0, 135);
+            this.layoutViewField_colShwIcon.EditorPreferredWidth = 541;
+            this.layoutViewField_colShwIcon.Location = new System.Drawing.Point(0, 392);
             this.layoutViewField_colShwIcon.Name = "layoutViewField_colShwIcon";
-            this.layoutViewField_colShwIcon.Size = new System.Drawing.Size(528, 306);
+            this.layoutViewField_colShwIcon.Size = new System.Drawing.Size(553, 45);
             this.layoutViewField_colShwIcon.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
             this.layoutViewField_colShwIcon.StartNewLine = true;
             this.layoutViewField_colShwIcon.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutViewField_colShwIcon.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // layoutViewField_colShwName
-            // 
-            this.layoutViewField_colShwName.EditorPreferredWidth = 399;
-            this.layoutViewField_colShwName.Location = new System.Drawing.Point(117, 0);
-            this.layoutViewField_colShwName.Name = "layoutViewField_colShwName";
-            this.layoutViewField_colShwName.Size = new System.Drawing.Size(411, 45);
-            this.layoutViewField_colShwName.Spacing = new DevExpress.XtraLayout.Utils.Padding(4, 4, 4, 4);
-            this.layoutViewField_colShwName.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutViewField_colShwName.TextSize = new System.Drawing.Size(75, 13);
             // 
             // Shows
             // 
@@ -310,15 +321,16 @@
             this.dataLayoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridShows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewShows)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEditShowDescr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCinemaIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwDesc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwPerformer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwPerformer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwDesc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colShwIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,6 +350,7 @@
         private DevExpress.XtraGrid.Columns.LayoutViewColumn colShwIcon;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemCinemaIcon;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEditShowDescr;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colShwId;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colShwName;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_colShwDesc;

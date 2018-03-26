@@ -36,36 +36,27 @@ import isd.dp.ua.EntertainmentNetworkServer.Common.BaseModel;
 @Table(name = "SCHEDULER", schema = "PBAB")
 public class Scheduler extends BaseModel implements java.io.Serializable 
 {
-	private BigDecimal schId;
-	@XmlTransient
-	private Hall hall;
-	@XmlTransient
-	private Show show;
-	private Date schDate;
-	private Date schTimeFrom;
-	private Date schTimeTo;
-	@XmlTransient
-	private Set<Tickets> ticketses = new HashSet<Tickets>(0);
-
 	public Scheduler() 
 	{
 	}
 
-	public Scheduler(BigDecimal schId, Hall hall, Show show, Date schDate) 
+	public Scheduler(BigDecimal schId, Hall hall, Show show, String schName, String schDescr) 
 	{
 		this.schId = schId;
 		this.hall = hall;
 		this.show = show;
-		this.schDate = schDate;
+		this.schName = schName;
+		this.schDescr = schDescr;
 	}
 
-	public Scheduler(BigDecimal schId, Hall hall, Show show, Date schDate, Date schTimeFrom, Date schTimeTo,
+	public Scheduler(BigDecimal schId, Hall hall, Show show, String schName, String schDescr, Date schTimeFrom, Date schTimeTo,
 			Set<Tickets> ticketses) 
 	{
 		this.schId = schId;
 		this.hall = hall;
 		this.show = show;
-		this.schDate = schDate;
+		this.schName = schName;
+		this.schDescr = schDescr;
 		this.schTimeFrom = schTimeFrom;
 		this.schTimeTo = schTimeTo;
 		this.ticketses = ticketses;
@@ -116,6 +107,28 @@ public class Scheduler extends BaseModel implements java.io.Serializable
 		this.show = show;
 	}
 	
+	@Column(name = "SCH_NAME", nullable = false, length = 100)
+	public String getSchName() 
+	{
+		return this.schName;
+	}
+
+	public void setSchName(String schName) 
+	{
+		this.schName = schName;
+	}
+
+	@Column(name = "SCH_DESCR")
+	public String getSchDescr() 
+	{
+		return this.schDescr;
+	}
+
+	public void setSchDescr(String schDescr) 
+	{
+		this.schDescr = schDescr;
+	}
+	
 	@Transient
 	@XmlElement
 	public BigDecimal getShowId()
@@ -123,19 +136,7 @@ public class Scheduler extends BaseModel implements java.io.Serializable
 		return this.getShow() == null ? new BigDecimal("-1") : this.getShow().getShwId();
 	}
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "SCH_DATE", nullable = false, length = 7)
-	public Date getSchDate() 
-	{
-		return this.schDate;
-	}
-
-	public void setSchDate(Date schDate) 
-	{
-		this.schDate = schDate;
-	}
-
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "SCH_TIME_FROM", length = 7)
 	public Date getSchTimeFrom() 
 	{
@@ -147,7 +148,7 @@ public class Scheduler extends BaseModel implements java.io.Serializable
 		this.schTimeFrom = schTimeFrom;
 	}
 
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "SCH_TIME_TO", length = 7)
 	public Date getSchTimeTo() 
 	{
@@ -175,4 +176,16 @@ public class Scheduler extends BaseModel implements java.io.Serializable
 	{
 		return "Scheduler [schId=" + this.getSchId() + "]";
 	}
+	
+	private BigDecimal schId;
+	@XmlTransient
+	private Hall hall;
+	@XmlTransient
+	private Show show;
+	private String schName;
+	private String schDescr;
+	private Date schTimeFrom;
+	private Date schTimeTo;
+	@XmlTransient
+	private Set<Tickets> ticketses = new HashSet<Tickets>(0);
 }

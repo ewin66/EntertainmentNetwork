@@ -49,7 +49,15 @@
     <Compile Include="BaseNotifyPropertyChanged.cs" />
     <Compile Include="CinemaServiceAdapter.cs" />
     <Compile Include="CityServiceAdapter.cs" />
+    <Compile Include="Models\Scheduler.cs" />
+    <Compile Include="Models\Interfaces\IScheduler.cs" />
     <Compile Include="Models\Show.cs" />
+    <Compile Include="SchedulerServiceAdapter.cs" />
+    <Compile Include="Service References\SchedulerService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ShowServiceAdapter.cs" />
     <Compile Include="FloorServiceAdapter.cs" />
     <Compile Include="HallServiceAdapter.cs" />
@@ -210,6 +218,29 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HallService\HallServiceService.wsdl" />
+    <None Include="Service References\SchedulerService\EntertainmentNetwork.DAL.SchedulerService.addSchedulerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulerService\EntertainmentNetwork.DAL.SchedulerService.findSchedulerByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulerService\EntertainmentNetwork.DAL.SchedulerService.getSchedulersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulerService\EntertainmentNetwork.DAL.SchedulerService.mergeSchedulerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulerService\EntertainmentNetwork.DAL.SchedulerService.removeSchedulerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulerService\EntertainmentNetwork.DAL.SchedulerService.scheduler.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SchedulerService\SchedulerService.wsdl" />
+    <None Include="Service References\SchedulerService\SchedulerService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SchedulerService\SchedulerWebService.wsdl" />
     <None Include="Service References\SeatService\EntertainmentNetwork.DAL.SeatService.addSeatResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -270,6 +301,7 @@
     <WCFMetadataStorage Include="Service References\CityService\" />
     <WCFMetadataStorage Include="Service References\FloorService\" />
     <WCFMetadataStorage Include="Service References\HallService\" />
+    <WCFMetadataStorage Include="Service References\SchedulerService\" />
     <WCFMetadataStorage Include="Service References\SeatService\" />
     <WCFMetadataStorage Include="Service References\ShowService\" />
   </ItemGroup>
@@ -341,6 +373,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ShowService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SchedulerService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SchedulerService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SchedulerService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

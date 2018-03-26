@@ -19,6 +19,6 @@ namespace EntertainmentNetwork.BL.Interfaces
 
         Task AddUpdate();
         Task LoadData(Func<T, bool> filter);
-        Task Remove();
+        Task Remove(object param);
     }
 }

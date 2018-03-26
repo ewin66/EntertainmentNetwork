@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addScheduler" type="tns:addScheduler" />
+  <xs:element name="addSchedulerResponse" type="tns:addSchedulerResponse" />
+  <xs:element name="findSchedulerById" type="tns:findSchedulerById" />
+  <xs:element name="findSchedulerByIdResponse" type="tns:findSchedulerByIdResponse" />
+  <xs:element name="getSchedulers" type="tns:getSchedulers" />
+  <xs:element name="getSchedulersResponse" type="tns:getSchedulersResponse" />
+  <xs:element name="mergeScheduler" type="tns:mergeScheduler" />
+  <xs:element name="mergeSchedulerResponse" type="tns:mergeSchedulerResponse" />
+  <xs:element name="removeScheduler" type="tns:removeScheduler" />
+  <xs:element name="removeSchedulerResponse" type="tns:removeSchedulerResponse" />
+  <xs:complexType name="getSchedulers">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getSchedulersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:scheduler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="scheduler">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="schId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="schName" type="xs:string" />
+          <xs:element minOccurs="0" name="schDescr" type="xs:string" />
+          <xs:element minOccurs="0" name="schTimeFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="schTimeTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="hallId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="showId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeScheduler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:mergeSchedulerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mergeSchedulerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:addSchedulerRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="schId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="addSchedulerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:baseDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="halId" type="xs:decimal" />
+          <xs:element minOccurs="0" name="schDescr" type="xs:string" />
+          <xs:element minOccurs="0" name="schName" type="xs:string" />
+          <xs:element minOccurs="0" name="schTimeFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="schTimeTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="shwId" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="baseDto">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="mergeSchedulerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:scheduler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSchedulerById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="findSchedulerByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:scheduler" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addScheduler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:addSchedulerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addSchedulerResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="removeScheduler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeSchedulerResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

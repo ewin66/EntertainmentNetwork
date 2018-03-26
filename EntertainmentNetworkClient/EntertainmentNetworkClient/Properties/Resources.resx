@@ -132,6 +132,12 @@
   <data name="ButtonSave" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="FieldNameHallId" xml:space="preserve">
+    <value>HallId</value>
+  </data>
+  <data name="FlyoutSchedulerAppointmentForm" xml:space="preserve">
+    <value>flyoutSchedulerAppointmentForm</value>
+  </data>
   <data name="FlyoutSeats" xml:space="preserve">
     <value>flyoutSeats</value>
   </data>

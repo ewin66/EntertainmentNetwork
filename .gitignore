@@ -1,2 +1,8 @@
 
 *.bak
+*.dll
+*.pdb
+*.txt
+*.cache
+*.exe
+*.manifest

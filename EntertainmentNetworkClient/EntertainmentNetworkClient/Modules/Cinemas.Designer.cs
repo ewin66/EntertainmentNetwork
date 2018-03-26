@@ -84,7 +84,7 @@
             this.lookUpEditCities.Location = new System.Drawing.Point(12, 12);
             this.lookUpEditCities.Name = "lookUpEditCities";
             this.lookUpEditCities.Properties.Appearance.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lookUpEditCities.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lookUpEditCities.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lookUpEditCities.Properties.Appearance.Options.UseBackColor = true;
             this.lookUpEditCities.Properties.Appearance.Options.UseFont = true;
             this.lookUpEditCities.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

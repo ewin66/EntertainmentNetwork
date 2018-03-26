@@ -30,6 +30,7 @@ namespace EntertainmentNetworkClient.Modules
             this.FloorsView = new Lazy<IViewModel<IFloor>>(() => new FloorsViewModel(ServiceManager.FloorService.Value));
             this.SeatsView = new Lazy<ISeatViewModel>(() => new SeatsViewModel(ServiceManager.SeatService.Value));
             this.ShowsView = new Lazy<IViewModel<IShow>>(() => new BaseViewModel<IBaseService<IShow>, IShow>(ServiceManager.ShowService.Value));
+            this.SchedulerView = new Lazy<IViewModel<IScheduler>>(() => new SchedulerViewModel(ServiceManager.SchedulerService.Value));
         }
 
         public DocumentManager MainDocumentManager { get; private set; }
@@ -39,6 +40,7 @@ namespace EntertainmentNetworkClient.Modules
         public Lazy<IViewModel<IFloor>> FloorsView { get; private set; }
         public Lazy<ISeatViewModel> SeatsView { get; private set; }
         public Lazy<IViewModel<IShow>> ShowsView { get; private set; }
+        public Lazy<IViewModel<IScheduler>> SchedulerView { get; private set; }
 
         public BindingSource CitiesBindingSource 
         {
@@ -148,6 +150,23 @@ namespace EntertainmentNetworkClient.Modules
             }
         }
 
+        public BindingSource SchedulersBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.schedulersBindingSource, this.SchedulerViewBindingSource, Resources.ModelsDataMember);
+                return this.schedulersBindingSource;
+            }
+        }
+
+        public BindingSource SchedulerViewBindingSource
+        {
+            get
+            {
+                this.SetDataSource(this.schedulerViewBindingSource, this.SchedulerView.Value, String.Empty);
+                return this.schedulerViewBindingSource;
+            }
+        }
 
         public void CitiesBindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -194,6 +213,15 @@ namespace EntertainmentNetworkClient.Modules
             }
         }
 
+        private void SchedulersBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            var bindingSource = sender as BindingSource;
+            if (bindingSource != null)
+            {
+                this.SchedulerView.Value.Selected = bindingSource.Current as IScheduler;
+            }
+        }
+
         private void CitiesBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             e.NewObject = new City();
@@ -217,6 +245,11 @@ namespace EntertainmentNetworkClient.Modules
         private void ShowsBindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             e.NewObject = new Show();
+        }
+
+        private void SchedulersBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            e.NewObject = new Scheduler();
         }
 
         /// <summary>

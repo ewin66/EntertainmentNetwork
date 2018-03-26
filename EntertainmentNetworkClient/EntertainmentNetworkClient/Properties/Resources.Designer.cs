@@ -106,6 +106,24 @@ namespace EntertainmentNetworkClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HallId.
+        /// </summary>
+        internal static string FieldNameHallId {
+            get {
+                return ResourceManager.GetString("FieldNameHallId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to flyoutSchedulerAppointmentForm.
+        /// </summary>
+        internal static string FlyoutSchedulerAppointmentForm {
+            get {
+                return ResourceManager.GetString("FlyoutSchedulerAppointmentForm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to flyoutSeats.
         /// </summary>
         internal static string FlyoutSeats {

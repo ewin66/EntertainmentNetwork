@@ -60,7 +60,7 @@ namespace EntertainmentNetwork.BL.ViewModels
             this.Models.ListChanged += ViewCollection_ListChanged;
         }
 
-        public virtual async Task Remove()
+        public virtual async Task Remove(object parameter)
         {
             await Logger.ExecuteAndLog<Task>(() => this.DataService.Remove(this.Selected.Id));
             this.Models.Remove(this.Selected);

@@ -27,14 +27,24 @@ public class AddSchedulerRequest extends BaseDto
 		this.shwId = shwId;
 	}
 	
-	public Date getSchDate() 
+	public String getSchName() 
 	{
-		return this.schDate;
+		return this.schName;
 	}
 
-	public void setSchDate(Date schDate) 
+	public void setSchName(String schName) 
 	{
-		this.schDate = schDate;
+		this.schName = schName;
+	}
+
+	public String getSchDescr() 
+	{
+		return this.schDescr;
+	}
+
+	public void setSchDescr(String schDescr) 
+	{
+		this.schDescr = schDescr;
 	}
 
 	public Date getSchTimeFrom() 
@@ -59,7 +69,8 @@ public class AddSchedulerRequest extends BaseDto
 	
 	private BigDecimal halId;
 	private BigDecimal shwId;
-	private Date schDate;
+	private String schName;
+	private String schDescr;
 	private Date schTimeFrom;
 	private Date schTimeTo;
 }

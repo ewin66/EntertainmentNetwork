@@ -16,6 +16,7 @@ namespace EntertainmentNetwork.BL.ViewModels
         Lazy<IViewModel<IFloor>> FloorsView { get; }
         Lazy<ISeatViewModel> SeatsView { get; }
         Lazy<IViewModel<IShow>> ShowsView { get; }
+        Lazy<IViewModel<IScheduler>> SchedulerView { get; }
 
         BindingSource CitiesBindingSource { get; }
         BindingSource CityViewBindingSource { get; }
@@ -29,5 +30,7 @@ namespace EntertainmentNetwork.BL.ViewModels
         BindingSource SeatViewBindingSource { get; }
         BindingSource ShowsBindingSource { get; }
         BindingSource ShowViewBindingSource { get; }
+        BindingSource SchedulersBindingSource { get; }
+        BindingSource SchedulerViewBindingSource { get; }
     }
 }

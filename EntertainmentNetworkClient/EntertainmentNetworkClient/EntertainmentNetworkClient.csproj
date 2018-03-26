@@ -11,6 +11,21 @@
     <AssemblyName>EntertainmentNetworkClient</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,12 +52,18 @@
     <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v15.2.Core, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Extensions, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
@@ -87,6 +108,18 @@
     </Compile>
     <Compile Include="Modules\Cinemas.Designer.cs">
       <DependentUpon>Cinemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SchedulerAppointmentForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\SchedulerAppointmentForm.Designer.cs">
+      <DependentUpon>SchedulerAppointmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Schedulers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\Schedulers.Designer.cs">
+      <DependentUpon>Schedulers.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\Shows.cs">
       <SubType>UserControl</SubType>
@@ -142,6 +175,12 @@
     <EmbeddedResource Include="Modules\Cinemas.resx">
       <DependentUpon>Cinemas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modules\SchedulerAppointmentForm.resx">
+      <DependentUpon>SchedulerAppointmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\Schedulers.resx">
+      <DependentUpon>Schedulers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\Shows.resx">
       <DependentUpon>Shows.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,9 +215,13 @@
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.CityViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.FloorsViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.HallsViewModel.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.SchedulerViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.BL.ViewModels.SeatsViewModel.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Floor.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Hall.datasource" />
     <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Interfaces.IShow.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Scheduler.datasource" />
+    <None Include="Properties\DataSources\EntertainmentNetwork.DAL.Models.Show.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -201,6 +244,23 @@
       <Project>{db211c84-b0bd-42c9-a214-1822b6815c3e}</Project>
       <Name>EntertainmentNetwork.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

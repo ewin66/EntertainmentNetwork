@@ -41,6 +41,8 @@
             this.seatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.showViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.showsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schedulerViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.schedulersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.citiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.citiesViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cinemaViewBindingSource)).BeginInit();
@@ -53,6 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // citiesBindingSource
@@ -89,6 +93,12 @@
             this.showsBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.ShowsBindingSource_AddingNew);
             this.showsBindingSource.CurrentChanged += new System.EventHandler(this.ShowsBindingSource_CurrentChanged);
             // 
+            // schedulersBindingSource
+            // 
+            this.schedulersBindingSource.AllowNew = true;
+            this.schedulersBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.SchedulersBindingSource_AddingNew);
+            this.schedulersBindingSource.CurrentChanged += new System.EventHandler(this.SchedulersBindingSource_CurrentChanged);
+            // 
             // ViewsManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,6 +117,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.seatsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,6 +137,8 @@
         private System.Windows.Forms.BindingSource seatsBindingSource;
         private System.Windows.Forms.BindingSource showViewBindingSource;
         private System.Windows.Forms.BindingSource showsBindingSource;
+        private System.Windows.Forms.BindingSource schedulerViewBindingSource;
+        private System.Windows.Forms.BindingSource schedulersBindingSource;
 
     }
 }

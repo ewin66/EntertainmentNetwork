@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" targetNamespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://127.0.0.1:9998/SchedulerService?xsd=1" namespace="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/" />
+    </xsd:schema>
+  </types>
+  <message name="mergeScheduler">
+    <part name="parameters" element="tns:mergeScheduler" />
+  </message>
+  <message name="mergeSchedulerResponse">
+    <part name="parameters" element="tns:mergeSchedulerResponse" />
+  </message>
+  <message name="removeScheduler">
+    <part name="parameters" element="tns:removeScheduler" />
+  </message>
+  <message name="removeSchedulerResponse">
+    <part name="parameters" element="tns:removeSchedulerResponse" />
+  </message>
+  <message name="addScheduler">
+    <part name="parameters" element="tns:addScheduler" />
+  </message>
+  <message name="addSchedulerResponse">
+    <part name="parameters" element="tns:addSchedulerResponse" />
+  </message>
+  <message name="getSchedulers">
+    <part name="parameters" element="tns:getSchedulers" />
+  </message>
+  <message name="getSchedulersResponse">
+    <part name="parameters" element="tns:getSchedulersResponse" />
+  </message>
+  <message name="findSchedulerById">
+    <part name="parameters" element="tns:findSchedulerById" />
+  </message>
+  <message name="findSchedulerByIdResponse">
+    <part name="parameters" element="tns:findSchedulerByIdResponse" />
+  </message>
+  <portType name="ISchedulerService">
+    <operation name="mergeScheduler">
+      <input xmlns:ns1="http://www.w3.org/2007/05/addressing/metadata" ns1:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/mergeSchedulerRequest" message="tns:mergeScheduler" />
+      <output xmlns:ns2="http://www.w3.org/2007/05/addressing/metadata" ns2:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/mergeSchedulerResponse" message="tns:mergeSchedulerResponse" />
+    </operation>
+    <operation name="removeScheduler">
+      <input xmlns:ns3="http://www.w3.org/2007/05/addressing/metadata" ns3:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/removeSchedulerRequest" message="tns:removeScheduler" />
+      <output xmlns:ns4="http://www.w3.org/2007/05/addressing/metadata" ns4:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/removeSchedulerResponse" message="tns:removeSchedulerResponse" />
+    </operation>
+    <operation name="addScheduler">
+      <input xmlns:ns5="http://www.w3.org/2007/05/addressing/metadata" ns5:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/addSchedulerRequest" message="tns:addScheduler" />
+      <output xmlns:ns6="http://www.w3.org/2007/05/addressing/metadata" ns6:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/addSchedulerResponse" message="tns:addSchedulerResponse" />
+    </operation>
+    <operation name="getSchedulers">
+      <input xmlns:ns7="http://www.w3.org/2007/05/addressing/metadata" ns7:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/getSchedulersRequest" message="tns:getSchedulers" />
+      <output xmlns:ns8="http://www.w3.org/2007/05/addressing/metadata" ns8:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/getSchedulersResponse" message="tns:getSchedulersResponse" />
+    </operation>
+    <operation name="findSchedulerById">
+      <input xmlns:ns9="http://www.w3.org/2007/05/addressing/metadata" ns9:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/findSchedulerByIdRequest" message="tns:findSchedulerById" />
+      <output xmlns:ns10="http://www.w3.org/2007/05/addressing/metadata" ns10:Action="http://Interfaces.EntertainmentNetworkServer.ua.dp.isd/ISchedulerService/findSchedulerByIdResponse" message="tns:findSchedulerByIdResponse" />
+    </operation>
+  </portType>
+</definitions>
